@@ -106,7 +106,7 @@ const CartScreen = ({ match, location, history }) => {
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <Col className='d-grid gap-2'>
+              <Col className='d-grid'>
                 <Button
                   type='button'
                   className='btn-block'
