@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import SearchBox from "./SearchBox";
 import { logout } from "../actions/userActions";
 
 const Header = () => {
@@ -24,10 +25,20 @@ const Header = () => {
       >
         <Container className='py-0'>
           <LinkContainer to='/'>
-            <Navbar.Brand>AcroGear</Navbar.Brand>
+            <Navbar.Brand className=''>
+              <img
+                src='/images/carabiner.svg'
+                width='50'
+                height='50'
+                className='d-inline-block align-center'
+                alt='Acrogear'
+              />{" "}
+              <Navbar.Text>AcroGear</Navbar.Text>
+            </Navbar.Brand>
           </LinkContainer>
-
+          <SearchBox />
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
+
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ms-auto'>
               <LinkContainer to='/cart'>
