@@ -19,3 +19,9 @@ h3 {
 .rating span {
   margin: 0.1rem;
 }
+#__next {
+  padding: 20px;
+}
+.image-item {
+  padding: 20px 0 20px 20px;
+}

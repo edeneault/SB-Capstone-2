@@ -1,17 +1,37 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Carousel, Image } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "./Loader";
 import Message from "./Message";
 import { listTopProducts } from "../actions/productActions";
 import "../css/ProductCarousel.css";
+import Carousel from "react-multi-carousel";
+
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+    paritialVisibilityGutter: 60,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+    paritialVisibilityGutter: 50,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    paritialVisibilityGutter: 30,
+  },
+};
 
 const ProductCarousel = () => {
   const dispatch = useDispatch();
 
   const productTopRated = useSelector((state) => state.productTopRated);
   const { loading, error, products } = productTopRated;
+  const images = products.map((product) => product);
 
   useEffect(() => {
     dispatch(listTopProducts());
@@ -22,20 +42,33 @@ const ProductCarousel = () => {
   ) : error ? (
     <Message variant='danger'>{error}</Message>
   ) : (
-    <Carousel pause='hover' className='bg-dark'>
-      {products.map((product) => (
-        <Carousel.Item key={product._id}>
-          <Link to={`/products/${product._id}`}>
-            <Image src={product.image} alt={product.name} fluid />
-            <Carousel.Caption className='carousel-caption'>
-              <h2>
-                {product.name} (${product.price})
-              </h2>
-            </Carousel.Caption>
-          </Link>
-        </Carousel.Item>
-      ))}
-    </Carousel>
+    <>
+      <h2 className='carousel-title m-0 p-3'>Top Rated Products</h2>
+      <Carousel
+        itemClass='image-item'
+        responsive={responsive}
+        swipeable
+        renderArrowsWhenDisabled
+        infinite
+        centerMode
+      >
+        {images.slice(0, 8).map((product) => {
+          return (
+            <div key={product.name} className=''>
+              <Image
+                className='img-carousel'
+                draggable={false}
+                src={product.image}
+              />
+              <Link to={`/products/${product._id}`} className='text-white'>
+                <p className='p-0 m-0  fs-6 '>{product.name}</p>
+                <p className='p-0 m-0  fs-6'>{product.price}</p>
+              </Link>
+            </div>
+          );
+        })}
+      </Carousel>
+    </>
   );
 };
 

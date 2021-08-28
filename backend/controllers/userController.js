@@ -11,13 +11,18 @@ const authUser = asyncHandler(async (req, res) => {
   const user = await User.findOne({ email: email });
 
   if (user && (await user.matchPassword(password))) {
-    res.json({
-      _id: user.id,
-      name: user.name,
-      email: user.email,
-      isAdmin: user.isAdmin,
-      token: generateToken(user._id),
-    });
+    const token = generateToken(user._id);
+    res
+      .cookie("access_token", token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+      })
+      .json({
+        _id: user.id,
+        name: user.name,
+        email: user.email,
+        isAdmin: user.isAdmin,
+      });
   } else {
     res.status(401);
     throw new Error("Invalid email or password");
@@ -42,19 +47,38 @@ const registerUser = asyncHandler(async (req, res) => {
     password,
   });
 
+  const token = generateToken(user._id);
+
   if (user) {
-    res.status(201).json({
-      _id: user.id,
-      name: user.name,
-      email: user.email,
-      isAdmin: user.isAdmin,
-      token: generateToken(user._id),
-    });
+    res
+      .status(201)
+      .cookie("access_token", token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+      })
+      .json({
+        _id: user.id,
+        name: user.name,
+        email: user.email,
+        isAdmin: user.isAdmin,
+      });
   } else {
     res.status(400);
     throw new Error("invalid user data");
   }
 });
+
+// @desc  Logout a user
+// @route GET /api/users/logout
+// @access Private
+const logoutUser = asyncHandler(async (req, res) => {
+  return res
+    .status(201)
+    .clearCookie("access_token")
+    .status(200)
+    .json({ message: "Successfully logged out 😏 🍀" });
+});
+
 // @desc  Get user profile
 // @route POST /api/users/profile
 // @access Private
@@ -94,7 +118,6 @@ const updateUserProfile = asyncHandler(async (req, res) => {
       name: updatedUser.name,
       email: updatedUser.email,
       isAdmin: updatedUser.isAdmin,
-      token: generateToken(updatedUser._id),
     });
   } else {
     res.status(404);
@@ -173,4 +196,5 @@ export {
   deleteUser,
   getUserById,
   updateUser,
+  logoutUser,
 };

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Form, Button, InputGroup } from "react-bootstrap";
+import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import "../css/SearchBox.css";
 
-const SearchBox = () => {
+const SearchBox = ({ name }) => {
   const history = useHistory();
   const [keyword, setKeyword] = useState("");
 
@@ -16,26 +16,33 @@ const SearchBox = () => {
     }
   };
   return (
-    <Form onSubmit={submitHandler} className='d-flex ms-auto mt-1'>
-      <InputGroup>
-        <Form.Control
-          type='text'
-          name='q'
-          onChange={(e) => setKeyword(e.target.value)}
-          placeholder='search products'
-          className='rounded-start smaller-input'
-          size='sm'
-        ></Form.Control>
+    <>
+      <Container>
+        <Row className='d-flex py-3'>
+          <Col>
+            <Form onSubmit={submitHandler} className='d-flex ms-auto mt-1'>
+              <Form.Control
+                type='text'
+                name='q'
+                onChange={(e) => setKeyword(e.target.value)}
+                placeholder={`search ${name}`}
+                className='rounded-start smaller-input'
+                size='sm'
+              ></Form.Control>
 
-        <Button
-          type='submit'
-          variant='outline-secondary btn-sm'
-          className='d-inline rounded-end smaller-button'
-        >
-          Search
-        </Button>
-      </InputGroup>
-    </Form>
+              <Button
+                type='submit'
+                variant='secondary '
+                className='btn rounded-end smaller-button'
+              >
+                <i className='fas fa-search'></i>
+              </Button>
+              {/* </InputGroup> */}
+            </Form>
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 };
 
