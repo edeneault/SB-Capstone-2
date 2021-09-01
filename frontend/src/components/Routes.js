@@ -1,24 +1,24 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import HomeScreen from "../screens/HomeScreen";
-import ProductScreen from "../screens/ProductScreen";
-import ProductsScreen from "../screens/ProductsScreen";
-import ProductsCategoryScreen from "../screens/ProductsCategoryScreen";
-import ProductsBrandScreen from "../screens/ProductsBrandScreen";
-import CartScreen from "../screens/CartScreen";
-import LoginScreen from "../screens/LoginScreen";
-import RegisterScreen from "../screens/RegisterScreen";
-import ProfileScreen from "../screens/ProfileScreen";
-import ShippingScreen from "../screens/ShippingScreen";
-import PaymentScreen from "../screens/PaymentScreen";
-import PaymentScreenUpdate from "../screens/PaymentScreenUpdate";
-import PlaceOrderScreen from "../screens/PlaceOrderScreen";
-import OrderScreen from "../screens/OrderScreen";
-import UserListScreen from "../screens/UserListScreen";
-import UserEditScreen from "../screens/UserEditScreen";
-import ProductsListScreen from "../screens/ProductsListScreen";
-import ProductEditScreen from "../screens/ProductEditScreen";
-import OrdersListScreen from "../screens/OrdersListScreen";
+import HomeScreen from "../pages/HomePage";
+import ProductScreen from "../pages/ProductPage";
+import ProductsScreen from "../pages/ProductsPage";
+import ProductsCategoryScreen from "../pages/ProductsCategoryPage";
+import ProductsBrandScreen from "../pages/ProductsBrandPage";
+import CartScreen from "../pages/CartPage";
+import LoginScreen from "../pages/LoginPage";
+import RegisterScreen from "../pages/RegisterPage";
+import ProfileScreen from "../pages/ProfilePage";
+import ShippingScreen from "../pages/ShippingPage";
+import PaymentScreen from "../pages/PaymentPage";
+import PaymentScreenUpdate from "../pages/PaymentPageUpdate";
+import PlaceOrderScreen from "../pages/PlaceOrderPage";
+import OrderScreen from "../pages/OrderPage";
+import UserListScreen from "../pages/UserListPage";
+import UserEditScreen from "../pages/UserEditPage";
+import ProductsListScreen from "../pages/ProductsListPage";
+import ProductEditScreen from "../pages/ProductEditPage";
+import OrdersListScreen from "../pages/OrdersListPage";
 
 const Routes = () => {
   return (

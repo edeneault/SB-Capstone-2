@@ -153,10 +153,9 @@ const ProductScreen = ({ history, match }) => {
                       <Col className='d-grid gap-2'>
                         <Button
                           onClick={addToCartHandler}
-                          className='btn-block'
+                          className='btn-block rounded'
                           type='button'
                           disabled={product.countInStock === 0}
-                          className='rounded'
                         >
                           Add To Cart
                         </Button>
