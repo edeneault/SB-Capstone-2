@@ -1,9 +1,19 @@
+@font-face {
+  font-family: tesla;
+  src: url(./fonts/TESLA.ttf);
+}
+
+.brand-text {
+  font-family: tesla;
+  color: white;
+}
+
 .social {
-  background: rgba(0, 0, 0, 0);
+  background-color: rgb(0, 0, 0);
 }
 
 .search {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(147, 147, 147, 0.283);
 }
 
 .navbar-toggler:focus,
@@ -12,7 +22,6 @@
   outline: none;
   box-shadow: none;
 }
-
-.navbar .nav {
-  transform: capitalize !important;
+.main-nav {
+  background-color: rgb(140, 61, 61);
 }

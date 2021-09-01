@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { PayPalButton } from "react-paypal-button-v2";
 import StripeCheckout from "react-stripe-checkout";
+
 import { Link } from "react-router-dom";
 import {
   Container,
@@ -25,6 +26,11 @@ import {
   ORDER_PAY_RESET,
   ORDER_DELIVER_RESET,
 } from "../constants/orderConstants";
+
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
 
 const OrderScreen = ({ match, history }) => {
   const orderId = match.params.id;
@@ -100,14 +106,33 @@ const OrderScreen = ({ match, history }) => {
     dispatch(deliverOrder(orderId));
   };
 
-  function handleToken(token, addresses) {
-    console.log({ token, addresses });
-  }
+  const handleToken = async (token, addresses) => {
+    // console.log({ token, addresses });
+    const { data } = await axios.post(`/api/stripecheckout`, { token, order });
+    const { status } = data;
+
+    const { id } = data;
+    const { email } = data;
+
+    // console.log("Response.order:", data);
+    if (status === "success") {
+      toast("Success! Check email for details", { type: "success" });
+      let paymentResult = {
+        id: id,
+        status: status,
+        email_address: email,
+      };
+      // console.log("payment result: ", paymentResult);
+      dispatch(payOrder(orderId, paymentResult));
+    } else {
+      toast("Something went wrong", { type: "error" });
+    }
+  };
 
   return loading ? (
     <Loader />
   ) : error ? (
-    <Message variant='danger'>{error}</Message>
+    toast("Something went wrong", { type: "error" })
   ) : (
     <>
       <Container fluid className='px-5'>
@@ -241,6 +266,10 @@ const OrderScreen = ({ match, history }) => {
                       <StripeCheckout
                         stripeKey={process.env.REACT_APP_PUBLISHABLE_KEY}
                         token={handleToken}
+                        billingAddress
+                        shippingAddress
+                        amount={order.totalPrice * 100}
+                        name={order.user.name}
                       />
                     </Col>
                   </ListGroup.Item>

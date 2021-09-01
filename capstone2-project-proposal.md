@@ -6,7 +6,7 @@
 
 **Project Overview:** StoreFront/eCommerce application for business to deliver brand identity and to sell products to retail consumers. Built in a way that is flexible/reusable.
 
-Theatrical Rigging themed.
+Coffee vendor themed. Products sold: coffee, brarista/coffee machines and accessories.
 
 **Application Features**
 
@@ -14,13 +14,12 @@ Theatrical Rigging themed.
 - admin panel: add/delete/update products, assign user as admin, (strech goal: track product trends, potentially add chart visualization)
 - Documentation: detailed documentation/tutorials for ease of use by end-user/client (route documentation using Postman)
 - Front-facing usage: user can get all the way to checkout before being required to login/signup
-- Cloudinary for media management and standardization
 
 **Technologies:**
 
 _MERN Stack_
 
-- MongoDB
+- MongoDB (Atlas Cloud Database)
 - Express
 - React
 - Node
@@ -31,16 +30,23 @@ _MERN Stack_
 - redux, react-redux for global state management
 - jwt we tokens/bcrypt for authentification - custom middleware to protect routes
 - react-helmet for SEO friendly meta data
+- toast for dynamic messaging
 
 **API**
 
 - Paypal API for payment
-- Stretch Goal: add stripe
+- Stripe API for payment
+- Cloudinary API for media management and custom transformations
 
 **Testing**
 
 - comprehensive testing: react-testing-library and jest (unit and integration tests)
 
 **Deployment**
--Backend: heroku
--Frontend: TBD
+
+- Backend and Frontend: heroku
+
+**Ressources**
+MERN Stack Tutorial by Brad Traversy (https://www.udemy.com/course/mern-ecommerce/)
+Set up Payments in React js with Stripe by Web Dev Hero (https://www.youtube.com/watch?v=lkA4rmo7W6k)
+Using Cookies with JWT in Node.js (https://dev.to/franciscomendes10866/using-cookies-with-jwt-in-node-js-8fn)

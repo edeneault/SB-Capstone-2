@@ -1,3 +1,7 @@
+:root {
+  --main-red-color: brown;
+}
+
 main {
   min-height: 80vh;
 }
@@ -24,4 +28,23 @@ h3 {
 }
 .image-item {
   padding: 20px 0 20px 20px;
+}
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: var(--main-red-color);
+  border-color: var(--main-red-color);
+  border-radius: 5px;
+}
+
+.trash {
+  background-color: var(--main-red-color);
+  border-radius: 5px;
+  width: 40px;
+}
+
+.edit {
+  border-radius: 5px;
+  width: 40px;
 }

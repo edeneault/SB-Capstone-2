@@ -56,11 +56,12 @@ const ProductCarousel = () => {
           return (
             <div key={product.name} className=''>
               <Image
+                fluid
                 className='img-carousel'
                 draggable={false}
                 src={product.image}
               />
-              <Link to={`/products/${product._id}`} className='text-white'>
+              <Link to={`/products/${product._id}`} className='text-dark'>
                 <p className='p-0 m-0  fs-6 '>{product.name}</p>
                 <p className='p-0 m-0  fs-6'>{product.price}</p>
               </Link>

@@ -18,7 +18,7 @@ const SearchBox = ({ name }) => {
   return (
     <>
       <Container>
-        <Row className='d-flex py-3'>
+        <Row className='d-flex py-1 px-3'>
           <Col>
             <Form onSubmit={submitHandler} className='d-flex ms-auto mt-1'>
               <Form.Control

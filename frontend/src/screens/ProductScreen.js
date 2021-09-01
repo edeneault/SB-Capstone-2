@@ -18,9 +18,13 @@ import {
   listProductDetails,
   createProductReview,
 } from "../actions/productActions";
-// import { userLogin } from "../actions/userActions";
+
 import { PRODUCT_CREATE_REVIEW_RESET } from "../constants/productConstants";
-// import ProductsListScreen from "./ProductsListScreen";
+
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
 
 const ProductScreen = ({ history, match }) => {
   const [qty, setQty] = useState(1);
@@ -75,7 +79,7 @@ const ProductScreen = ({ history, match }) => {
         {loading ? (
           <Loader />
         ) : error ? (
-          <Message variant={"danger"}> {error}</Message>
+          toast(`${error}`, { type: "error" })
         ) : (
           <>
             <Row>
@@ -94,13 +98,13 @@ const ProductScreen = ({ history, match }) => {
                     />
                   </ListGroup.Item>
                   <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
-                  <ListGroup.Item>
+                  {/* <ListGroup.Item>
                     Description: {product.description}
-                  </ListGroup.Item>
+                  </ListGroup.Item> */}
                 </ListGroup>
               </Col>
               <Col md={3}>
-                <Card>
+                <Card className='rounded'>
                   <ListGroup variant='flush'>
                     <ListGroup.Item>
                       <Row>
@@ -152,6 +156,7 @@ const ProductScreen = ({ history, match }) => {
                           className='btn-block'
                           type='button'
                           disabled={product.countInStock === 0}
+                          className='rounded'
                         >
                           Add To Cart
                         </Button>
@@ -160,6 +165,11 @@ const ProductScreen = ({ history, match }) => {
                   </ListGroup>
                 </Card>
               </Col>
+            </Row>
+            <Row className='me-3 '>
+              <Card style={{ minHeight: "50px" }} className='p-3 m-3'>
+                Description: {product.description}
+              </Card>
             </Row>
             <Row>
               <Col md={6}>
@@ -174,6 +184,10 @@ const ProductScreen = ({ history, match }) => {
                       <p>{review.comment}</p>
                     </ListGroup.Item>
                   ))}
+                </ListGroup>
+              </Col>
+              <Col md={6}>
+                <ListGroup variant='flush'>
                   <ListGroup.Item>
                     <h2>Write a Customer Review</h2>
                     {successProductReview && (
@@ -215,6 +229,7 @@ const ProductScreen = ({ history, match }) => {
                           disabled={loadingProductReview}
                           type='submit'
                           variant='primary'
+                          className='my-3 rounded'
                         >
                           Submit
                         </Button>

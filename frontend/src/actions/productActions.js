@@ -21,6 +21,12 @@ import {
   PRODUCT_TOP_REQUEST,
   PRODUCT_TOP_SUCCESS,
   PRODUCT_TOP_FAIL,
+  PRODUCT_CATEGORY_REQUEST,
+  PRODUCT_CATEGORY_SUCCESS,
+  PRODUCT_CATEGORY_FAIL,
+  PRODUCT_BRAND_REQUEST,
+  PRODUCT_BRAND_SUCCESS,
+  PRODUCT_BRAND_FAIL,
 } from "../constants/productConstants";
 
 export const listProducts =
@@ -77,17 +83,7 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
       type: PRODUCT_DELETE_REQUEST,
     });
 
-    const {
-      userLogin: { userInfo },
-    } = getState();
-
-    const config = {
-      headers: {
-        Authorization: `Bearer ${userInfo.token}`,
-      },
-    };
-
-    await axios.delete(`/api/products/${id}`, config);
+    await axios.delete(`/api/products/${id}`);
 
     dispatch({
       type: PRODUCT_DELETE_SUCCESS,
@@ -223,6 +219,52 @@ export const listTopProducts = () => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: PRODUCT_TOP_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
+
+export const listCategoryProducts = (category) => async (dispatch) => {
+  try {
+    dispatch({
+      type: PRODUCT_CATEGORY_REQUEST,
+    });
+
+    const { data } = await axios.get(`/api/products/category/${category}`);
+
+    dispatch({
+      type: PRODUCT_CATEGORY_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: PRODUCT_CATEGORY_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
+
+export const listBrandProducts = (brand) => async (dispatch) => {
+  try {
+    dispatch({
+      type: PRODUCT_BRAND_REQUEST,
+    });
+
+    const { data } = await axios.get(`/api/products/brand/${brand}`);
+
+    dispatch({
+      type: PRODUCT_BRAND_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: PRODUCT_BRAND_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message

@@ -4,6 +4,8 @@ import {
   getProducts,
   getProductById,
   getTopProducts,
+  getProductsByCategory,
+  getProductsByBrand,
   deleteProduct,
   updateProduct,
   createProduct,
@@ -15,6 +17,8 @@ import { protect, admin } from "../middleware/authMiddleware.js";
 router.route("/").get(getProducts).post(protect, admin, createProduct);
 router.route("/:id/reviews").post(protect, createProductReview);
 router.get("/top", getTopProducts);
+router.get("/category/:category", getProductsByCategory);
+router.get("/brand/:brand", getProductsByBrand);
 router
   .route("/:id")
   .get(getProductById)

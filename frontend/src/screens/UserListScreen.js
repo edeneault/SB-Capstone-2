@@ -2,9 +2,13 @@ import React, { useEffect } from "react";
 import { LinkContainer } from "react-router-bootstrap";
 import { Container, Table, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { usersList, deleteUser } from "../actions/userActions";
+
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
 
 const UserListScreen = ({ history }) => {
   const dispatch = useDispatch();
@@ -38,7 +42,7 @@ const UserListScreen = ({ history }) => {
         {loading ? (
           <Loader />
         ) : error ? (
-          <Message variant='danger'>{error}</Message>
+          toast(`${error}`, { type: "error" })
         ) : (
           <Table striped bordered hover responsive className='table-sm'>
             <thead>
@@ -47,7 +51,7 @@ const UserListScreen = ({ history }) => {
                 <th>NAME</th>
                 <th>EMAIL</th>
                 <th>ADMIN</th>
-                <th></th>
+                <th>ACTIONS</th>
               </tr>
             </thead>
             <tbody>
@@ -70,13 +74,12 @@ const UserListScreen = ({ history }) => {
                   </td>
                   <td>
                     <LinkContainer to={`/admin/user/${user._id}/edit`}>
-                      <Button variant='light' className='btn-sm'>
+                      <Button variant='light' className='btn-sm edit m-1'>
                         <i className='fas fa-edit'></i>
                       </Button>
                     </LinkContainer>
                     <Button
-                      variant='danger'
-                      className='btn-sm'
+                      className='btn-sm trash m-1'
                       onClick={() => deleteHandler(user._id)}
                     >
                       <i className='fas fa-trash'></i>

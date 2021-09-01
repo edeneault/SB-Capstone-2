@@ -2,9 +2,13 @@ import React, { useEffect } from "react";
 import { LinkContainer } from "react-router-bootstrap";
 import { Container, Table, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { listOrders } from "../actions/orderActions";
+
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
 
 const UserListScreen = ({ history }) => {
   const dispatch = useDispatch();
@@ -30,7 +34,7 @@ const UserListScreen = ({ history }) => {
         {loading ? (
           <Loader />
         ) : error ? (
-          <Message variant='danger'>{error}</Message>
+          toast("Something went wrong", { type: "error" })
         ) : (
           <Table striped bordered hover responsive className='table-sm'>
             <thead>

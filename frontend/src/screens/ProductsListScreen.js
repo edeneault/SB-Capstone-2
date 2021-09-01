@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { LinkContainer } from "react-router-bootstrap";
 import { Container, Table, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import Message from "../components/Message";
 import Loader from "../components/Loader";
 import Paginate from "../components/Paginate";
 import {
@@ -12,11 +11,14 @@ import {
 } from "../actions/productActions";
 import { PRODUCT_CREATE_RESET } from "../constants/productConstants";
 
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
+
 const ProductsListScreen = ({ history, match }) => {
   const pageNumber = match.params.pageNumber || 1;
   const dispatch = useDispatch();
-
-  // const id = match.params.id;
 
   const productsList = useSelector((state) => state.productList);
   const { loading, error, products, page, pages } = productsList;
@@ -78,19 +80,19 @@ const ProductsListScreen = ({ history, match }) => {
             <h1>Products</h1>
           </Col>
           <Col className='text-end'>
-            <Button className='my-3' onClick={createProductHandler}>
+            <Button className='my-3 rounded' onClick={createProductHandler}>
               <i className='fas fa-plus'></i> Create Product
             </Button>
           </Col>
         </Row>
         {loadingCreate && <Loader />}
-        {errorCreate && <Message variant='danger'>{errorDelete}</Message>}
+        {errorCreate && toast(`${errorCreate}`, { type: "error" })}
         {loadingDelete && <Loader />}
-        {errorDelete && <Message variant='danger'>{errorDelete}</Message>}
+        {errorDelete && toast(`${errorDelete}`, { type: "error" })}
         {loading ? (
           <Loader />
         ) : error ? (
-          <Message variant='danger'>{error}</Message>
+          toast(`${error}`, { type: "error" })
         ) : (
           <>
             <Table striped bordered hover responsive className='table-sm'>
@@ -101,7 +103,7 @@ const ProductsListScreen = ({ history, match }) => {
                   <th>PRICE</th>
                   <th>CATEGORY</th>
                   <th>BRAND</th>
-                  <th></th>
+                  <th>ACTION</th>
                 </tr>
               </thead>
               <tbody>
@@ -114,13 +116,13 @@ const ProductsListScreen = ({ history, match }) => {
                     <td>{product.brand}</td>
                     <td>
                       <LinkContainer to={`/admin/product/${product._id}/edit`}>
-                        <Button variant='light' className='btn-sm'>
+                        <Button variant='light' className='btn-sm edit m-1'>
                           <i className='fas fa-edit'></i>
                         </Button>
                       </LinkContainer>
                       <Button
                         variant='danger'
-                        className='btn-sm'
+                        className='btn-sm trash m-1'
                         onClick={() => deleteHandler(product._id)}
                       >
                         <i className='fas fa-trash'></i>

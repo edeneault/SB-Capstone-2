@@ -1,0 +1,15 @@
+.card {
+  min-height: 33rem;
+}
+
+.price {
+  color: rgb(140, 61, 61);
+}
+
+.list-group-item {
+  min-height: 5rem;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+}

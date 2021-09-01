@@ -1,10 +1,23 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Button, Row, Col, ListGroup, Image, Card } from "react-bootstrap";
+import {
+  Container,
+  Button,
+  Row,
+  Col,
+  ListGroup,
+  Image,
+  Card,
+} from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import CheckoutSteps from "../components/CheckoutSteps";
 import { createOrder, getOrderDetails } from "../actions/orderActions";
+
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
 
 const PlaceOrderScreen = ({ history }) => {
   const dispatch = useDispatch();
@@ -60,7 +73,7 @@ const PlaceOrderScreen = ({ history }) => {
     );
   };
   return (
-    <div>
+    <Container fluid className='px-5'>
       <CheckoutSteps step1 step2 step3 step4 />
       <Row>
         <Col md={8}>
@@ -149,7 +162,7 @@ const PlaceOrderScreen = ({ history }) => {
               </ListGroup.Item>
 
               <ListGroup.Item>
-                {error && <Message variant='danger'>{error}</Message>}
+                {error && toast(`${error}`, { type: "error" })}
               </ListGroup.Item>
               <ListGroup.Item>
                 <Col className='d-grid'>
@@ -167,7 +180,7 @@ const PlaceOrderScreen = ({ history }) => {
           </Card>
         </Col>
       </Row>
-    </div>
+    </Container>
   );
 };
 

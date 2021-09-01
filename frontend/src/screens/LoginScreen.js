@@ -2,10 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import Message from "../components/Message";
 import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
 import { login } from "../actions/userActions";
+
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
 
 const LoginScreen = ({ location, history }) => {
   const [email, setEmail] = useState("");
@@ -14,13 +18,10 @@ const LoginScreen = ({ location, history }) => {
   const dispatch = useDispatch();
 
   const userLogin = useSelector((state) => state.userLogin);
-  console.log(userLogin);
 
   const { loading, error, userInfo } = userLogin;
-  console.log("userInfo: ", userInfo);
+
   const redirect = location.search ? location.search.split("=")[1] : "/";
-  console.log(location.search);
-  console.log(redirect);
 
   useEffect(() => {
     if (userInfo) {
@@ -36,7 +37,7 @@ const LoginScreen = ({ location, history }) => {
   return (
     <FormContainer>
       <h1>Sign In</h1>
-      {error && <Message variant='danger'>{error}</Message>}
+      {error && toast(`${error}`, { type: "error" })}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='email'>

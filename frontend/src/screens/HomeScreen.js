@@ -2,12 +2,16 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Row, Col, Container } from "react-bootstrap";
 import Product from "../components/Product";
-import Message from "../components/Message";
 import Loader from "../components/Loader";
 import Paginate from "../components/Paginate";
 import { listProducts } from "../actions/productActions";
 import ProductCarousel from "../components/ProductCarousel";
 import HomepageCarousel from "../components/HomepageCarousel";
+
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
 
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword;
@@ -30,7 +34,7 @@ const HomeScreen = ({ match }) => {
         {loading ? (
           <Loader />
         ) : error ? (
-          <Message variant={"danger"}>{error}</Message>
+          toast(`${error}`, { type: "error" })
         ) : (
           <>
             <Row>

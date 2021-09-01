@@ -1,40 +1,70 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Carousel, Image } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import Loader from "./Loader";
-import Message from "./Message";
-import { listTopProducts } from "../actions/productActions";
-import "../css/ProductCarousel.css";
+import "../css/HomepageCarousel.css";
 
 const HomepageCarousel = () => {
-  const dispatch = useDispatch();
-
-  const productTopRated = useSelector((state) => state.productTopRated);
-  const { loading, error, products } = productTopRated;
-
-  useEffect(() => {
-    dispatch(listTopProducts());
-  }, [dispatch]);
-
-  return loading ? (
-    <Loader />
-  ) : error ? (
-    <Message variant='danger'>{error}</Message>
-  ) : (
-    <Carousel pause='hover' className='bg-dark'>
-      {products.map((product) => (
-        <Carousel.Item key={product._id}>
-          <Link to={`/product/${product._id}`}>
-            <Image src={product.image} alt={product.name} fluid />
-            <Carousel.Caption className='carousel-caption'>
-              <h2>
-                {product.name} (${product.price})
-              </h2>
-            </Carousel.Caption>
+  return (
+    <Carousel fade>
+      <Carousel.Item>
+        <Image
+          className='img'
+          src='https://res.cloudinary.com/gym-hero/image/upload/c_fill,h_400,w_2000/v1630186070/eShop/homepage-carousel-coffee-2_e6ue2v.jpg'
+          alt='First slide'
+        />
+        <Carousel.Caption>
+          <h3 className='text-light fs-1 fs-md-5 slide-title'>
+            Curated Coffee Selection
+          </h3>
+          <p className='text-white fs-3 carousel-text-shadow'>
+            Because life is better with coffee!
+          </p>
+          <Link className='btn btn-secondary rounded' to='/categories/espresso'>
+            SHOP COFFEE
           </Link>
-        </Carousel.Item>
-      ))}
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <Image
+          className='img'
+          src='https://res.cloudinary.com/gym-hero/image/upload/b_rgb:000000,c_fill,h_400,o_64,w_2000,x_0,z_0.1/v1630200059/eShop/homepage-carousel-coffee-4_rciqlk.jpg'
+          alt='Second slide'
+        />
+
+        <Carousel.Caption>
+          <h3 className='text-light fs-1 fs-md-5 slide-title'>
+            Barista and Coffee Machines
+          </h3>
+          <p className='text-white fs-3 carousel-text-shadow'>
+            Only the highest quality and best rated.
+          </p>
+          <Link className='btn btn-secondary rounded' to='/categories/barista'>
+            SHOP MACHINE
+          </Link>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <Image
+          className='img'
+          src='https://res.cloudinary.com/gym-hero/image/upload/c_fill,h_400,w_2000/v1630208757/eShop/products/barista/homepage-carousel-coffee-5_jsvuvs.jpg'
+          alt='Third slide'
+        />
+
+        <Carousel.Caption>
+          <h3 className='text-light fs-1 fs-md-5 slide-title'>
+            ACCESSORIES AND MERCHANDISE
+          </h3>
+          <p className='text-white fs-3 carousel-text-shadow'>
+            Coffee mugs, single pour products, filters and much more.
+          </p>
+          <Link
+            className='btn btn-secondary rounded'
+            to='/categories/accessories'
+          >
+            SHOP ACCESSORIES
+          </Link>
+        </Carousel.Caption>
+      </Carousel.Item>
     </Carousel>
   );
 };

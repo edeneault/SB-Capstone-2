@@ -2,11 +2,15 @@ import React, { useState, useEffect } from "react";
 import { LinkContainer } from "react-router-bootstrap";
 import { Container, Form, Button, Row, Col, Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { getUserDetails, updateUserProfile } from "../actions/userActions";
 import { listMyOrders } from "../actions/orderActions";
 import { USER_UPDATE_PROFILE_RESET } from "../constants/userConstants";
+
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
 
 const ProfileScreen = ({ location, history }) => {
   const [email, setEmail] = useState("");
@@ -58,9 +62,9 @@ const ProfileScreen = ({ location, history }) => {
       <Row>
         <Col md={3}>
           <h2>User Profile</h2>
-          {message && <Message variant='danger'>{message}</Message>}
-          {error && <Message variant='danger'>{error}</Message>}
-          {success && <Message variant='success'>Profile Updated</Message>}
+          {message && toast(`${error}`, { type: "error" })}
+          {error && toast(`${error}`, { type: "error" })}
+          {success && toast(`Profile Updated`, { type: "success" })}
           {loading && <Loader />}
           <Form onSubmit={submitHandler}>
             <Form.Group controlId='name'>
@@ -113,7 +117,7 @@ const ProfileScreen = ({ location, history }) => {
           {loadingOrders ? (
             <Loader />
           ) : errorOrders ? (
-            <Message variant='danger'>{errorOrders}</Message>
+            toast(`${errorOrders}`, { type: "error" })
           ) : (
             <Table striped bordered hover responsive className='table-sm'>
               <thead>
