@@ -24,6 +24,7 @@ const ProductEditScreen = ({ match, history }) => {
   const [countInStock, setCountInStock] = useState(0);
   const [description, setDescription] = useState("");
   const [uploading, setUploading] = useState(false);
+  const [previewSource, setPreviewSource] = useState();
 
   const dispatch = useDispatch();
 
@@ -36,6 +37,15 @@ const ProductEditScreen = ({ match, history }) => {
     error: errorUpdate,
     success: successUpdate,
   } = productUpdate;
+
+  const previewFile = (file) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setPreviewSource(reader.result);
+      uploadImage(reader.result);
+    };
+  };
 
   useEffect(() => {
     if (successUpdate) {
@@ -56,29 +66,37 @@ const ProductEditScreen = ({ match, history }) => {
     }
   }, [dispatch, history, productId, product, successUpdate]);
 
-  const uploadFileHandler = async (e) => {
+  const handleFileInputChange = (e) => {
     const file = e.target.files[0];
-    const formData = new FormData();
-    formData.append("image", file);
-    setUploading(true);
+    previewFile(file);
+  };
 
+  const uploadImage = async (base64EncodedImage) => {
     try {
+      setUploading(true);
       const config = {
         headers: {
-          "Content-Type": "multiupart/form-data",
+          "Content-Type": "application/json",
         },
       };
-      const { data } = await axios.post("/api/upload", formData, config);
-      setImage(data);
-      setUploading(false);
-    } catch (error) {
-      console.log(error);
+
+      const body = JSON.stringify({ data: base64EncodedImage });
+      await axios
+        .post("/api/upload", body, config)
+        .then((res) => {
+          const secure_url = res.data.secure_url;
+          setUploading(false);
+          setImage(secure_url);
+        })
+        .catch((err) => new Error(err));
+    } catch (err) {
       setUploading(false);
     }
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
+
     dispatch(
       updateProduct({
         _id: productId,
@@ -91,6 +109,7 @@ const ProductEditScreen = ({ match, history }) => {
         countInStock,
       }),
     );
+    dispatch(listProductDetails(productId));
   };
 
   return (
@@ -139,11 +158,19 @@ const ProductEditScreen = ({ match, history }) => {
               <Form.Control
                 type='file'
                 label='choose file'
-                onChange={uploadFileHandler}
+                onChange={handleFileInputChange}
                 className='btn text-dark'
               ></Form.Control>
               {uploading && <Loader />}
             </Form.Group>
+
+            {previewSource && (
+              <img
+                src={previewSource}
+                alt='chosen'
+                style={{ height: "200px" }}
+              />
+            )}
 
             <Form.Group controlId='brand'>
               <Form.Label>Brand</Form.Label>

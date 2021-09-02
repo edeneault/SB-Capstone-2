@@ -13,15 +13,11 @@ toast.configure();
 
 const ProductsCategoryScreen = ({ match }) => {
   const category = match.params.category;
-  console.log(category);
   const pageNumber = match.params.pageNumber || 1;
   const dispatch = useDispatch();
 
   const productCategory = useSelector((state) => state.productCategory);
   const { loading, error, products, page, pages } = productCategory;
-
-  console.log(productCategory);
-  console.log(pageNumber);
 
   useEffect(() => {
     dispatch(listCategoryProducts(category, pageNumber));

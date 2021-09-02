@@ -14,6 +14,7 @@ import {
 import Rating from "../components/Rating";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
+import MetaData from "../components/MetaData";
 import {
   listProductDetails,
   createProductReview,
@@ -82,6 +83,7 @@ const ProductScreen = ({ history, match }) => {
           toast(`${error}`, { type: "error" })
         ) : (
           <>
+            <MetaData title={product.name} />
             <Row>
               <Col md={6}>
                 <Image src={product.image} alt={product.name} fluid />

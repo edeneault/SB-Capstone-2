@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Row, Col, Container } from "react-bootstrap";
 import Product from "../components/Product";
@@ -7,6 +8,7 @@ import Paginate from "../components/Paginate";
 import { listProducts } from "../actions/productActions";
 import ProductCarousel from "../components/ProductCarousel";
 import HomepageCarousel from "../components/HomepageCarousel";
+import MetaData from "../components/MetaData";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -27,7 +29,14 @@ const HomeScreen = ({ match }) => {
 
   return (
     <>
-      {!keyword && <HomepageCarousel />}
+      <MetaData />
+      {!keyword ? (
+        <HomepageCarousel />
+      ) : (
+        <Link to='/' className='btn btn-light mx-5'>
+          Go Back
+        </Link>
+      )}
       {!keyword && <ProductCarousel />}
       <Container fluid className='px-5'>
         <h1 className='fs-4'>Latest Products</h1>

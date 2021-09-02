@@ -13,7 +13,7 @@ toast.configure();
 
 const ProductsBrandScreen = ({ match }) => {
   const brand = match.params.brand;
-  console.log(brand);
+
   const pageNumber = match.params.pageNumber || 1;
   const dispatch = useDispatch();
 

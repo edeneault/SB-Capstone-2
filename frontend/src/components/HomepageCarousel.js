@@ -9,7 +9,7 @@ const HomepageCarousel = () => {
       <Carousel.Item>
         <Image
           className='img'
-          src='https://res.cloudinary.com/gym-hero/image/upload/c_fill,h_400,w_2000/v1630186070/eShop/homepage-carousel-coffee-2_e6ue2v.jpg'
+          src='https://res.cloudinary.com/edeneault-cloudinary/image/upload/c_fill,h_400,w_2000/v1630186070/eShop/homepage-carousel/homepage-carousel-coffee-2_e6ue2v.jpg'
           alt='First slide'
         />
         <Carousel.Caption>
@@ -27,7 +27,7 @@ const HomepageCarousel = () => {
       <Carousel.Item>
         <Image
           className='img'
-          src='https://res.cloudinary.com/gym-hero/image/upload/b_rgb:000000,c_fill,h_400,o_64,w_2000,x_0,z_0.1/v1630200059/eShop/homepage-carousel-coffee-4_rciqlk.jpg'
+          src='https://res.cloudinary.com/edeneault-cloudinary/image/upload/c_fill,h_400,w_2000/v1630200059/eShop/homepage-carousel/homepage-carousel-coffee-4_rciqlk.jpg'
           alt='Second slide'
         />
 
@@ -46,7 +46,7 @@ const HomepageCarousel = () => {
       <Carousel.Item>
         <Image
           className='img'
-          src='https://res.cloudinary.com/gym-hero/image/upload/c_fill,h_400,w_2000/v1630208757/eShop/products/barista/homepage-carousel-coffee-5_jsvuvs.jpg'
+          src='https://res.cloudinary.com/edeneault-cloudinary/image/upload/c_fill,h_400,w_2000/v1630208757/eShop/homepage-carousel/homepage-carousel-coffee-5_jsvuvs.jpg'
           alt='Third slide'
         />
 

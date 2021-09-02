@@ -3,7 +3,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import Header from "./components/Header2";
 import Footer from "./components/Footer";
-import Routes from "./components/Routes";
+import Routes from "./routes/Routes";
 
 const App = () => {
   return (

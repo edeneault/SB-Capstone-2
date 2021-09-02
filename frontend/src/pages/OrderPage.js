@@ -98,7 +98,6 @@ const OrderScreen = ({ match, history }) => {
   }, [dispatch, order, orderId, successPay, successDeliver, history, userInfo]);
 
   const successPaymentHandler = (paymentResult) => {
-    console.log(paymentResult);
     dispatch(payOrder(orderId, paymentResult));
   };
 
@@ -107,14 +106,15 @@ const OrderScreen = ({ match, history }) => {
   };
 
   const handleToken = async (token, addresses) => {
-    // console.log({ token, addresses });
-    const { data } = await axios.post(`/api/stripecheckout`, { token, order });
+    const { data } = await axios.post(`/api/config/stripecheckout`, {
+      token,
+      order,
+    });
     const { status } = data;
 
     const { id } = data;
     const { email } = data;
 
-    // console.log("Response.order:", data);
     if (status === "success") {
       toast("Success! Check email for details", { type: "success" });
       let paymentResult = {
@@ -122,7 +122,6 @@ const OrderScreen = ({ match, history }) => {
         status: status,
         email_address: email,
       };
-      // console.log("payment result: ", paymentResult);
       dispatch(payOrder(orderId, paymentResult));
     } else {
       toast("Something went wrong", { type: "error" });

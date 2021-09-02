@@ -82,40 +82,38 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
   }
 };
 
-export const payOrder =
-  (orderId, paymentResult) => async (dispatch, getState) => {
-    console.log("PaymentResult: ", paymentResult);
-    try {
-      dispatch({
-        type: ORDER_PAY_REQUEST,
-      });
+export const payOrder = (orderId, paymentResult) => async (dispatch) => {
+  try {
+    dispatch({
+      type: ORDER_PAY_REQUEST,
+    });
 
-      const config = {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
 
-      const { data } = await axios.put(
-        `/api/orders/${orderId}/pay`,
-        paymentResult,
-        config,
-      );
+    const { data } = await axios.put(
+      `/api/orders/${orderId}/pay`,
+      paymentResult,
+      config,
+    );
 
-      dispatch({
-        type: ORDER_PAY_SUCCESS,
-        payload: data,
-      });
-    } catch (error) {
-      dispatch({
-        type: ORDER_PAY_FAIL,
-        payload:
-          error.response && error.response.data.message
-            ? error.response.data.message
-            : error.message,
-      });
-    }
-  };
+    dispatch({
+      type: ORDER_PAY_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: ORDER_PAY_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
 
 export const deliverOrder = (orderId) => async (dispatch, getState) => {
   try {
@@ -159,17 +157,8 @@ export const listMyOrders = () => async (dispatch, getState) => {
     dispatch({
       type: ORDER_MY_LIST_REQUEST,
     });
-    console.log("dispatches ORDER_MY_LIST_REQUEST");
-    const {
-      userLogin: { userInfo },
-    } = getState();
 
-    const config = {
-      headers: {
-        Authorization: `Bearer ${userInfo.token}`,
-      },
-    };
-
+    const config = {};
     const { data } = await axios.get(`/api/orders/myorders`, config);
 
     dispatch({
@@ -187,22 +176,13 @@ export const listMyOrders = () => async (dispatch, getState) => {
   }
 };
 
-export const listOrders = () => async (dispatch, getState) => {
+export const listOrders = () => async (dispatch) => {
   try {
     dispatch({
       type: ORDER_LIST_REQUEST,
     });
 
-    const {
-      userLogin: { userInfo },
-    } = getState();
-
-    const config = {
-      headers: {
-        Authorization: `Bearer ${userInfo.token}`,
-      },
-    };
-
+    const config = {};
     const { data } = await axios.get(`/api/orders`, config);
 
     dispatch({

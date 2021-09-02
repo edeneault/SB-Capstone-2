@@ -11,8 +11,6 @@ const PaymentScreenUpdate = ({ history }) => {
 
   const orderId = useSelector((state) => state.orderDetails.order._id);
 
-  console.log(orderId);
-
   if (!shippingAddress) {
     history.push("/shipping");
   }
@@ -23,7 +21,6 @@ const PaymentScreenUpdate = ({ history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(paymentMethod);
     dispatch(savePaymentMethod(paymentMethod));
     dispatch(updatePaymentMethod(paymentMethod, orderId));
     history.push(`/orders/${orderId}`);
