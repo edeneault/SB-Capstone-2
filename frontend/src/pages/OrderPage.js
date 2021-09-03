@@ -32,6 +32,11 @@ import "react-toastify/dist/ReactToastify.css";
 
 toast.configure();
 
+// From Stripe:  "Publishable API keys are meant solely to identify your account with Stripe, they aren't secret.
+// In other words, you can safely publish them in places like your Stripe.js JavaScript code...""
+const REACT_APP_PUBLISHABLE_KEY =
+  "pk_test_51JRqp7KjZGClM1n1fLCwC3ildAT2NuKicEImgX4XtkgXATvYhkiR9oyz5Pply1joDuFth4wkVYDJk3WzAPxqfoo600i4HL6sCE";
+
 const OrderScreen = ({ match, history }) => {
   const orderId = match.params.id;
 
@@ -263,7 +268,7 @@ const OrderScreen = ({ match, history }) => {
                     {loadingPay && <Loader />}
                     <Col className='d-grid'>
                       <StripeCheckout
-                        stripeKey={process.env.REACT_APP_PUBLISHABLE_KEY}
+                        stripeKey={REACT_APP_PUBLISHABLE_KEY}
                         token={handleToken}
                         billingAddress
                         shippingAddress
