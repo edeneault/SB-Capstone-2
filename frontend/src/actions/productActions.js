@@ -132,20 +132,15 @@ export const createProduct = () => async (dispatch, getState) => {
   }
 };
 
-export const updateProduct = (product) => async (dispatch, getState) => {
+export const updateProduct = (product) => async (dispatch) => {
   try {
     dispatch({
       type: PRODUCT_UPDATE_REQUEST,
     });
 
-    const {
-      userLogin: { userInfo },
-    } = getState();
-
     const config = {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${userInfo.token}`,
       },
     };
 
@@ -154,6 +149,7 @@ export const updateProduct = (product) => async (dispatch, getState) => {
       product,
       config,
     );
+    console.log(data);
 
     dispatch({
       type: PRODUCT_UPDATE_SUCCESS,

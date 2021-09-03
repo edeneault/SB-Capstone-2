@@ -155,7 +155,6 @@ const getTopProducts = asyncHandler(async (req, res) => {
 // @access Public
 const getProductsByCategory = asyncHandler(async (req, res) => {
   const { category } = req.params;
-  console.log(category);
   const pageSize = 12;
   const page = Number(req.query.pageNumber) || 1;
 
@@ -172,7 +171,6 @@ const getProductsByCategory = asyncHandler(async (req, res) => {
 // @access Public
 const getProductsByBrand = asyncHandler(async (req, res) => {
   const { brand } = req.params;
-  console.log(brand);
   const pageSize = 12;
   const page = Number(req.query.pageNumber) || 1;
 

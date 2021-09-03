@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import CheckoutSteps from "../components/CheckoutSteps";
 import { createOrder, getOrderDetails } from "../actions/orderActions";
+import { listProductDetails, updateProduct } from "../actions/productActions";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -71,6 +72,23 @@ const PlaceOrderScreen = ({ history }) => {
         totalPrice: cart.totalPrice,
       }),
     );
+    cart.cartItems.map((item) => {
+      item.countInStock = item.countInStock - item.qty;
+      item._id = item.product;
+      dispatch(
+        updateProduct({
+          _id: item.product,
+          name: item.name,
+          price: item.price,
+          image: item.image,
+          brand: item.brand,
+          category: item.category,
+          countInStock: item.countInStock,
+          description: item.description,
+        }),
+      );
+      dispatch(listProductDetails(item.product));
+    });
   };
   return (
     <Container fluid className='px-5'>
