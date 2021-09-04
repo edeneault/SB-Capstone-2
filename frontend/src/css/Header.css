@@ -3,8 +3,14 @@
   src: url(./fonts/TESLA.ttf);
 }
 
+@font-face {
+  font-family: lovely-coffee;
+  src: url(./fonts/LovelyCoffee-jEVeO.ttf);
+}
+
 .brand-text {
-  font-family: tesla;
+  font-family: lovely-coffee;
+  font-size: 3rem;
   color: white;
 }
 

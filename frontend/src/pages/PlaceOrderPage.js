@@ -88,8 +88,10 @@ const PlaceOrderScreen = ({ history }) => {
         }),
       );
       dispatch(listProductDetails(item.product));
+      return item;
     });
   };
+
   return (
     <Container fluid className='px-5'>
       <CheckoutSteps step1 step2 step3 step4 />

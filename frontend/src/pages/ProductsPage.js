@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Row, Col, Container } from "react-bootstrap";
 import Product from "../components/Product";
 import Loader from "../components/Loader";
+import AllProductsCarousel from "../components/AllProductsCarousel";
 import Paginate from "../components/Paginate";
 import { listProducts } from "../actions/productActions";
 
@@ -27,6 +28,7 @@ const ProductsScreen = ({ match }) => {
     <>
       {/* {!keyword && <HomepageCarousel />}
       {!keyword && <ProductCarousel />} */}
+      <AllProductsCarousel />
       <Container fluid className='px-5'>
         <h1 className='fs-4'>All Products</h1>
         {loading ? (

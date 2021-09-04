@@ -28,40 +28,42 @@ const Header = () => {
       <Container fluid>
         <Row>
           <Col lg={12} className='m-0 p-0'>
-            <Navbar className='social py-0 fs-4'>
+            <Navbar
+              variant='dark'
+              expand='lg'
+              collapseOnSelect
+              className='social py-0 fs-4'
+            >
               <LinkContainer to='/'>
                 <Navbar.Brand className='d-flex mx-2 brand-text fs-3'>
-                  <Navbar.Text className='mt-1 ms-2 text-capitalize brand-text text-white'>
-                    Impresso Espresso
+                  <Navbar.Text className='m-0 p-0 ms-3 text-capitalize brand-text text-white'>
+                    IMPRESSO ESPRESSO
                   </Navbar.Text>
                 </Navbar.Brand>
               </LinkContainer>
-              <Nav className='d-none d-md-block ms-auto px-3'>
-                <Link
-                  to={{ pathname: "https://www.facebook.com" }}
-                  target='_blank'
-                >
-                  <i className='fab fa-facebook ps-4 text-white '></i>
-                </Link>
-                <Link
-                  to={{ pathname: "https://www.instagram.com" }}
-                  target='_blank'
-                >
-                  <i className='fab fa-instagram ps-4 text-white'></i>
-                </Link>
-                <Link
-                  to={{ pathname: "https://www.linkedin.com" }}
-                  target='_blank'
-                >
-                  <i className='fab fa-linkedin-in ps-4 text-white'></i>
-                </Link>
-                <Link
-                  to={{ pathname: "https://www.tiktok.com" }}
-                  target='_blank'
-                >
-                  <i className='fab fa-tiktok ps-4 text-white'></i>
-                </Link>
-              </Nav>
+
+              <Navbar.Toggle
+                onToggle={handleToggle}
+                aria-controls='search-navbar-nav'
+                className='ms-auto border-0'
+              >
+                <span className='border-0 text-light'>
+                  {collapse ? (
+                    <i className='fas fa-chevron-down fa-sm'></i>
+                  ) : (
+                    <i className='fas fa-chevron-up fa-sm'></i>
+                  )}
+                </span>
+                <span className='text-dark fs-6 ms-2'>
+                  <i className='fas fa-search text-white'></i>
+                </span>
+              </Navbar.Toggle>
+
+              <Navbar.Collapse id='search-navbar-nav'>
+                <Nav className='ms-auto'>
+                  <SearchBox name='products' />
+                </Nav>
+              </Navbar.Collapse>
             </Navbar>
           </Col>
         </Row>
@@ -69,10 +71,10 @@ const Header = () => {
         <Row>
           <Col lg={12} className='m-0 p-0'>
             <Navbar
-              variant='dark'
+              variant='light'
               expand='lg'
               collapseOnSelect
-              className='bg-gradient py-1 fs-6 main-nav'
+              className='bg-transparent py-1 fs-6 main-nav'
             >
               <Navbar.Toggle aria-controls='basic-navbar-nav' />
 
@@ -177,21 +179,20 @@ const Header = () => {
           </Col>
           <Col></Col>
         </Row>
-        <Row>
-          {/* <Container className='search px-3 m-0 text-end text-white' fluid> */}
+        {/* <Row>
           <Col lg={12} className='m-0 p-0'>
             <Navbar
               expand='false'
               onToggle={handleToggle}
               collapseOnSelect={true}
-              className='search px-3  p-0 m-0 text-end text-white'
+              className='search px-3  p-0 m-0 text-end text-dark'
             >
               <Navbar.Toggle
                 onToggle={handleToggle}
                 aria-controls='search-navbar-nav'
                 className='ms-auto border-0'
               >
-                <span className='border-0 text-light'>
+                <span className='border-0 text-dark'>
                   {collapse ? (
                     <i className='fas fa-chevron-down fa-sm'></i>
                   ) : (
@@ -199,7 +200,7 @@ const Header = () => {
                   )}
                 </span>
               </Navbar.Toggle>
-              <span className='text-light fs-6 ms-2'>
+              <span className='text-dark fs-6 ms-2'>
                 <i className='fas fa-search'></i>
               </span>
               <Navbar.Collapse id='search-navbar-nav'>
@@ -209,8 +210,7 @@ const Header = () => {
               </Navbar.Collapse>
             </Navbar>
           </Col>
-          {/* </Container> */}
-        </Row>
+        </Row> */}
       </Container>
     </header>
   );

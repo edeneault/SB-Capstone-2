@@ -7,6 +7,10 @@
   font-family: corbel;
   src: url(./fonts/CORBEL.TTF);
 }
+@font-face {
+  font-family: lovely-coffee;
+  src: url(./fonts/LovelyCoffee-jEVeO.ttf);
+}
 
 .carousel {
   height: 25rem;
@@ -33,13 +37,17 @@
 }
 
 .carousel-text-shadow {
-  font-family: corbel;
+  font-family: lovely-coffee;
+  font-size: 2.5rem;
 }
 
 .slide-title {
   font-family: corbel;
   text-shadow: 0px 0px 2px #000000;
+  font-size: 2.5rem;
 }
 
-.img {
+.slide-btn {
+  font-family: corbel;
+  font-size: 1rem;
 }

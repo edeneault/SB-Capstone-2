@@ -43,7 +43,9 @@ const ProductCarousel = () => {
     <Message variant='danger'>{error}</Message>
   ) : (
     <>
-      <h2 className='carousel-title m-0 p-3'>Top Rated Products</h2>
+      <h2 className='carousel-title m-0 p-3 text-dark fs-1'>
+        ~ Top Rated Products ~
+      </h2>
       <Carousel
         itemClass='image-item'
         responsive={responsive}

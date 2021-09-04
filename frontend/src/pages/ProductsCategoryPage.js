@@ -4,10 +4,12 @@ import { Row, Col, Container } from "react-bootstrap";
 import Product from "../components/Product";
 import Loader from "../components/Loader";
 import Paginate from "../components/Paginate";
+import CategoryCarousel from "../components/CategoryCarousel";
 import { listCategoryProducts } from "../actions/productActions";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ProductCarousel from "../components/TopProductsCarousel";
 
 toast.configure();
 
@@ -28,6 +30,7 @@ const ProductsCategoryScreen = ({ match }) => {
       {/* {!keyword && <HomepageCarousel />}
       {!keyword && <ProductCarousel />} */}
       <Container fluid className='px-5'>
+        <CategoryCarousel category={category} />
         <h1 className='fs-4'>Category: {category}</h1>
         {loading ? (
           <Loader />

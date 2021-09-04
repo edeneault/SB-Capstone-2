@@ -6,8 +6,10 @@ import Product from "../components/Product";
 import Loader from "../components/Loader";
 import Paginate from "../components/Paginate";
 import { listProducts } from "../actions/productActions";
-import ProductCarousel from "../components/ProductCarousel";
+import ProductCarousel from "../components/TopProductsCarousel";
 import HomepageCarousel from "../components/HomepageCarousel";
+import AllProductsCarousel from "../components/AllProductsCarousel";
+import CategoryCarousel from "../components/CategoryCarousel";
 import MetaData from "../components/MetaData";
 
 import { toast } from "react-toastify";
@@ -38,8 +40,11 @@ const HomeScreen = ({ match }) => {
         </Link>
       )}
       {!keyword && <ProductCarousel />}
+      {/* <AllProductsCarousel /> */}
+      <CategoryCarousel category='espresso' />
+
       <Container fluid className='px-5'>
-        <h1 className='fs-4'>Latest Products</h1>
+        <h1 className='fs-4'>All Products</h1>
         {loading ? (
           <Loader />
         ) : error ? (
