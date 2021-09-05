@@ -31,7 +31,7 @@ const BrandCarousel = ({ brand }) => {
   const dispatch = useDispatch();
 
   const productBrand = useSelector((state) => state.productBrand);
-  const { loading, error, products, page, pages } = productBrand;
+  const { loading, error, products } = productBrand;
   shuffle(products);
 
   useEffect(() => {

@@ -8,7 +8,6 @@ import Paginate from "../components/Paginate";
 import { listProducts } from "../actions/productActions";
 import ProductCarousel from "../components/TopProductsCarousel";
 import HomepageCarousel from "../components/HomepageCarousel";
-import AllProductsCarousel from "../components/AllProductsCarousel";
 import CategoryCarousel from "../components/CategoryCarousel";
 import BrandCarousel from "../components/BrandCarousel";
 import MetaData from "../components/MetaData";

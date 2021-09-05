@@ -31,7 +31,7 @@ const CategoryCarousel = ({ category }) => {
   const dispatch = useDispatch();
 
   const productCategory = useSelector((state) => state.productCategory);
-  const { loading, error, products, page, pages } = productCategory;
+  const { loading, error, products } = productCategory;
   shuffle(products);
 
   useEffect(() => {

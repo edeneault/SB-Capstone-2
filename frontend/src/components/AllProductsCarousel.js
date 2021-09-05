@@ -7,7 +7,6 @@ import Message from "./Message";
 import { listProducts } from "../actions/productActions";
 import "../css/ProductCarousel.css";
 import Carousel from "react-multi-carousel";
-import shuffle from "../utils/shuffle";
 
 const responsive = {
   desktop: {

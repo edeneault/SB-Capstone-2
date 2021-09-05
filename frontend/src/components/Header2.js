@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
-import { Link } from "react-router-dom";
 import { Container, Row, Col, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import SearchBox from "./SearchBox";
 import { logout } from "../actions/userActions";
@@ -26,17 +25,17 @@ const Header = () => {
 
   return (
     <header>
-      <Container fluid>
+      <Container fluid className='fade-in'>
         <Row>
           <Col lg={12} className='m-0 p-0'>
             <Navbar
               variant='dark'
               expand='lg'
               collapseOnSelect
-              className='social py-0 fs-4'
+              className='social py-0 fs-4 bg-gradient'
             >
               <LinkContainer to='/'>
-                <Navbar.Brand className='d-flex mx-2 p-0 brand-text fs-3'>
+                <Navbar.Brand className='d-flex mx-2 p-0 brand-text fs-3 '>
                   <img
                     src={coffee_logo}
                     width='68'
@@ -44,7 +43,7 @@ const Header = () => {
                     className='d-inline-block align-center'
                     alt='impresso-espresso-logo'
                   />
-                  <Navbar.Text className='m-0 pt-1 ms-3 text-capitalize brand-text text-white'>
+                  <Navbar.Text className='m-0 pt-2 ms-1 text-capitalize brand-text text-white'>
                     IMPRESSO ESPRESSO
                   </Navbar.Text>
                 </Navbar.Brand>
@@ -57,18 +56,18 @@ const Header = () => {
               >
                 <span className='border-0 text-light'>
                   {collapse ? (
-                    <i className='fas fa-chevron-down fa-sm'></i>
+                    <i className='fas fa-chevron-down fa-sm pt-1'></i>
                   ) : (
-                    <i className='fas fa-chevron-up fa-sm'></i>
+                    <i className='fas fa-chevron-up fa-sm pt-1'></i>
                   )}
                 </span>
                 <span className='text-dark fs-6 ms-2'>
-                  <i className='fas fa-search text-white'></i>
+                  <i className='fas fa-search text-white pt-1'></i>
                 </span>
               </Navbar.Toggle>
 
               <Navbar.Collapse id='search-navbar-nav'>
-                <Nav className='ms-auto'>
+                <Nav className='ms-auto pt-1'>
                   <SearchBox name='products' />
                 </Nav>
               </Navbar.Collapse>

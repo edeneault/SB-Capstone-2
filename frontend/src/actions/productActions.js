@@ -40,7 +40,7 @@ export const listProducts =
       const { data } = await axios.get(
         `/api/products?keyword=${keyword}&pageNumber=${pageNumber}`,
       );
-      console.log(data);
+
       dispatch({
         type: PRODUCT_LIST_SUCCESS,
         payload: data,

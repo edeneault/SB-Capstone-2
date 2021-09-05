@@ -22,7 +22,6 @@ import {
   deliverOrder,
   listMyOrders,
 } from "../actions/orderActions";
-import { updateProduct } from "../actions/productActions";
 import {
   ORDER_PAY_RESET,
   ORDER_DELIVER_RESET,
