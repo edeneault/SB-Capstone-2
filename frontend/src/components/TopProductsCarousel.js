@@ -22,7 +22,7 @@ const responsive = {
   mobile: {
     breakpoint: { max: 464, min: 0 },
     items: 1,
-    paritialVisibilityGutter: 30,
+    paritialVisibilityGutter: 20,
   },
 };
 
@@ -51,8 +51,9 @@ const ProductCarousel = () => {
         responsive={responsive}
         swipeable
         renderArrowsWhenDisabled
-        infinite
+        // infinite
         centerMode
+        className='fade-in'
       >
         {images.slice(0, 8).map((product) => {
           return (

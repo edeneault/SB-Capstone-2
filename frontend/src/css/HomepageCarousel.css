@@ -44,10 +44,36 @@
 .slide-title {
   font-family: corbel;
   text-shadow: 0px 0px 2px #000000;
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .slide-btn {
   font-family: corbel;
   font-size: 1rem;
+  overflow: hidden;
+}
+
+.slide-in {
+  position: relative;
+  left: -200px;
+  width: 100px;
+  height: 100px;
+
+  -webkit-animation: slide 0.5s forwards;
+  -webkit-animation-delay: 0.5s;
+  animation: slide 0.5s forwards;
+  animation-delay: 0.5s;
+  overflow: hidden;
+}
+
+@-webkit-keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide {
+  100% {
+    left: 0;
+  }
 }

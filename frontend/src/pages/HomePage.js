@@ -10,6 +10,7 @@ import ProductCarousel from "../components/TopProductsCarousel";
 import HomepageCarousel from "../components/HomepageCarousel";
 import AllProductsCarousel from "../components/AllProductsCarousel";
 import CategoryCarousel from "../components/CategoryCarousel";
+import BrandCarousel from "../components/BrandCarousel";
 import MetaData from "../components/MetaData";
 
 import { toast } from "react-toastify";
@@ -39,19 +40,38 @@ const HomeScreen = ({ match }) => {
           Go Back
         </Link>
       )}
-      {!keyword && <ProductCarousel />}
+      {!keyword && (
+        <>
+          <ProductCarousel className='fade-in' />
+        </>
+      )}
       {/* <AllProductsCarousel /> */}
-      <CategoryCarousel category='espresso' />
+
+      {!keyword && (
+        <>
+          <CategoryCarousel category='espresso' />
+        </>
+      )}
+
+      {!keyword && (
+        <>
+          <BrandCarousel brand='Bremille' />
+        </>
+      )}
 
       <Container fluid className='px-5'>
-        <h1 className='fs-4'>All Products</h1>
+        <hr className='fade-in' />
+        <h2 className='carousel-title m-0 p-3 text-dark fs-1'>
+          {" "}
+          ~ All Products ~
+        </h2>
         {loading ? (
           <Loader />
         ) : error ? (
           toast(`${error}`, { type: "error" })
         ) : (
           <>
-            <Row>
+            <Row className='fade-in'>
               {products.map((product) => (
                 <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
                   <Product product={product} />

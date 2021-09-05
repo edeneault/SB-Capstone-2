@@ -9,7 +9,6 @@ import { listCategoryProducts } from "../actions/productActions";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import ProductCarousel from "../components/TopProductsCarousel";
 
 toast.configure();
 
@@ -29,8 +28,8 @@ const ProductsCategoryScreen = ({ match }) => {
     <>
       {/* {!keyword && <HomepageCarousel />}
       {!keyword && <ProductCarousel />} */}
+      <CategoryCarousel category={category} />
       <Container fluid className='px-5'>
-        <CategoryCarousel category={category} />
         <h1 className='fs-4'>Category: {category}</h1>
         {loading ? (
           <Loader />

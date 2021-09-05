@@ -9,11 +9,10 @@ const Loader = () => {
         size='lg'
         variant='dark'
         style={{
-          position: "fixed",
+          position: "absolute",
           top: "50%",
           left: "50%",
           marginTop: "-50px", //Half of the height of the loading graphic
-          marginLeft: "-50px",
         }}
       >
         <span className='sr-only'> Loading...</span>

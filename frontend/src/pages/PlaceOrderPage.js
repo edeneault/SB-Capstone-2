@@ -93,7 +93,7 @@ const PlaceOrderScreen = ({ history }) => {
   };
 
   return (
-    <Container fluid className='px-5'>
+    <Container fluid className='px-5 fade-in'>
       <CheckoutSteps step1 step2 step3 step4 />
       <Row>
         <Col md={8}>

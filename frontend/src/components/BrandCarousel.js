@@ -4,7 +4,7 @@ import { Image } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "./Loader";
 import Message from "./Message";
-import { listProducts } from "../actions/productActions";
+import { listBrandProducts } from "../actions/productActions";
 import "../css/ProductCarousel.css";
 import Carousel from "react-multi-carousel";
 import shuffle from "../utils/shuffle";
@@ -27,15 +27,16 @@ const responsive = {
   },
 };
 
-const AllProductsCarousel = () => {
+const BrandCarousel = ({ brand }) => {
   const dispatch = useDispatch();
 
-  const productsList = useSelector((state) => state.productList);
-  const { loading, error, products } = productsList;
+  const productBrand = useSelector((state) => state.productBrand);
+  const { loading, error, products, page, pages } = productBrand;
+  shuffle(products);
 
   useEffect(() => {
-    dispatch(listProducts());
-  }, [dispatch]);
+    dispatch(listBrandProducts(brand));
+  }, [dispatch, brand]);
 
   return loading ? (
     <Loader />
@@ -44,7 +45,7 @@ const AllProductsCarousel = () => {
   ) : (
     <>
       <h2 className='carousel-title m-0 p-3 text-dark fs-1'>
-        ~ All Products ~
+        ~ Brand {brand} ~
       </h2>
       <Carousel
         itemClass='image-item'
@@ -76,4 +77,4 @@ const AllProductsCarousel = () => {
   );
 };
 
-export default AllProductsCarousel;
+export default BrandCarousel;

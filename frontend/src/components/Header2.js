@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import SearchBox from "./SearchBox";
 import { logout } from "../actions/userActions";
+import coffee_logo from "../coffee_logo.svg";
 
 import "../css/Header.css";
 
@@ -35,8 +36,15 @@ const Header = () => {
               className='social py-0 fs-4'
             >
               <LinkContainer to='/'>
-                <Navbar.Brand className='d-flex mx-2 brand-text fs-3'>
-                  <Navbar.Text className='m-0 p-0 ms-3 text-capitalize brand-text text-white'>
+                <Navbar.Brand className='d-flex mx-2 p-0 brand-text fs-3'>
+                  <img
+                    src={coffee_logo}
+                    width='68'
+                    height='68'
+                    className='d-inline-block align-center'
+                    alt='impresso-espresso-logo'
+                  />
+                  <Navbar.Text className='m-0 pt-1 ms-3 text-capitalize brand-text text-white'>
                     IMPRESSO ESPRESSO
                   </Navbar.Text>
                 </Navbar.Brand>
@@ -110,8 +118,8 @@ const Header = () => {
                     <LinkContainer to='/brand/Lavazza'>
                       <NavDropdown.Item>Lavazza</NavDropdown.Item>
                     </LinkContainer>
-                    <LinkContainer to='/brand/Breville'>
-                      <NavDropdown.Item>Breville</NavDropdown.Item>
+                    <LinkContainer to='/brand/Bremille'>
+                      <NavDropdown.Item>Bremille</NavDropdown.Item>
                     </LinkContainer>
                     <LinkContainer to='/brand/Hario'>
                       <NavDropdown.Item>Hario</NavDropdown.Item>
@@ -121,6 +129,24 @@ const Header = () => {
                     </LinkContainer>
                     <LinkContainer to='/brand/LuvMuggs'>
                       <NavDropdown.Item>LuvMuggs</NavDropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to='/brand/Damesi'>
+                      <NavDropdown.Item>Damesi</NavDropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to='/brand/BlueMoon'>
+                      <NavDropdown.Item>Blue Moon</NavDropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to='/brand/Nesgresso'>
+                      <NavDropdown.Item>Nesgresso</NavDropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to='/brand/FancyBarista'>
+                      <NavDropdown.Item>Fancy Barista</NavDropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to='/brand/BrightDay'>
+                      <NavDropdown.Item>Bright Day</NavDropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to='/brand/ItalianCoffee'>
+                      <NavDropdown.Item>Italian Coffee</NavDropdown.Item>
                     </LinkContainer>
                   </NavDropdown>
                   <LinkContainer className='m-0 ps-3 pe-5' to='/cart'>

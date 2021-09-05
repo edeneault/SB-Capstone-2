@@ -58,7 +58,7 @@ const ProfileScreen = ({ location, history }) => {
   };
 
   return (
-    <Container fluid className='px-5'>
+    <Container fluid className='px-5 fade-in'>
       <Row>
         <Col md={3}>
           <h2>User Profile</h2>

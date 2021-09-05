@@ -8,7 +8,7 @@ const Product = ({ product }) => {
   return (
     <Card className='my-3 rounded product-card'>
       <Link to={`/products/${product._id}`}>
-        <Card.Img className='p-1' src={product.image} variant='top' />
+        <Card.Img className='p-1 fade-in' src={product.image} variant='top' />
       </Link>
       <Card.Body>
         <ListGroup className='list-group-flush py-2'>

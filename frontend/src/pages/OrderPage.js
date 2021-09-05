@@ -22,6 +22,7 @@ import {
   deliverOrder,
   listMyOrders,
 } from "../actions/orderActions";
+import { updateProduct } from "../actions/productActions";
 import {
   ORDER_PAY_RESET,
   ORDER_DELIVER_RESET,
@@ -139,7 +140,7 @@ const OrderScreen = ({ match, history }) => {
     toast("Something went wrong", { type: "error" })
   ) : (
     <>
-      <Container fluid className='px-5'>
+      <Container fluid className='px-5 fade-in'>
         <h1>Order: {orderId} </h1>{" "}
         <Row>
           <Col md={8}>
