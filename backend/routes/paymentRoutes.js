@@ -9,6 +9,8 @@ import dotenv from "dotenv";
 const stripe = new Stripe(process.env.SECRET_KEY);
 dotenv.config();
 
+// Payment Routes //
+
 router.get("/paypal", (req, res) => res.send(process.env.PAYPAL_CLIENT_ID));
 
 router.post("/stripecheckout", async (req, res) => {

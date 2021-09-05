@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
+
+// User Schema //
+
 const userSchema = mongoose.Schema(
   {
     name: {
@@ -26,9 +29,12 @@ const userSchema = mongoose.Schema(
   },
 );
 
+// Schema Methods //
 userSchema.methods.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
+
+// Schema Pre(before) Middleware //
 
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {

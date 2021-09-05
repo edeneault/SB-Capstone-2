@@ -12,7 +12,11 @@ import {
   createProductReview,
 } from "../controllers/productController.js";
 
+// Authorization Middleware //
+
 import { protect, admin } from "../middleware/authMiddleware.js";
+
+// Product Routes //
 
 router.route("/").get(getProducts).post(protect, admin, createProduct);
 router.route("/:id/reviews").post(protect, createProductReview);

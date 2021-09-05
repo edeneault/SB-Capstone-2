@@ -50,7 +50,7 @@ const AllProductsCarousel = () => {
         responsive={responsive}
         swipeable
         renderArrowsWhenDisabled
-        // infinite
+        infinite
         centerMode
         className='fade-in'
       >

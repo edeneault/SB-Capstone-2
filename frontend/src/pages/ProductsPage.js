@@ -29,9 +29,9 @@ const ProductsScreen = ({ match }) => {
       {/* {!keyword && <HomepageCarousel />}
       {!keyword && <ProductCarousel />} */}
       <AllProductsCarousel />
-      <hr />
+
       <Container fluid className='px-5'>
-        {/* <h2 className='carousel-title m-0 p-3 text-dark fs-1'>All Products</h2> */}
+        <h2 className='fs-4'>All Products</h2>
 
         {loading ? (
           <Loader />

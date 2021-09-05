@@ -52,7 +52,7 @@ const BrandCarousel = ({ brand }) => {
         responsive={responsive}
         swipeable
         renderArrowsWhenDisabled
-        // infinite
+        infinite
         centerMode
         className='fade-in'
       >

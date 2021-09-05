@@ -5,6 +5,8 @@ dotenv.config();
 
 const router = express.Router();
 
+// Updload to Cloudinary Routes //
+
 router.post("/", async (req, res) => {
   try {
     const fileStr = req.body.data;

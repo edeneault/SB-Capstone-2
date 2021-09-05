@@ -4,6 +4,7 @@ import { Image } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "./Loader";
 import Message from "./Message";
+import Rating from "./Rating";
 import { listTopProducts } from "../actions/productActions";
 import "../css/ProductCarousel.css";
 import Carousel from "react-multi-carousel";
@@ -51,7 +52,7 @@ const ProductCarousel = () => {
         responsive={responsive}
         swipeable
         renderArrowsWhenDisabled
-        // infinite
+        infinite
         centerMode
         className='fade-in'
       >
@@ -66,8 +67,12 @@ const ProductCarousel = () => {
               />
               <Link to={`/products/${product._id}`} className='text-dark'>
                 <p className='p-0 m-0  fs-6 '>{product.name}</p>
-                <p className='p-0 m-0  fs-6'>{product.price}</p>
               </Link>
+              <p className='p-0 m-0  fs-6'>${product.price}</p>
+              <Rating
+                value={product.rating}
+                text={`${product.numReviews}  reviews`}
+              />
             </div>
           );
         })}

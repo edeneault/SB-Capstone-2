@@ -52,7 +52,7 @@ const CategoryCarousel = ({ category }) => {
         responsive={responsive}
         swipeable
         renderArrowsWhenDisabled
-        // infinite
+        infinite
         centerMode
         className='fade-in'
       >
