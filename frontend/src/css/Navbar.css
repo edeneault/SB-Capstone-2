@@ -28,6 +28,12 @@
   outline: none;
   box-shadow: none;
 }
+
+.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 20;
+}
+
 .main-nav {
-  background-color: rgb(140, 61, 61);
 }

@@ -39,7 +39,7 @@ const CartScreen = ({ match, location, history }) => {
   };
 
   return (
-    <Container fluid className='px-5 fade-in'>
+    <Container fluid className='px-5 pt-3 fade-in'>
       <Row>
         <Col md={8}>
           <h1>Shopping Cart</h1>

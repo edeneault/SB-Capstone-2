@@ -106,7 +106,7 @@ const ProfileScreen = ({ location, history }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Button type='submit' variant='primary my-2'>
+            <Button type='submit' variant='primary rounded my-2'>
               Update
             </Button>
           </Form>
@@ -119,9 +119,9 @@ const ProfileScreen = ({ location, history }) => {
           ) : errorOrders ? (
             toast(`${errorOrders}`, { type: "error" })
           ) : (
-            <Table striped bordered hover responsive className='table-sm'>
+            <Table bordered hover responsive className='table-sm'>
               <thead>
-                <tr>
+                <tr className='bg-black text-light'>
                   <th>ID</th>
                   <th>DATE</th>
                   <th>TOTAL</th>

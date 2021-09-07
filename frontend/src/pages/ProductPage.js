@@ -49,6 +49,11 @@ const ProductScreen = ({ history, match }) => {
   const { userInfo } = userLogin;
 
   useEffect(() => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
     if (successProductReview) {
       alert("Review Submitted!");
       setRating(0);

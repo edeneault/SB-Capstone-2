@@ -139,7 +139,7 @@ const OrderScreen = ({ match, history }) => {
     toast("Something went wrong", { type: "error" })
   ) : (
     <>
-      <Container fluid className='px-5 fade-in'>
+      <Container fluid className='px-5 pt-3 fade-in'>
         <h1>Order: {orderId} </h1>{" "}
         <Row>
           <Col md={8}>

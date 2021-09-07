@@ -6,7 +6,7 @@ import SearchBox from "./SearchBox";
 import { logout } from "../actions/userActions";
 import coffee_logo from "../coffee_logo.svg";
 
-import "../css/Header.css";
+import "../css/Navbar.css";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -25,12 +25,12 @@ const Header = () => {
 
   return (
     <header>
-      <Container fluid className='fade-in'>
+      <Container fluid className='fade-in fixed'>
         <Row>
           <Col lg={12} className='m-0 p-0'>
             <Navbar
               variant='dark'
-              expand='lg'
+              expand='xxl'
               collapseOnSelect
               className='social py-0 fs-4 bg-gradient'
             >
@@ -74,14 +74,13 @@ const Header = () => {
             </Navbar>
           </Col>
         </Row>
-
         <Row>
           <Col lg={12} className='m-0 p-0'>
             <Navbar
               variant='light'
               expand='lg'
               collapseOnSelect
-              className='bg-transparent py-1 fs-6 main-nav'
+              className='bg-white py-1 fs-6 main-nav'
             >
               <Navbar.Toggle aria-controls='basic-navbar-nav' />
 
@@ -202,40 +201,7 @@ const Header = () => {
               </Navbar.Collapse>
             </Navbar>
           </Col>
-          <Col></Col>
         </Row>
-        {/* <Row>
-          <Col lg={12} className='m-0 p-0'>
-            <Navbar
-              expand='false'
-              onToggle={handleToggle}
-              collapseOnSelect={true}
-              className='search px-3  p-0 m-0 text-end text-dark'
-            >
-              <Navbar.Toggle
-                onToggle={handleToggle}
-                aria-controls='search-navbar-nav'
-                className='ms-auto border-0'
-              >
-                <span className='border-0 text-dark'>
-                  {collapse ? (
-                    <i className='fas fa-chevron-down fa-sm'></i>
-                  ) : (
-                    <i className='fas fa-chevron-up fa-sm'></i>
-                  )}
-                </span>
-              </Navbar.Toggle>
-              <span className='text-dark fs-6 ms-2'>
-                <i className='fas fa-search'></i>
-              </span>
-              <Navbar.Collapse id='search-navbar-nav'>
-                <Nav className='ms-auto'>
-                  <SearchBox name='products' />
-                </Nav>
-              </Navbar.Collapse>
-            </Navbar>
-          </Col>
-        </Row> */}
       </Container>
     </header>
   );

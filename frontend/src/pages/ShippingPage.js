@@ -23,7 +23,7 @@ const ShippingScreen = ({ history }) => {
   };
 
   return (
-    <Container fluid className='px-5 fade-in'>
+    <Container fluid className='px-5 pt-3 fade-in'>
       <FormContainer>
         <CheckoutSteps step1 step2 />
         <h1>Shipping</h1>
@@ -72,7 +72,7 @@ const ShippingScreen = ({ history }) => {
             ></Form.Control>
           </Form.Group>
 
-          <Button type='submit' variant='primary' className='my-2'>
+          <Button type='submit' variant='primary' className=' rounded my-2'>
             Continue
           </Button>
         </Form>

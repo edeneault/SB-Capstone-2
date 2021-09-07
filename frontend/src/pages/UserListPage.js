@@ -38,15 +38,15 @@ const UserListScreen = ({ history }) => {
   return (
     <>
       <Container fluid className='px-5'>
-        <h1>Users</h1>
+        <h1 className='page-title slide-in'>My Users</h1>
         {loading ? (
           <Loader />
         ) : error ? (
           toast(`${error}`, { type: "error" })
         ) : (
-          <Table striped bordered hover responsive className='table-sm'>
+          <Table bordered hover responsive className='table-sm'>
             <thead>
-              <tr>
+              <tr className='bg-black text-light'>
                 <th>ID</th>
                 <th>NAME</th>
                 <th>EMAIL</th>

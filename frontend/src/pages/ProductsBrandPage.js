@@ -29,15 +29,14 @@ const ProductsBrandScreen = ({ match }) => {
   return (
     <>
       <BrandCarousel brand={brand} />
-      <Container fluid className='px-5'>
-        <h1 className='fs-4'>Brand: {brand}</h1>
+      <Container fluid className='px-5 pt-3'>
         {loading ? (
           <Loader />
         ) : error ? (
           toast(`${error}`, { type: "error" })
         ) : (
           <>
-            <Row className='fade-in'>
+            <Row>
               {products.map((product) => (
                 <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
                   <Product product={product} />

@@ -2,6 +2,17 @@
   --main-red-color: brown;
 }
 
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: lovely-coffee;
+  src: url(./css/fonts/LovelyCoffee-jEVeO.ttf);
+}
+
 main {
   min-height: 80vh;
 }
@@ -38,6 +49,11 @@ h3 {
   border-radius: 5px;
 }
 
+.page-title {
+  font-family: lovely-coffee;
+  font-size: 2rem;
+}
+
 .trash {
   background-color: var(--main-red-color);
   border-radius: 5px;
@@ -68,8 +84,8 @@ h3 {
 
 .slide-in {
   position: relative;
-  left: -200px;
-  width: 100px;
+  left: -250px;
+  width: 200px;
   height: 100px;
 
   -webkit-animation: slide 0.5s forwards;

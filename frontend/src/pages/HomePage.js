@@ -6,7 +6,7 @@ import Product from "../components/Product";
 import Loader from "../components/Loader";
 import Paginate from "../components/Paginate";
 import { listProducts } from "../actions/productActions";
-import ProductCarousel from "../components/TopProductsCarousel";
+import TopProductsCarousel from "../components/TopProductsCarousel";
 import HomepageCarousel from "../components/HomepageCarousel";
 import CategoryCarousel from "../components/CategoryCarousel";
 import BrandCarousel from "../components/BrandCarousel";
@@ -26,6 +26,11 @@ const HomeScreen = ({ match }) => {
   const { loading, error, products, page, pages } = productList;
 
   useEffect(() => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
     dispatch(listProducts(keyword, pageNumber));
   }, [dispatch, keyword, pageNumber]);
 
@@ -41,7 +46,7 @@ const HomeScreen = ({ match }) => {
       )}
       {!keyword && (
         <>
-          <ProductCarousel className='fade-in' />
+          <TopProductsCarousel className='fade-in' />
         </>
       )}
       {/* <AllProductsCarousel /> */}
@@ -59,7 +64,6 @@ const HomeScreen = ({ match }) => {
       )}
 
       <Container fluid className='px-5'>
-        <hr className='fade-in' />
         <h2 className='carousel-title m-0 p-3 text-dark fs-1'>
           {" "}
           ~ All Products ~

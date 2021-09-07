@@ -26,11 +26,8 @@ const ProductsCategoryScreen = ({ match }) => {
 
   return (
     <>
-      {/* {!keyword && <HomepageCarousel />}
-      {!keyword && <ProductCarousel />} */}
       <CategoryCarousel category={category} />
-      <Container fluid className='px-5'>
-        <h1 className='fs-4'>Category: {category}</h1>
+      <Container fluid className='px-5 pt-3'>
         {loading ? (
           <Loader />
         ) : error ? (

@@ -30,15 +30,15 @@ const UserListScreen = ({ history }) => {
   return (
     <>
       <Container fluid className='px-5'>
-        <h1>Orders</h1>
+        <h1 className='page-title slide-in'>My Orders</h1>
         {loading ? (
           <Loader />
         ) : error ? (
           toast("Something went wrong", { type: "error" })
         ) : (
-          <Table striped bordered hover responsive className='table-sm'>
+          <Table bordered hover responsive className='table-sm'>
             <thead>
-              <tr>
+              <tr className='bg-black text-light'>
                 <th>ORDER ID</th>
                 <th>USER</th>
                 <th>DATE</th>

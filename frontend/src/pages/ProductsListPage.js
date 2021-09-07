@@ -76,12 +76,12 @@ const ProductsListScreen = ({ history, match }) => {
     <>
       <Container fluid className='px-5'>
         <Row className='align-items-center'>
-          <Col>
-            <h1>Products</h1>
+          <Col sm={4}>
+            <h1 className='page-title slide-in'>My Products</h1>
           </Col>
           <Col className='text-end'>
             <Button className='my-3 rounded' onClick={createProductHandler}>
-              <i className='fas fa-plus'></i> Create Product
+              <i className='fas fa-plus '></i> Create Product
             </Button>
           </Col>
         </Row>
@@ -95,9 +95,9 @@ const ProductsListScreen = ({ history, match }) => {
           toast(`${error}`, { type: "error" })
         ) : (
           <>
-            <Table striped bordered hover responsive className='table-sm'>
+            <Table bordered hover responsive className='table-sm'>
               <thead>
-                <tr>
+                <tr className='bg-black text-light'>
                   <th>ID</th>
                   <th>NAME</th>
                   <th>PRICE</th>
