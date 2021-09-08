@@ -32,8 +32,5 @@
 .fixed {
   position: fixed;
   top: 0;
-  z-index: 20;
-}
-
-.main-nav {
+  z-index: 1001;
 }

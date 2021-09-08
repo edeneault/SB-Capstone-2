@@ -58,10 +58,13 @@ const ProfileScreen = ({ location, history }) => {
   };
 
   return (
-    <Container fluid className='px-5 fade-in'>
+    <Container fluid className='px-5 pt-3 fade-in'>
       <Row>
         <Col md={3}>
-          <h2>User Profile</h2>
+          <h2 className=' pb-0 mb-0 slide-in'>
+            User Profile<p>Update</p>
+          </h2>
+
           {message && toast(`${error}`, { type: "error" })}
           {error && toast(`${error}`, { type: "error" })}
           {success && toast(`Profile Updated`, { type: "success" })}

@@ -26,6 +26,12 @@ const ProductsBrandScreen = ({ match }) => {
     dispatch(listBrandProducts(brand, pageNumber));
   }, [dispatch, brand, pageNumber]);
 
+  window.scroll({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+
   return (
     <>
       <BrandCarousel brand={brand} />

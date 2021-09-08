@@ -74,13 +74,15 @@ const ProductsListScreen = ({ history, match }) => {
   };
   return (
     <>
-      <Container fluid className='px-5'>
-        <Row className='align-items-center'>
+      <Container fluid className='fade-in px-5 pt-3'>
+        <Row className='align-items-top mb-0 pb-0'>
           <Col sm={4}>
-            <h1 className='page-title slide-in'>My Products</h1>
+            <h1 className='page-title slide-in mb-0 pb-0'>My Products</h1>
           </Col>
-          <Col className='text-end'>
-            <Button className='my-3 rounded' onClick={createProductHandler}>
+        </Row>
+        <Row className='align-items-top mb-0 pb-0'>
+          <Col md={12} className=' text-start'>
+            <Button className='my-1 rounded' onClick={createProductHandler}>
               <i className='fas fa-plus '></i> Create Product
             </Button>
           </Col>

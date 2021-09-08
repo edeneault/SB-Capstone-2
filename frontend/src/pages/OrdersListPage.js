@@ -29,7 +29,7 @@ const UserListScreen = ({ history }) => {
 
   return (
     <>
-      <Container fluid className='px-5'>
+      <Container fluid className='fade-in px-5 pt-3'>
         <h1 className='page-title slide-in'>My Orders</h1>
         {loading ? (
           <Loader />

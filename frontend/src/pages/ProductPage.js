@@ -55,7 +55,8 @@ const ProductScreen = ({ history, match }) => {
       behavior: "smooth",
     });
     if (successProductReview) {
-      alert("Review Submitted!");
+      // alert("Review Submitted!");
+      toast("Success! Review Submitted!", { type: "success" });
       setRating(0);
       setComment("");
       dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
@@ -178,7 +179,7 @@ const ProductScreen = ({ history, match }) => {
               </Col>
             </Row>
             <Row className='me-3 '>
-              <Card style={{ minHeight: "50px" }} className='p-3 m-3'>
+              <Card style={{ minHeight: "50px" }} className='rounded p-3 m-3'>
                 Description: {product.description}
               </Card>
             </Row>

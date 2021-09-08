@@ -5,7 +5,7 @@ import "../css/HomepageCarousel.css";
 
 const HomepageCarousel = () => {
   return (
-    <Carousel fade className='fade-in'>
+    <Carousel fade className='mt-4 fade-in'>
       <Carousel.Item>
         <Image
           className='img'

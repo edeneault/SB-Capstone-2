@@ -218,7 +218,7 @@ const OrderScreen = ({ match, history }) => {
             </ListGroup>
           </Col>
           <Col md={4}>
-            <Card>
+            <Card className='rounded'>
               <ListGroup variant='flush'>
                 <ListGroup.Item>
                   <h2>Order Summary</h2>
