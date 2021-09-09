@@ -37,7 +37,7 @@ toast.configure();
 const REACT_APP_PUBLISHABLE_KEY =
   "pk_test_51JRqp7KjZGClM1n1fLCwC3ildAT2NuKicEImgX4XtkgXATvYhkiR9oyz5Pply1joDuFth4wkVYDJk3WzAPxqfoo600i4HL6sCE";
 
-const OrderScreen = ({ match, history }) => {
+const OrderPage = ({ match, history }) => {
   const orderId = match.params.id;
 
   const [sdkReady, setSdkReady] = useState(false);
@@ -311,4 +311,4 @@ const OrderScreen = ({ match, history }) => {
   );
 };
 
-export default OrderScreen;
+export default OrderPage;

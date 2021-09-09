@@ -13,7 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 toast.configure();
 
-const ProductsBrandScreen = ({ match }) => {
+const ProductsBrandPage = ({ match }) => {
   const brand = match.params.brand;
 
   const pageNumber = match.params.pageNumber || 1;
@@ -57,4 +57,4 @@ const ProductsBrandScreen = ({ match }) => {
   );
 };
 
-export default ProductsBrandScreen;
+export default ProductsBrandPage;

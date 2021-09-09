@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 toast.configure();
 
-const ProductsCategoryScreen = ({ match }) => {
+const ProductsCategoryPage = ({ match }) => {
   const category = match.params.category;
   const pageNumber = match.params.pageNumber || 1;
   const dispatch = useDispatch();
@@ -59,4 +59,4 @@ const ProductsCategoryScreen = ({ match }) => {
   );
 };
 
-export default ProductsCategoryScreen;
+export default ProductsCategoryPage;

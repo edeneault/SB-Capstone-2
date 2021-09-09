@@ -63,7 +63,7 @@ const HomeScreen = ({ match }) => {
         </>
       )}
 
-      <Container fluid className='px-5'>
+      <Container fluid className='px-5 pt-3'>
         <h2 className='carousel-title m-0 p-3 text-dark fs-1'>
           {" "}
           ~ All Products ~

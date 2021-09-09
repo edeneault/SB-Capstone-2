@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 toast.configure();
 
-const ProfileScreen = ({ location, history }) => {
+const ProfilePage = ({ location, history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -177,4 +177,4 @@ const ProfileScreen = ({ location, history }) => {
   );
 };
 
-export default ProfileScreen;
+export default ProfilePage;

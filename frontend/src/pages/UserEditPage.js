@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 toast.configure();
 
-const UserEditScreen = ({ match, history }) => {
+const UserEditPage = ({ match, history }) => {
   const userId = match.params.id;
 
   const [email, setEmail] = useState("");
@@ -103,4 +103,4 @@ const UserEditScreen = ({ match, history }) => {
   );
 };
 
-export default UserEditScreen;
+export default UserEditPage;

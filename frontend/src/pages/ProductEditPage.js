@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 toast.configure();
 
-const ProductEditScreen = ({ match, history }) => {
+const ProductEditPage = ({ match, history }) => {
   const productId = match.params.id;
 
   const [name, setName] = useState("");
@@ -223,4 +223,4 @@ const ProductEditScreen = ({ match, history }) => {
   );
 };
 
-export default ProductEditScreen;
+export default ProductEditPage;

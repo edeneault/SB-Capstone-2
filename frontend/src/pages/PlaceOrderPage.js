@@ -20,7 +20,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 toast.configure();
 
-const PlaceOrderScreen = ({ history }) => {
+const PlaceOrderPage = ({ history }) => {
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
@@ -204,4 +204,4 @@ const PlaceOrderScreen = ({ history }) => {
   );
 };
 
-export default PlaceOrderScreen;
+export default PlaceOrderPage;

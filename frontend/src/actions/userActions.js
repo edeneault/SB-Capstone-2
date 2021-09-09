@@ -258,14 +258,9 @@ export const updateUser = (user) => async (dispatch, getState) => {
       type: USER_UPDATE_REQUEST,
     });
 
-    const {
-      userLogin: { userInfo },
-    } = getState();
-
     const config = {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${userInfo.token}`,
       },
     };
 

@@ -7,7 +7,7 @@ import FormContainer from "../components/FormContainer";
 import Message from "../components/Message";
 import { register } from "../actions/userActions";
 
-const RegisterScreen = ({ location, history }) => {
+const RegisterPage = ({ location, history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -99,4 +99,4 @@ const RegisterScreen = ({ location, history }) => {
   );
 };
 
-export default RegisterScreen;
+export default RegisterPage;

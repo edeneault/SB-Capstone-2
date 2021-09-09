@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 toast.configure();
 
-const UserListScreen = ({ history }) => {
+const OrderListPage = ({ history }) => {
   const dispatch = useDispatch();
 
   const ordersList = useSelector((state) => state.ordersList);
@@ -88,4 +88,4 @@ const UserListScreen = ({ history }) => {
   );
 };
 
-export default UserListScreen;
+export default OrderListPage;

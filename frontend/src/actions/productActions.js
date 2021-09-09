@@ -105,14 +105,8 @@ export const createProduct = () => async (dispatch, getState) => {
       type: PRODUCT_CREATE_REQUEST,
     });
 
-    const {
-      userLogin: { userInfo },
-    } = getState();
-
     const config = {
-      headers: {
-        Authorization: `Bearer ${userInfo.token}`,
-      },
+      headers: {},
     };
 
     const { data } = await axios.post(`/api/products`, {}, config);

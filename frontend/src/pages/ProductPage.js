@@ -27,7 +27,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 toast.configure();
 
-const ProductScreen = ({ history, match }) => {
+const ProductPage = ({ history, match }) => {
   const [qty, setQty] = useState(1);
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
@@ -263,4 +263,4 @@ const ProductScreen = ({ history, match }) => {
   );
 };
 
-export default ProductScreen;
+export default ProductPage;

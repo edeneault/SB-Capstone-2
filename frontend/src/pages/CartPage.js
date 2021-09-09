@@ -14,9 +14,11 @@ import {
 import Message from "../components/Message";
 import { addToCart, removeFromCart } from "../actions/cartActions";
 
-const CartScreen = ({ match, location, history }) => {
+const CartPage = ({ match, location, history }) => {
   const productId = match.params.id;
 
+  // uses the query portion of the url, in this case "?qty=1" split on "=" will returns array with index 0 and 1.
+  // The quantity is equal to the value at index 1. Or the default quantity of 1.
   const qty = location.search ? Number(location.search.split("=")[1]) : 1;
 
   const dispatch = useDispatch();
@@ -127,4 +129,4 @@ const CartScreen = ({ match, location, history }) => {
   );
 };
 
-export default CartScreen;
+export default CartPage;

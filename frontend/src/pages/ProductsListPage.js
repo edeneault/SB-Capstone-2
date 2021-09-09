@@ -16,7 +16,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 toast.configure();
 
-const ProductsListScreen = ({ history, match }) => {
+const ProductsListPage = ({ history, match }) => {
   const pageNumber = match.params.pageNumber || 1;
   const dispatch = useDispatch();
 
@@ -142,4 +142,4 @@ const ProductsListScreen = ({ history, match }) => {
   );
 };
 
-export default ProductsListScreen;
+export default ProductsListPage;
