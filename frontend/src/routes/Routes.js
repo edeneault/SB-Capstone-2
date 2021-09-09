@@ -1,59 +1,59 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import HomeScreen from "../pages/HomePage";
-import ProductScreen from "../pages/ProductPage";
-import ProductsScreen from "../pages/ProductsPage";
-import ProductsCategoryScreen from "../pages/ProductsCategoryPage";
-import ProductsBrandScreen from "../pages/ProductsBrandPage";
-import CartScreen from "../pages/CartPage";
-import LoginScreen from "../pages/LoginPage";
-import RegisterScreen from "../pages/RegisterPage";
-import ProfileScreen from "../pages/ProfilePage";
-import ShippingScreen from "../pages/ShippingPage";
-import PaymentScreen from "../pages/PaymentPage";
-import PaymentScreenUpdate from "../pages/PaymentPageUpdate";
-import PlaceOrderScreen from "../pages/PlaceOrderPage";
-import OrderScreen from "../pages/OrderPage";
-import UserListScreen from "../pages/UserListPage";
-import UserEditScreen from "../pages/UserEditPage";
-import ProductsListScreen from "../pages/ProductsListPage";
-import ProductEditScreen from "../pages/ProductEditPage";
-import OrdersListScreen from "../pages/OrdersListPage";
+import HomePage from "../pages/HomePage";
+import ProductPage from "../pages/ProductPage";
+import ProductsPage from "../pages/ProductsPage";
+import ProductsCategoryPage from "../pages/ProductsCategoryPage";
+import ProductsBrandPage from "../pages/ProductsBrandPage";
+import CartPage from "../pages/CartPage";
+import LoginPage from "../pages/LoginPage";
+import RegisterPage from "../pages/RegisterPage";
+import ProfilePage from "../pages/ProfilePage";
+import ShippingPage from "../pages/ShippingPage";
+import PaymentPage from "../pages/PaymentPage";
+import PaymentPageUpdate from "../pages/PaymentPageUpdate";
+import PlaceOrderPage from "../pages/PlaceOrderPage";
+import OrderPage from "../pages/OrderPage";
+import UsersListPage from "../pages/UserListPage";
+import UserEditPage from "../pages/UserEditPage";
+import ProductsListPage from "../pages/ProductsListPage";
+import ProductEditPage from "../pages/ProductEditPage";
+import OrdersListPage from "../pages/OrdersListPage";
 
 const Routes = () => {
   return (
     <Switch>
-      <Route path='/orders/:id' component={OrderScreen} />
-      <Route path='/admin/orderslist' component={OrdersListScreen} />
-      <Route path='/shipping' component={ShippingScreen} />
-      <Route path='/payment' component={PaymentScreen} />
-      <Route path='/paymentmethod' component={PaymentScreenUpdate} />
-      <Route path='/placeorder' component={PlaceOrderScreen} />
-      <Route path='/login' component={LoginScreen} />
-      <Route path='/register' component={RegisterScreen} />
-      <Route path='/profile' component={ProfileScreen} />
-      <Route path='/products/:id' component={ProductScreen} />
-      <Route path='/categories/:category' component={ProductsCategoryScreen} />
-      <Route path='/brand/:brand' component={ProductsBrandScreen} />
-      <Route path='/allproducts' component={ProductsScreen} />
-      <Route path='/cart/:id?' component={CartScreen} />
-      <Route path='/admin/userslist' component={UserListScreen} />
-      <Route path='/admin/user/:id/edit' component={UserEditScreen} />
-      <Route exact path='/admin/productslist' component={ProductsListScreen} />
+      <Route path='/orders/:id' component={OrderPage} />
+      <Route path='/admin/orderslist' component={OrdersListPage} />
+      <Route path='/shipping' component={ShippingPage} />
+      <Route path='/payment' component={PaymentPage} />
+      <Route path='/paymentmethod' component={PaymentPageUpdate} />
+      <Route path='/placeorder' component={PlaceOrderPage} />
+      <Route path='/login' component={LoginPage} />
+      <Route path='/register' component={RegisterPage} />
+      <Route path='/profile' component={ProfilePage} />
+      <Route path='/products/:id' component={ProductPage} />
+      <Route path='/categories/:category' component={ProductsCategoryPage} />
+      <Route path='/brand/:brand' component={ProductsBrandPage} />
+      <Route path='/allproducts' component={ProductsPage} />
+      <Route path='/cart/:id?' component={CartPage} />
+      <Route path='/admin/userslist' component={UsersListPage} />
+      <Route path='/admin/user/:id/edit' component={UserEditPage} />
+      <Route exact path='/admin/productslist' component={ProductsListPage} />
       <Route
         exact
         path='/admin/productslist/:pageNumber'
-        component={ProductsListScreen}
+        component={ProductsListPage}
       />
-      <Route path='/admin/product/:id/edit' component={ProductEditScreen} />
-      <Route exact path='/search/:keyword' component={HomeScreen} />
-      <Route exact path='/page/:pageNumber' component={HomeScreen} />
+      <Route path='/admin/product/:id/edit' component={ProductEditPage} />
+      <Route exact path='/search/:keyword' component={HomePage} />
+      <Route exact path='/page/:pageNumber' component={HomePage} />
       <Route
         exact
         path='/search/:keyword/page/:pageNumber'
-        component={HomeScreen}
+        component={HomePage}
       />
-      <Route exact path='/' component={HomeScreen} />
+      <Route exact path='/' component={HomePage} />
     </Switch>
   );
 };

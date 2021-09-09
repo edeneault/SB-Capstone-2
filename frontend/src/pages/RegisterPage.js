@@ -4,12 +4,8 @@ import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
+import Message from "../components/Message";
 import { register } from "../actions/userActions";
-
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
-toast.configure();
 
 const RegisterScreen = ({ location, history }) => {
   const [email, setEmail] = useState("");
@@ -43,8 +39,8 @@ const RegisterScreen = ({ location, history }) => {
   return (
     <FormContainer>
       <h1>Sign Up</h1>
-      {message && toast(`${message}`, { type: "error" })}
-      {error && toast(`${error}`, { type: "error" })}
+      {message && <Message variant='danger'>{error}</Message>}
+
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='name'>

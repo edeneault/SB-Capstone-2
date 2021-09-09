@@ -7,11 +7,6 @@ import Message from "../components/Message";
 import FormContainer from "../components/FormContainer";
 import { login } from "../actions/userActions";
 
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
-toast.configure();
-
 const LoginScreen = ({ location, history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
