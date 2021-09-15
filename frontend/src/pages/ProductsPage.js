@@ -24,12 +24,6 @@ const ProductsPage = ({ match }) => {
     dispatch(listProducts(keyword, pageNumber));
   }, [dispatch, keyword, pageNumber]);
 
-  window.scroll({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
-
   return (
     <>
       <AllProductsCarousel />

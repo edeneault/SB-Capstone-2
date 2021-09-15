@@ -49,11 +49,6 @@ const ProductPage = ({ history, match }) => {
   const { userInfo } = userLogin;
 
   useEffect(() => {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
     if (successProductReview) {
       // alert("Review Submitted!");
       toast("Success! Review Submitted!", { type: "success" });

@@ -190,3 +190,18 @@ const orderSchema = mongoose.Schema(
   },
 );
 ```
+
+Backend Testing with Postman:
+
+Install Node and Newman, then run:
+
+newman run eShop.postman_collection.json -e eShop.postman_environment.json
+
+Known Issues:
+
+- cart reset after order is placed
+- Stripe payment not working on mobile devices
+- local storage issues on mobile devices
+- pagination missing in admin orders page
+- navbar categories and brand should be provided dynamically (endpoints missing to allow for mapping of categories and brand)
+- delete order endpoint missing

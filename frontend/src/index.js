@@ -7,12 +7,15 @@ import "./bootstrap.min.css";
 import "react-multi-carousel/lib/styles.css";
 import "./index.css";
 import App from "./App";
+import ScrollToTop from "./components/ScrollToTop";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <ScrollToTop>
+        <App />
+      </ScrollToTop>
     </BrowserRouter>
   </Provider>,
   document.getElementById("root"),

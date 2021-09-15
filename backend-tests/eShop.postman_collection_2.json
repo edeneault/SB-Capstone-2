@@ -1,0 +1,2345 @@
+{
+	"info": {
+		"_postman_id": "51a3daee-fcd8-4d93-8125-a16ac2283ca0",
+		"name": "eShop",
+		"description": "#### eShop shopping Cart API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users and Auth",
+			"item": [
+				{
+					"name": "POST/api/users/login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('access_token', pm.cookies.get('access_token'))",
+									"",
+									"pm.test(\"Response contains cookie with access_token\", function() {",
+									"     pm.expect(pm.cookies.get('access_token') === pm.environment.get('access_token'))",
+									"",
+									"})",
+									"",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.ok;",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"User Details are Present\", () => {",
+									"    let jsonData = pm.response.json()",
+									"    const expectedKeys = ['_id','name', 'email', 'isAdmin'];",
+									"    pm.expect(jsonData).to.be.an(\"object\");",
+									"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"g@example.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/users/profile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response contains cookie with access_token\", function() {",
+									"     pm.expect(pm.cookies.get('access_token') === pm.environment.get('access_token'))",
+									"",
+									"})",
+									"",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"User Details are Present\", () => {",
+									"    let jsonData = pm.response.json()",
+									"    const expectedKeys = ['_id','name', 'email', 'isAdmin'];",
+									"    pm.expect(jsonData).to.be.an(\"object\");",
+									"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John\",\n    \"email\": \"g@example.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users/profile",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"profile"
+							]
+						},
+						"description": "Update user Profile"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/users/profile (reset)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// pm.test(\"Response contains cookie with access_token\", function() {",
+									"//      pm.expect(pm.cookies.get('access_token') === pm.environment.get('access_token'))",
+									"",
+									"// })",
+									"",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"User Details are Present\", () => {",
+									"    let jsonData = pm.response.json()",
+									"    const expectedKeys = ['_id','name', 'email', 'isAdmin'];",
+									"    pm.expect(jsonData).to.be.an(\"object\");",
+									"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"name\": \"John Doe\",\n    \"email\": \"g@example.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users/profile",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"profile"
+							]
+						},
+						"description": "Update user Profile"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/users/profile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('user_id', pm.response.json()._id);",
+									"",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.ok;",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"User Profile data is Present\", () => {",
+									"    let jsonData = pm.response.json()",
+									"    const expectedKeys = ['_id','name', 'email', 'isAdmin'];",
+									"    pm.expect(jsonData).to.be.an(\"object\");",
+									"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"});",
+									"",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/users/profile",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"profile"
+							]
+						},
+						"description": "Return logged in User"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Get all users admin only"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/user/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/users/{{user_id}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{user_id}}"
+							]
+						},
+						"description": "GET user by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/users/logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.unset('access_token')",
+									"",
+									"",
+									"pm.test(\"Response removes cookie\", function() {",
+									"     pm.expect(pm.cookies.get('access_token') === undefined)",
+									"     pm.expect(pm.environment.get('access_token') === null)",
+									"",
+									"})",
+									"",
+									"",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.ok;",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"message property is in response\", () => {",
+									"    let jsonData = pm.response.json()",
+									"    const expectedKeys = ['message'];",
+									"    pm.expect(jsonData).to.be.an(\"object\");",
+									"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"});",
+									"",
+									"pm.test(\"Log out message is correct\", function() {",
+									"    let jsonData = pm.response.json()",
+									"    pm.expect(jsonData).to.have.property('message', 'Successfully logged out 😏 🍀');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"john@example.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users/logout",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST/api/users/login (login as admin)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('access_token', pm.cookies.get('access_token'))",
+									"",
+									"pm.test(\"Response contains cookie with access_token\", function() {",
+									"     pm.expect(pm.cookies.get('access_token') === pm.environment.get('access_token'))",
+									"",
+									"})",
+									"",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.ok;",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"User Details are Present\", () => {",
+									"    let jsonData = pm.response.json()",
+									"    const expectedKeys = ['_id','name', 'email', 'isAdmin'];",
+									"    pm.expect(jsonData).to.be.an(\"object\");",
+									"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"g@example.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('user_id_delete', pm.response.json()._id);",
+									"",
+									"pm.test(\"Response contains cookie with access_token\", function() {",
+									"     pm.expect(pm.cookies.get('access_token') === pm.environment.get('access_token'))",
+									"})",
+									"",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"User Details are Present\", () => {",
+									"    let jsonData = pm.response.json()",
+									"    const expectedKeys = ['_id','name', 'email', 'isAdmin'];",
+									"    pm.expect(jsonData).to.be.an(\"object\");",
+									"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test\",\n    \"email\": \"test@example.com\",\n    \"password\": \"123456\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Create new User"
+					},
+					"response": []
+				},
+				{
+					"name": "POST/api/users/login (login as admin) Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('access_token', pm.cookies.get('access_token'))",
+									"",
+									"pm.test(\"Response contains cookie with access_token\", function() {",
+									"     pm.expect(pm.cookies.get('access_token') === pm.environment.get('access_token'))",
+									"",
+									"})",
+									"",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.ok;",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"User Details are Present\", () => {",
+									"    let jsonData = pm.response.json()",
+									"    const expectedKeys = ['_id','name', 'email', 'isAdmin'];",
+									"    pm.expect(jsonData).to.be.an(\"object\");",
+									"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"g@example.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/users/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('access_token', pm.cookies.get('access_token'))",
+									"",
+									"pm.test(\"Response contains cookie with access_token\", function() {",
+									"     pm.expect(pm.cookies.get('access_token') === pm.environment.get('access_token'))",
+									"",
+									"})",
+									"",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.ok;",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/users/{{user_id_delete}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{user_id_delete}}"
+							]
+						},
+						"description": "Delete a user by ID"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "POST/api/users/login (login as admin) Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('access_token', pm.cookies.get('access_token'))",
+									"",
+									"pm.test(\"Response contains cookie with access_token\", function() {",
+									"     pm.expect(pm.cookies.get('access_token') === pm.environment.get('access_token'))",
+									"",
+									"})",
+									"",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.ok;",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"User Details are Present\", () => {",
+									"    let jsonData = pm.response.json()",
+									"    const expectedKeys = ['_id','name', 'email', 'isAdmin'];",
+									"    pm.expect(jsonData).to.be.an(\"object\");",
+									"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"g@example.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/products",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.ok;",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"response should be okay to process\", function () {",
+									"    pm.response.to.not.be.error;",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.response.to.not.have.jsonBody(\"error\");",
+									"});",
+									"",
+									"pm.test(\"Products is present\", () => {",
+									" pm.response.to.have.jsonBody(\"products\");",
+									"});",
+									"",
+									"let jsonData = pm.response.json()",
+									"",
+									"pm.test(\"Product Details are Present\", () => {",
+									"    ",
+									"    const expectedKeys = ['rating','numReviews', 'price', 'countInStock','_id', 'name', 'image', 'description', 'brand', 'category', 'user', 'reviews', '__v', 'createdAt', 'updatedAt'];",
+									"    pm.expect(jsonData.products).to.be.an(\"array\");",
+									"    pm.expect(jsonData.products[0]).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"});",
+									"// pm.environment.set('product', jsonData.products[0]._id);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/products",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						},
+						"description": "##### GET all products"
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/products",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"response should be okay to process\", function () {",
+									"    pm.response.to.not.be.error;",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.response.to.not.have.jsonBody(\"error\");",
+									"});",
+									"",
+									"",
+									"pm.environment.set('product', pm.response.json()._id);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/products",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						},
+						"description": "POST Create a new product"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/products/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.ok;",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Product Details are Present\", () => {",
+									"    let jsonData = pm.response.json()",
+									"    const expectedKeys = ['rating','numReviews', 'price', 'countInStock','_id', 'name', 'image', 'description', 'brand', 'category', 'user', 'reviews', '__v', 'createdAt', 'updatedAt'];",
+									"    pm.expect(jsonData).to.be.an(\"object\");",
+									"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/products/6125d04db949259bdec4de3a",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"6125d04db949259bdec4de3a"
+							]
+						},
+						"description": "##### GET single product by Id"
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/products/:id/reviews",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Object has message key\", function() {",
+									"    let jsonData = pm.response.json()",
+									"    const expectedKeys = ['message'];",
+									"    pm.expect(jsonData).to.be.an(\"object\");",
+									"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"});",
+									"",
+									"pm.test(\"message is present\", function() {",
+									"    let jsonData = pm.response.json()",
+									"    pm.expect(jsonData).to.have.property('message', 'Review added');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rating\": 5,\n    \"comment\": \"This product is Great...\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/products/{{product}}/reviews",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"{{product}}",
+								"reviews"
+							]
+						},
+						"description": "Add review."
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/products/top",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.ok;",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"response should be okay to process\", function () {",
+									"    pm.response.to.not.be.error;",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.response.to.not.have.jsonBody(\"error\");",
+									"});",
+									"",
+									"// pm.test(\"Products is present\", () => {",
+									"//  pm.response.to.have.jsonBody(\"products\");",
+									"// });",
+									"",
+									"let jsonData = pm.response.json()",
+									"",
+									"pm.test(\"Product Details are Present\", () => {",
+									"    const expectedKeys = ['rating','numReviews', 'price', 'countInStock','_id', 'name', 'image', 'description', 'brand', 'category', 'user', 'reviews', '__v', 'createdAt', 'updatedAt'];",
+									"    pm.expect(jsonData).to.be.an(\"array\");",
+									"    pm.expect(jsonData[0]).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"});",
+									"",
+									"pm.test(\"Response has the correct number of products\", () => {",
+									"",
+									"    pm.expect(jsonData.length).to.be.equal(6);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/products/top",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"top"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/products/category/:category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.ok;",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"response should be okay to process\", function () {",
+									"    pm.response.to.not.be.error;",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.response.to.not.have.jsonBody(\"error\");",
+									"});",
+									"",
+									"// pm.test(\"Products is present\", () => {",
+									"//  pm.response.to.have.jsonBody(\"products\");",
+									"// });",
+									"",
+									"let jsonData = pm.response.json()",
+									"",
+									"pm.test(\"Product Details are Present\", () => {",
+									"    const expectedKeys = ['rating','numReviews', 'price', 'countInStock','_id', 'name', 'image', 'description', 'brand', 'category', 'user', 'reviews', '__v', 'createdAt', 'updatedAt'];",
+									"    pm.expect(jsonData.products).to.be.an(\"array\");",
+									"    pm.expect(jsonData.products[0]).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"});",
+									"",
+									"pm.test(\"objects in products have correct category\", () => {",
+									"",
+									"    pm.expect(jsonData.products[0].category).to.be.equal('espresso');",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/products/category/espresso",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"category",
+								"espresso"
+							]
+						},
+						"description": "Get products by category"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/products/brand/:brand",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.ok;",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"response should be okay to process\", function () {",
+									"    pm.response.to.not.be.error;",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.response.to.not.have.jsonBody(\"error\");",
+									"});",
+									"",
+									"// pm.test(\"Products is present\", () => {",
+									"//  pm.response.to.have.jsonBody(\"products\");",
+									"// });",
+									"",
+									"let jsonData = pm.response.json()",
+									"",
+									"pm.test(\"Product Details are Present\", () => {",
+									"    const expectedKeys = ['rating','numReviews', 'price', 'countInStock','_id', 'name', 'image', 'description', 'brand', 'category', 'user', 'reviews', '__v', 'createdAt', 'updatedAt'];",
+									"    pm.expect(jsonData.products).to.be.an(\"array\");",
+									"    pm.expect(jsonData.products[0]).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"});",
+									"",
+									"pm.test(\"objects in products have correct brand\", () => {",
+									"",
+									"    pm.expect(jsonData.products[0].brand).to.be.equal('Lavazza');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/products/brand/Lavazza",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"brand",
+								"Lavazza"
+							]
+						},
+						"description": "Get products by brand"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/product/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.ok;",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Product Details are Present\", function() {",
+									"    let jsonData = pm.response.json()",
+									"    const expectedKeys = ['rating','numReviews', 'price', 'countInStock','_id', 'name', 'image', 'description', 'brand', 'category', 'user', 'reviews', '__v', 'createdAt', 'updatedAt'];",
+									"    pm.expect(jsonData).to.be.an(\"object\");",
+									"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"});",
+									"",
+									"pm.test(\"Updated data is present\", function() {",
+									"    let jsonData = pm.response.json()",
+									"    pm.expect(jsonData).to.have.property('category', 'espresso');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Test - Espresso\",\n    \"description\": \"Test Description\",\n    \"price\": 10,\n    \"category\": \"espresso\",\n    \"countInStock\": 10,\n    \"image\": \"http://placekitten.com/640/510\",\n    \"brand\": \"Lavazza\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/products/{{product}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"{{product}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/products/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Message is Present\", function() {",
+									"    let jsonData = pm.response.json()",
+									"    const expectedKeys = ['message'];",
+									"    pm.expect(jsonData).to.be.an(\"object\");",
+									"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"});",
+									"",
+									"pm.test(\"Updated data is present\", function() {",
+									"    let jsonData = pm.response.json()",
+									"    pm.expect(jsonData).to.have.property('message', 'Product removed.');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/products/{{product}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"{{product}}"
+							]
+						},
+						"description": "Delete a product by Id"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/users/logout Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.unset('access_token')",
+									"",
+									"",
+									"pm.test(\"Response removes cookie\", function() {",
+									"     pm.expect(pm.cookies.get('access_token') === undefined)",
+									"     pm.expect(pm.environment.get('access_token') === null)",
+									"",
+									"})",
+									"",
+									"",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.ok;",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"message property is in response\", () => {",
+									"    let jsonData = pm.response.json()",
+									"    const expectedKeys = ['message'];",
+									"    pm.expect(jsonData).to.be.an(\"object\");",
+									"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"});",
+									"",
+									"pm.test(\"Log out message is correct\", function() {",
+									"    let jsonData = pm.response.json()",
+									"    pm.expect(jsonData).to.have.property('message', 'Successfully logged out 😏 🍀');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"john@example.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users/logout",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "##### All routes that have to do with products"
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "GET /api/orders/:id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/orders/611f49f3b4d945dd48238635",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"611f49f3b4d945dd48238635"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get an order by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/orders/myorders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/orders/myorders",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"myorders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/orders",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						},
+						"description": "GET all orders"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/orders/:id/paymentmethod",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"paymentMethod\": \"PayPal\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/orders/611f49f3b4d945dd48238635/paymentmethod",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"611f49f3b4d945dd48238635",
+								"paymentmethod"
+							]
+						},
+						"description": "Update an orders payment method."
+					},
+					"response": []
+				}
+			],
+			"description": "Routes that have to do with Orders."
+		},
+		{
+			"name": "Integration Tests",
+			"item": [
+				{
+					"name": "Scenario - CRUD product",
+					"item": [
+						{
+							"name": "POST/api/users/login (admin user)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.environment.set('access_token', pm.cookies.get('access_token'))",
+											"",
+											"pm.test(\"Response contains cookie with access_token\", function() {",
+											"     pm.expect(pm.cookies.get('access_token') === pm.environment.get('access_token'))",
+											"",
+											"})",
+											"",
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"environment to be eShop\", function () {",
+											"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+											"});",
+											"",
+											"pm.test(\"response must be valid and have a body\", function () {",
+											"     pm.response.to.be.ok;",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"User Details are Present\", () => {",
+											"    let jsonData = pm.response.json()",
+											"    const expectedKeys = ['_id','name', 'email', 'isAdmin'];",
+											"    pm.expect(jsonData).to.be.an(\"object\");",
+											"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"g@example.com\",\n    \"password\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/api/users/login",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST /api/products",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});",
+											"",
+											"",
+											"pm.test(\"environment to be eShop\", function () {",
+											"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+											"});",
+											"",
+											"pm.test(\"response must be valid and have a body\", function () {",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"response should be okay to process\", function () {",
+											"    pm.response.to.not.be.error;",
+											"    pm.response.to.have.jsonBody();",
+											"    pm.response.to.not.have.jsonBody(\"error\");",
+											"});",
+											"",
+											"",
+											"pm.environment.set('product', pm.response.json()._id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/products",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"products"
+									]
+								},
+								"description": "POST Create a new product"
+							},
+							"response": []
+						},
+						{
+							"name": "GET /api/products/:id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"environment to be eShop\", function () {",
+											"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+											"});",
+											"",
+											"pm.test(\"response must be valid and have a body\", function () {",
+											"     pm.response.to.be.ok;",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"Product Details are Present\", () => {",
+											"    let jsonData = pm.response.json()",
+											"    const expectedKeys = ['rating','numReviews', 'price', 'countInStock','_id', 'name', 'image', 'description', 'brand', 'category', 'user', 'reviews', '__v', 'createdAt', 'updatedAt'];",
+											"    pm.expect(jsonData).to.be.an(\"object\");",
+											"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+											"",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/products/6125d04db949259bdec4de3a",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"6125d04db949259bdec4de3a"
+									]
+								},
+								"description": "##### GET single product by Id"
+							},
+							"response": []
+						},
+						{
+							"name": "PUT /api/product/:id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"environment to be eShop\", function () {",
+											"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+											"});",
+											"",
+											"pm.test(\"response must be valid and have a body\", function () {",
+											"     pm.response.to.be.ok;",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"Product Details are Present\", function() {",
+											"    let jsonData = pm.response.json()",
+											"    const expectedKeys = ['rating','numReviews', 'price', 'countInStock','_id', 'name', 'image', 'description', 'brand', 'category', 'user', 'reviews', '__v', 'createdAt', 'updatedAt'];",
+											"    pm.expect(jsonData).to.be.an(\"object\");",
+											"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+											"});",
+											"",
+											"pm.test(\"Updated data is present\", function() {",
+											"    let jsonData = pm.response.json()",
+											"    pm.expect(jsonData).to.have.property('category', 'espresso');",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Test - Espresso\",\n    \"description\": \"Test Description\",\n    \"price\": 10,\n    \"category\": \"espresso\",\n    \"countInStock\": 10,\n    \"image\": \"http://placekitten.com/640/510\",\n    \"brand\": \"Lavazza\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/api/products/{{product}}",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"{{product}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE /api/products/:id",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/products/{{product}}",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"{{product}}"
+									]
+								},
+								"description": "Delete a product by Id"
+							},
+							"response": []
+						},
+						{
+							"name": "GET /api/users/logout (admin user)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.environment.unset('access_token')",
+											"",
+											"",
+											"pm.test(\"Response removes cookie\", function() {",
+											"     pm.expect(pm.cookies.get('access_token') === undefined)",
+											"     pm.expect(pm.environment.get('access_token') === null)",
+											"",
+											"})",
+											"",
+											"",
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"environment to be eShop\", function () {",
+											"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+											"});",
+											"",
+											"pm.test(\"response must be valid and have a body\", function () {",
+											"     pm.response.to.be.ok;",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"message property is in response\", () => {",
+											"    let jsonData = pm.response.json()",
+											"    const expectedKeys = ['message'];",
+											"    pm.expect(jsonData).to.be.an(\"object\");",
+											"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+											"});",
+											"",
+											"pm.test(\"Log out message is correct\", function() {",
+											"    let jsonData = pm.response.json()",
+											"    pm.expect(jsonData).to.have.property('message', 'Successfully logged out 😏 🍀');",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"g@example.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/api/users/logout",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Integration Test for CRUD product"
+				},
+				{
+					"name": "Scenario - CRUD user",
+					"item": [
+						{
+							"name": "POST /api/users (register)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.environment.set('user_id_delete', pm.response.json()._id);",
+											"",
+											"pm.test(\"Response contains cookie with access_token\", function() {",
+											"     pm.expect(pm.cookies.get('access_token') === pm.environment.get('access_token'))",
+											"})",
+											"",
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});",
+											"",
+											"pm.test(\"environment to be eShop\", function () {",
+											"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+											"});",
+											"",
+											"pm.test(\"response must be valid and have a body\", function () {",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"User Details are Present\", () => {",
+											"    let jsonData = pm.response.json()",
+											"    const expectedKeys = ['_id','name', 'email', 'isAdmin'];",
+											"    pm.expect(jsonData).to.be.an(\"object\");",
+											"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Integration-test\",\n    \"email\": \"integration-test@example.com\",\n    \"password\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/api/users",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								},
+								"description": "Create new User"
+							},
+							"response": []
+						},
+						{
+							"name": "POST/api/users/login (login)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.environment.set('access_token', pm.cookies.get('access_token'))",
+											"",
+											"pm.test(\"Response contains cookie with access_token\", function() {",
+											"     pm.expect(pm.cookies.get('access_token') === pm.environment.get('access_token'))",
+											"",
+											"})",
+											"",
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"environment to be eShop\", function () {",
+											"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+											"});",
+											"",
+											"pm.test(\"response must be valid and have a body\", function () {",
+											"     pm.response.to.be.ok;",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"User Details are Present\", () => {",
+											"    let jsonData = pm.response.json()",
+											"    const expectedKeys = ['_id','name', 'email', 'isAdmin'];",
+											"    pm.expect(jsonData).to.be.an(\"object\");",
+											"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"integration-test@example.com\",\n    \"password\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/api/users/login",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT /api/users/profile (update)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response contains cookie with access_token\", function() {",
+											"     pm.expect(pm.cookies.get('access_token') === pm.environment.get('access_token'))",
+											"",
+											"})",
+											"",
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"environment to be eShop\", function () {",
+											"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+											"});",
+											"",
+											"pm.test(\"response must be valid and have a body\", function () {",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"User Details are Present\", () => {",
+											"    let jsonData = pm.response.json()",
+											"    const expectedKeys = ['_id','name', 'email', 'isAdmin'];",
+											"    pm.expect(jsonData).to.be.an(\"object\");",
+											"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"integration-test-updated\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/api/users/profile",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"profile"
+									]
+								},
+								"description": "Update user Profile"
+							},
+							"response": []
+						},
+						{
+							"name": "GET /api/users/logout (non-admin user)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.environment.unset('access_token')",
+											"",
+											"",
+											"pm.test(\"Response removes cookie\", function() {",
+											"     pm.expect(pm.cookies.get('access_token') === undefined)",
+											"     pm.expect(pm.environment.get('access_token') === null)",
+											"",
+											"})",
+											"",
+											"",
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"environment to be eShop\", function () {",
+											"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+											"});",
+											"",
+											"pm.test(\"response must be valid and have a body\", function () {",
+											"     pm.response.to.be.ok;",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"message property is in response\", () => {",
+											"    let jsonData = pm.response.json()",
+											"    const expectedKeys = ['message'];",
+											"    pm.expect(jsonData).to.be.an(\"object\");",
+											"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+											"});",
+											"",
+											"pm.test(\"Log out message is correct\", function() {",
+											"    let jsonData = pm.response.json()",
+											"    pm.expect(jsonData).to.have.property('message', 'Successfully logged out 😏 🍀');",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"integration-test@example.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/api/users/logout",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST/api/users/login (admin user)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.environment.set('access_token', pm.cookies.get('access_token'))",
+											"",
+											"pm.test(\"Response contains cookie with access_token\", function() {",
+											"     pm.expect(pm.cookies.get('access_token') === pm.environment.get('access_token'))",
+											"",
+											"})",
+											"",
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"environment to be eShop\", function () {",
+											"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+											"});",
+											"",
+											"pm.test(\"response must be valid and have a body\", function () {",
+											"     pm.response.to.be.ok;",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"User Details are Present\", () => {",
+											"    let jsonData = pm.response.json()",
+											"    const expectedKeys = ['_id','name', 'email', 'isAdmin'];",
+											"    pm.expect(jsonData).to.be.an(\"object\");",
+											"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"g@example.com\",\n    \"password\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/api/users/login",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT /api/users/:id Copy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n     \"name\": \"integration-test-updated\",\n    \"isAdmin\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/api/users/{{user_id_delete}}",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"{{user_id_delete}}"
+									]
+								},
+								"description": "Update user by ID"
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE /api/users/:id (delete)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/users/{{user_id_delete}}",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"{{user_id_delete}}"
+									]
+								},
+								"description": "Delete a user by ID"
+							},
+							"response": []
+						},
+						{
+							"name": "GET /api/users/logout (admin user)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.environment.unset('access_token')",
+											"",
+											"",
+											"pm.test(\"Response removes cookie\", function() {",
+											"     pm.expect(pm.cookies.get('access_token') === undefined)",
+											"     pm.expect(pm.environment.get('access_token') === null)",
+											"",
+											"})",
+											"",
+											"",
+											"pm.test(\"Status test\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"environment to be eShop\", function () {",
+											"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+											"});",
+											"",
+											"pm.test(\"response must be valid and have a body\", function () {",
+											"     pm.response.to.be.ok;",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"message property is in response\", () => {",
+											"    let jsonData = pm.response.json()",
+											"    const expectedKeys = ['message'];",
+											"    pm.expect(jsonData).to.be.an(\"object\");",
+											"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+											"});",
+											"",
+											"pm.test(\"Log out message is correct\", function() {",
+											"    let jsonData = pm.response.json()",
+											"    pm.expect(jsonData).to.have.property('message', 'Successfully logged out 😏 🍀');",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"g@example.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/api/users/logout",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

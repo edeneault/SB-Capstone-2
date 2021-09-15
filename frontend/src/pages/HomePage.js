@@ -17,7 +17,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 toast.configure();
 
-const HomeScreen = ({ match }) => {
+const HomePage = ({ match }) => {
   const keyword = match.params.keyword;
   const pageNumber = match.params.pageNumber || 1;
   const dispatch = useDispatch();
@@ -26,11 +26,6 @@ const HomeScreen = ({ match }) => {
   const { loading, error, products, page, pages } = productList;
 
   useEffect(() => {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
     dispatch(listProducts(keyword, pageNumber));
   }, [dispatch, keyword, pageNumber]);
 
@@ -93,4 +88,4 @@ const HomeScreen = ({ match }) => {
   );
 };
 
-export default HomeScreen;
+export default HomePage;

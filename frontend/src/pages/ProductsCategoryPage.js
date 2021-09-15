@@ -24,12 +24,6 @@ const ProductsCategoryPage = ({ match }) => {
     dispatch(listCategoryProducts(category, pageNumber));
   }, [dispatch, category, pageNumber]);
 
-  window.scroll({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
-
   return (
     <>
       <CategoryCarousel category={category} />
