@@ -80,7 +80,7 @@ const Header = () => {
               variant='light'
               expand='lg'
               collapseOnSelect
-              className='bg-white py-1 fs-6 main-nav'
+              className=' py-1 fs-6 main-nav bg-custom'
             >
               <Navbar.Toggle aria-controls='basic-navbar-nav' />
 

@@ -46,12 +46,17 @@ const Routes = () => {
         component={ProductsListPage}
       />
       <Route path='/admin/product/:id/edit' component={ProductEditPage} />
-      <Route exact path='/search/:keyword' component={HomePage} />
+      <Route exact path='/search/:keyword' component={ProductsPage} />
       <Route exact path='/page/:pageNumber' component={HomePage} />
       <Route
         exact
+        path='allproducts/page/:pageNumber'
+        component={ProductsPage}
+      />
+      <Route
+        exact
         path='/search/:keyword/page/:pageNumber'
-        component={HomePage}
+        component={ProductsPage}
       />
       <Route exact path='/' component={HomePage} />
     </Switch>

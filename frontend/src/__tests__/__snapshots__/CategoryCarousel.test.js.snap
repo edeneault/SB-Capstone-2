@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test matches snapshot 1`] = `
+<DocumentFragment>
+  <h2
+    class="carousel-title m-0 p-3 text-dark fs-1"
+  >
+    ~ Category espresso ~
+  </h2>
+  <div
+    class="react-multi-carousel-list  fade-in"
+  >
+    <ul
+      class="react-multi-carousel-track "
+      style="transition: none; overflow: unset; transform: translate3d(0px,0,0);"
+    />
+  </div>
+</DocumentFragment>
+`;

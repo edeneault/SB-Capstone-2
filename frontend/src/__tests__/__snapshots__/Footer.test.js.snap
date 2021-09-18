@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <footer>
+    <div
+      class="container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="text-center py-1 col"
+        >
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+          >
+            <i
+              class="fab fa-facebook ps-4 text-dark "
+            />
+          </a>
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+          >
+            <i
+              class="fab fa-instagram ps-4 text-dark"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com"
+            target="_blank"
+          >
+            <i
+              class="fab fa-linkedin-in ps-4 text-dark"
+            />
+          </a>
+          <a
+            href="https://www.tiktok.com"
+            target="_blank"
+          >
+            <i
+              class="fab fa-tiktok ps-4 text-dark"
+            />
+          </a>
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="text-center py-3 col"
+        >
+          Copyright © Impresso Espresso
+        </div>
+      </div>
+    </div>
+  </footer>
+</DocumentFragment>
+`;

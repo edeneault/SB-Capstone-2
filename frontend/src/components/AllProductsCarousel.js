@@ -31,6 +31,7 @@ const AllProductsCarousel = () => {
 
   const productsList = useSelector((state) => state.productList);
   const { loading, error, products } = productsList;
+  // console.log(products);
 
   useEffect(() => {
     dispatch(listProducts());
