@@ -22,6 +22,7 @@ const SearchBox = ({ name }) => {
           <Col>
             <Form onSubmit={submitHandler} className='d-flex ms-auto mt-1'>
               <Form.Control
+                id='search'
                 type='text'
                 name='q'
                 onChange={(e) => setKeyword(e.target.value)}

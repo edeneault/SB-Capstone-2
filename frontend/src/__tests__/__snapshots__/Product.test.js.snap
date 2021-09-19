@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="my-3 rounded product-card card"
+  >
+    <a
+      href="/products/61306f7d7ef9b1460b0f6c6c"
+    >
+      <img
+        class="card-img-top p-1 fade-in"
+        src="https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630786349/eShop/yt55uakwnkvkfrxck7oj.jpg"
+      />
+    </a>
+    <div
+      class="card-body"
+    >
+      <div
+        class="list-group-flush py-2 list-group"
+      >
+        <div
+          class="list-group-item"
+        >
+          <a
+            href="/products/61306f7d7ef9b1460b0f6c6c"
+          >
+            <div
+              class="d-block card-title"
+            >
+              <strong>
+                 Espresso Capsules Sampler Bundle
+              </strong>
+            </div>
+          </a>
+        </div>
+        <div
+          class="list-group-item"
+        >
+          <div
+            class="card-text"
+          >
+            <div
+              class="rating"
+            >
+              <span>
+                <i
+                  class="fas fa-star"
+                  style="color: rgb(140, 61, 61);"
+                />
+              </span>
+              <span>
+                <i
+                  class="fas fa-star"
+                  style="color: rgb(140, 61, 61);"
+                />
+              </span>
+              <span>
+                <i
+                  class="fas fa-star"
+                  style="color: rgb(140, 61, 61);"
+                />
+              </span>
+              <span>
+                <i
+                  class="fas fa-star"
+                  style="color: rgb(140, 61, 61);"
+                />
+              </span>
+              <span>
+                <i
+                  class="fas fa-star"
+                  style="color: rgb(140, 61, 61);"
+                />
+              </span>
+              <span>
+                 1 reviews
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="price mx-auto list-group-item"
+        >
+          <h3
+            class="card-text"
+          >
+            $35.99
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

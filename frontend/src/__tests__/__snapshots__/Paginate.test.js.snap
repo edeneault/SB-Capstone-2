@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test matches snapshot 1`] = `
+<DocumentFragment>
+  <ul
+    class="pagination"
+  >
+    <li
+      class="page-item active"
+    >
+      <span
+        class="page-link"
+        href="/page/1"
+      >
+        1
+        <span
+          class="sr-only"
+        >
+          (current)
+        </span>
+      </span>
+    </li>
+    <li
+      class="page-item"
+    >
+      <a
+        class="page-link"
+        href="/page/2"
+      >
+        2
+      </a>
+    </li>
+  </ul>
+</DocumentFragment>
+`;

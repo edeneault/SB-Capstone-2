@@ -3,29 +3,42 @@ import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import { initialState, render } from "../test-utils";
+import { waitFor } from "@testing-library/react";
 
 import MetaData from "../components/MetaData";
 
 const mockStore = configureMockStore([thunk]);
-const product = "lavazza mug";
+const title = "Welcome to Impresso Espresso";
 
-test("renders Loader component without crashing", () => {
+function getMeta(metaName) {
+  const title = document.title;
+  if (title === metaName) {
+    return title;
+  }
+  return "";
+}
+
+test("renders MetaData component without crashing", async () => {
   const store = mockStore(initialState);
 
-  const { getByText } = render(
-    <Provider store={store}>
-      <MetaData title={product} />
-    </Provider>,
+  render(
+    <>
+      <Provider store={store}>
+        <MetaData />
+        <div>Body</div>
+      </Provider>
+      ,
+    </>,
   );
 
-  expect(getByText(product)).to.equal(document.title);
+  await waitFor(() => expect(getMeta(title)).toEqual(title));
 });
 
 test("matches snapshot", function () {
   const store = mockStore(initialState);
   const { asFragment } = render(
     <Provider store={store}>
-      <MetaData title={product} />
+      <MetaData title={title} />
     </Provider>,
   );
   expect(asFragment()).toMatchSnapshot();

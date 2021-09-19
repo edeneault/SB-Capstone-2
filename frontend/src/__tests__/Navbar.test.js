@@ -4,27 +4,29 @@ import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import { initialState, render } from "../test-utils";
 
-import Message from "../components/Message";
+import Navbar from "../components/Navbar";
 
 const mockStore = configureMockStore([thunk]);
 
-test("renders Message component without crashing", () => {
+test("renders Navbar component without crashing", () => {
   const store = mockStore(initialState);
 
-  const { getByRole } = render(
+  const { getByText } = render(
     <Provider store={store}>
-      <Message />
+      <Navbar />
     </Provider>,
   );
 
-  expect(getByRole("alert")).toBeInTheDocument();
+  expect(getByText("IMPRESSO ESPRESSO")).toBeInTheDocument();
+  expect(getByText("Home")).toBeInTheDocument();
+  expect(getByText("Brands")).toBeInTheDocument();
 });
 
 test("matches snapshot", function () {
   const store = mockStore(initialState);
   const { asFragment } = render(
     <Provider store={store}>
-      <Message />
+      <Navbar />
     </Provider>,
   );
   expect(asFragment()).toMatchSnapshot();

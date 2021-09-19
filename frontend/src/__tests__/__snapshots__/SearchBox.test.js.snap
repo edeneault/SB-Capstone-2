@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <div
+      class="d-flex py-2 px-3 row"
+    >
+      <div
+        class="col"
+      >
+        <form
+          class="d-flex ms-auto mt-1"
+        >
+          <input
+            class="rounded-start smaller-input form-control form-control-sm"
+            id="search"
+            name="q"
+            placeholder="search lavazza"
+            type="text"
+          />
+          <button
+            class="btn rounded-end smaller-button btn btn-secondary "
+            type="submit"
+          >
+            <i
+              class="fas fa-search"
+            />
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -14,6 +14,8 @@ import {
 import Message from "../components/Message";
 import { addToCart, removeFromCart } from "../actions/cartActions";
 
+import "../css/CartPage.css";
+
 const CartPage = ({ match, location, history }) => {
   const productId = match.params.id;
 
@@ -43,7 +45,7 @@ const CartPage = ({ match, location, history }) => {
   return (
     <Container fluid className='px-5 pt-3 fade-in'>
       <Row>
-        <Col md={8}>
+        <Col md={12}>
           <h1>Shopping Cart</h1>
           {cartItems.length === 0 ? (
             <Message>
@@ -95,8 +97,10 @@ const CartPage = ({ match, location, history }) => {
             </ListGroup>
           )}
         </Col>
-        <Col md={4} className='py-3'>
-          <Card>
+      </Row>
+      <Row>
+        <Col md={12} className='py-3'>
+          <Card className='card-cart'>
             <ListGroup variant='flush'>
               <ListGroup.Item>
                 <h2>
