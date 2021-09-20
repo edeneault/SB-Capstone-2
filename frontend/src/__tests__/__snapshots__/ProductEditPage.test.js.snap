@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="px-5 container-fluid"
+  >
+    <button
+      class="btn btn-light my-3 btn btn-primary"
+      type="button"
+    >
+      Go Back
+    </button>
+    <div
+      class="container"
+    >
+      <div
+        class="justify-content-md-center row"
+      >
+        <div
+          class="col-md-6 col-12"
+        >
+          <h1>
+            Edit Product
+          </h1>
+          <form
+            class=""
+          >
+            <div
+              class="form-group"
+            >
+              <label
+                class="form-label"
+                for="name"
+              >
+                Name
+              </label>
+              <input
+                class="form-control"
+                id="name"
+                placeholder="Enter name"
+                type="name"
+                value="Lavazza - Espresso - Medium Roast"
+              />
+            </div>
+            <div
+              class="form-group"
+            >
+              <label
+                class="form-label"
+                for="price"
+              >
+                Price
+              </label>
+              <input
+                class="form-control"
+                id="price"
+                placeholder="Enter price"
+                type="number"
+                value="9.99"
+              />
+            </div>
+            <div
+              class="form-group"
+            >
+              <label
+                class="form-label"
+                for="image"
+              >
+                Image
+              </label>
+              <input
+                class="form-control"
+                id="image"
+                placeholder="Enter image URL"
+                type="text"
+                value="https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630783263/eShop/sqiwu5ummm4y1to3cp5o.jpg"
+              />
+              <input
+                class="btn text-dark form-control-file"
+                id="image"
+                label="choose file"
+                type="file"
+              />
+            </div>
+            <div
+              class="form-group"
+            >
+              <label
+                class="form-label"
+                for="brand"
+              >
+                Brand
+              </label>
+              <input
+                class="form-control"
+                id="brand"
+                placeholder="Enter brand"
+                type="text"
+                value="Lavazza"
+              />
+            </div>
+            <div
+              class="form-group"
+            >
+              <label
+                class="form-label"
+                for="countInStock"
+              >
+                Count In Stock
+              </label>
+              <input
+                class="form-control"
+                id="countInStock"
+                placeholder="Enter count-in-stock"
+                type="number"
+                value="4"
+              />
+            </div>
+            <div
+              class="form-group"
+            >
+              <label
+                class="form-label"
+                for="category"
+              >
+                Category
+              </label>
+              <input
+                class="form-control"
+                id="category"
+                placeholder="Enter category"
+                type="text"
+                value="espresso"
+              />
+            </div>
+            <div
+              class="form-group"
+            >
+              <label
+                class="form-label"
+                for="description"
+              >
+                Description
+              </label>
+              <input
+                class="form-control"
+                id="description"
+                placeholder="Enter description"
+                type="text"
+                value="Lavazza - 2.2 lbs (1kg) Whole Bean - Medium Roast"
+              />
+            </div>
+            <button
+              class="my-2 btn btn-primary"
+              type="submit"
+            >
+              Update
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

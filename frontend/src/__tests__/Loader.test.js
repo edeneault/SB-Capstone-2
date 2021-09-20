@@ -20,7 +20,7 @@ test("renders Loader component without crashing", () => {
   expect(getByText("Loading...")).toBeInTheDocument();
 });
 
-test("matches snapshot", function () {
+test("matches snapshot", () => {
   const store = mockStore(initialState);
   const { asFragment } = render(
     <Provider store={store}>

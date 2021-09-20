@@ -1,33 +1,37 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import { initialState, render } from "../test-utils";
-
-import BrandCarousel from "../components/BrandCarousel.js";
+import PaymentPageUpdate from "../pages/PaymentPageUpdate.js";
+import { createMemoryHistory } from "history";
 
 const mockStore = configureMockStore([thunk]);
 
 describe("test", () => {
-  test("renders BrandCarousel without crashing", () => {
+  const history = createMemoryHistory();
+
+  test("renders PaymentPageUpdate without crashing", () => {
     const store = mockStore(initialState);
 
     const { getByText } = render(
       <Provider store={store}>
-        <BrandCarousel brand='lavazza' />
+        <PaymentPageUpdate history={history} />
       </Provider>,
+      { initialRoutes: [`/paymentmethod`] },
     );
-
-    expect(getByText("~ Brand lavazza ~")).toBeDefined();
+    // screen.debug();
+    expect(getByText(/Payment Method/i)).toBeInTheDocument();
   });
 
   test("matches snapshot", function () {
     const store = mockStore(initialState);
+
     const { asFragment } = render(
       <Provider store={store}>
-        <BrandCarousel brand='lavazza' />
+        <PaymentPageUpdate history={history} />
       </Provider>,
+      { initialRoutes: [`/paymentmethod`] },
     );
 
     expect(asFragment()).toMatchSnapshot();

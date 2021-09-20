@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 toast.configure();
 
-const ProfilePage = ({ location, history }) => {
+const ProfilePage = ({ history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");

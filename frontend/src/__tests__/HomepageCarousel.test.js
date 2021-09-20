@@ -8,7 +8,7 @@ import HomepageCarousel from "../components/HomepageCarousel.js";
 const mockStore = configureMockStore([thunk]);
 
 describe("test", () => {
-  test("renders HomepageCarousel without crashing", async () => {
+  test("renders HomepageCarousel without crashing", () => {
     const store = mockStore(initialState);
 
     const { getByText } = render(

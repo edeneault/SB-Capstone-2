@@ -1,0 +1,547 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="fade-in px-5 pt-3 container-fluid"
+  >
+    <div
+      class="align-items-top mb-0 pb-0 row"
+    >
+      <div
+        class="col-sm-4"
+      >
+        <h1
+          class="page-title slide-in mb-0 pb-0"
+        >
+          My Products
+        </h1>
+      </div>
+    </div>
+    <div
+      class="align-items-top mb-0 pb-0 row"
+    >
+      <div
+        class=" text-start col-md-12"
+      >
+        <button
+          class="my-1 rounded btn btn-primary"
+          type="button"
+        >
+          <i
+            class="fas fa-plus "
+          />
+           Create Product
+        </button>
+      </div>
+    </div>
+    <div
+      class="table-responsive"
+    >
+      <table
+        class="table-sm table table-bordered table-hover"
+      >
+        <thead>
+          <tr
+            class="bg-black text-light"
+          >
+            <th>
+              ID
+            </th>
+            <th>
+              NAME
+            </th>
+            <th>
+              PRICE
+            </th>
+            <th>
+              CATEGORY
+            </th>
+            <th>
+              BRAND
+            </th>
+            <th>
+              ACTION
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="align-middle"
+          >
+            <td>
+              6125d04db949259bdec4de39
+            </td>
+            <td>
+              Lavazza - Super Crema Espresso
+            </td>
+            <td>
+              39.99
+            </td>
+            <td>
+              espresso
+            </td>
+            <td>
+              Lavazza
+            </td>
+            <td>
+              <a
+                class="btn-sm edit m-1 btn btn-light"
+                href="/admin/product/6125d04db949259bdec4de39/edit"
+              >
+                <i
+                  class="fas fa-edit"
+                />
+              </a>
+              <button
+                class="btn-sm trash m-1 btn btn-danger"
+                type="button"
+              >
+                <i
+                  class="fas fa-trash"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="align-middle"
+          >
+            <td>
+              6125d04db949259bdec4de3c
+            </td>
+            <td>
+              Lavazza - Espresso - Medium Roast
+            </td>
+            <td>
+              9.99
+            </td>
+            <td>
+              espresso
+            </td>
+            <td>
+              Lavazza
+            </td>
+            <td>
+              <a
+                class="btn-sm edit m-1 btn btn-light"
+                href="/admin/product/6125d04db949259bdec4de3c/edit"
+              >
+                <i
+                  class="fas fa-edit"
+                />
+              </a>
+              <button
+                class="btn-sm trash m-1 btn btn-danger"
+                type="button"
+              >
+                <i
+                  class="fas fa-trash"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="align-middle"
+          >
+            <td>
+              6125d04db949259bdec4de3a
+            </td>
+            <td>
+              Illy - Espresso 100% Arabica
+            </td>
+            <td>
+              14.99
+            </td>
+            <td>
+              espresso
+            </td>
+            <td>
+              illy
+            </td>
+            <td>
+              <a
+                class="btn-sm edit m-1 btn btn-light"
+                href="/admin/product/6125d04db949259bdec4de3a/edit"
+              >
+                <i
+                  class="fas fa-edit"
+                />
+              </a>
+              <button
+                class="btn-sm trash m-1 btn btn-danger"
+                type="button"
+              >
+                <i
+                  class="fas fa-trash"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="align-middle"
+          >
+            <td>
+              6125d04db949259bdec4de38
+            </td>
+            <td>
+              Damesi - Organic Espresso Italiano
+            </td>
+            <td>
+              11.99
+            </td>
+            <td>
+              espresso
+            </td>
+            <td>
+              Damesi
+            </td>
+            <td>
+              <a
+                class="btn-sm edit m-1 btn btn-light"
+                href="/admin/product/6125d04db949259bdec4de38/edit"
+              >
+                <i
+                  class="fas fa-edit"
+                />
+              </a>
+              <button
+                class="btn-sm trash m-1 btn btn-danger"
+                type="button"
+              >
+                <i
+                  class="fas fa-trash"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="align-middle"
+          >
+            <td>
+              6125d04db949259bdec4de3b
+            </td>
+            <td>
+              Bremille - Barista Express - Red
+            </td>
+            <td>
+              799.99
+            </td>
+            <td>
+              barista
+            </td>
+            <td>
+              Bremille
+            </td>
+            <td>
+              <a
+                class="btn-sm edit m-1 btn btn-light"
+                href="/admin/product/6125d04db949259bdec4de3b/edit"
+              >
+                <i
+                  class="fas fa-edit"
+                />
+              </a>
+              <button
+                class="btn-sm trash m-1 btn btn-danger"
+                type="button"
+              >
+                <i
+                  class="fas fa-trash"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="align-middle"
+          >
+            <td>
+              6125d04db949259bdec4de3d
+            </td>
+            <td>
+              Bremille - Barista Pro
+            </td>
+            <td>
+              1499.99
+            </td>
+            <td>
+              barista
+            </td>
+            <td>
+              Bremille
+            </td>
+            <td>
+              <a
+                class="btn-sm edit m-1 btn btn-light"
+                href="/admin/product/6125d04db949259bdec4de3d/edit"
+              >
+                <i
+                  class="fas fa-edit"
+                />
+              </a>
+              <button
+                class="btn-sm trash m-1 btn btn-danger"
+                type="button"
+              >
+                <i
+                  class="fas fa-trash"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="align-middle"
+          >
+            <td>
+              612bd3d74a0598527a005a22
+            </td>
+            <td>
+              Hario Pour Over Coffee Driper
+            </td>
+            <td>
+              19.99
+            </td>
+            <td>
+              accessories
+            </td>
+            <td>
+              Hario
+            </td>
+            <td>
+              <a
+                class="btn-sm edit m-1 btn btn-light"
+                href="/admin/product/612bd3d74a0598527a005a22/edit"
+              >
+                <i
+                  class="fas fa-edit"
+                />
+              </a>
+              <button
+                class="btn-sm trash m-1 btn btn-danger"
+                type="button"
+              >
+                <i
+                  class="fas fa-trash"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="align-middle"
+          >
+            <td>
+              612bd6584a0598527a005a47
+            </td>
+            <td>
+              Slow Brew Iced Coffee Maker Glass 
+            </td>
+            <td>
+              85.99
+            </td>
+            <td>
+              accessories
+            </td>
+            <td>
+              LuvMuggs
+            </td>
+            <td>
+              <a
+                class="btn-sm edit m-1 btn btn-light"
+                href="/admin/product/612bd6584a0598527a005a47/edit"
+              >
+                <i
+                  class="fas fa-edit"
+                />
+              </a>
+              <button
+                class="btn-sm trash m-1 btn btn-danger"
+                type="button"
+              >
+                <i
+                  class="fas fa-trash"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="align-middle"
+          >
+            <td>
+              612bd7e14a0598527a005a69
+            </td>
+            <td>
+              Blue Moon - Espresso Beans
+            </td>
+            <td>
+              8.99
+            </td>
+            <td>
+              espresso
+            </td>
+            <td>
+              BlueMoon
+            </td>
+            <td>
+              <a
+                class="btn-sm edit m-1 btn btn-light"
+                href="/admin/product/612bd7e14a0598527a005a69/edit"
+              >
+                <i
+                  class="fas fa-edit"
+                />
+              </a>
+              <button
+                class="btn-sm trash m-1 btn btn-danger"
+                type="button"
+              >
+                <i
+                  class="fas fa-trash"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="align-middle"
+          >
+            <td>
+              61306f7d7ef9b1460b0f6c6c
+            </td>
+            <td>
+              Espresso Capsules Sampler Bundle
+            </td>
+            <td>
+              35.99
+            </td>
+            <td>
+              espresso
+            </td>
+            <td>
+              Nesgresso
+            </td>
+            <td>
+              <a
+                class="btn-sm edit m-1 btn btn-light"
+                href="/admin/product/61306f7d7ef9b1460b0f6c6c/edit"
+              >
+                <i
+                  class="fas fa-edit"
+                />
+              </a>
+              <button
+                class="btn-sm trash m-1 btn btn-danger"
+                type="button"
+              >
+                <i
+                  class="fas fa-trash"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="align-middle"
+          >
+            <td>
+              61306f847ef9b1460b0f6c75
+            </td>
+            <td>
+              Italian Coffee - Compatible pods
+            </td>
+            <td>
+              25
+            </td>
+            <td>
+              espresso
+            </td>
+            <td>
+              ItalianCoffee
+            </td>
+            <td>
+              <a
+                class="btn-sm edit m-1 btn btn-light"
+                href="/admin/product/61306f847ef9b1460b0f6c75/edit"
+              >
+                <i
+                  class="fas fa-edit"
+                />
+              </a>
+              <button
+                class="btn-sm trash m-1 btn btn-danger"
+                type="button"
+              >
+                <i
+                  class="fas fa-trash"
+                />
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="align-middle"
+          >
+            <td>
+              61306f957ef9b1460b0f6c83
+            </td>
+            <td>
+              DeFonghi Bar Espresso and Cappuccino Machine
+            </td>
+            <td>
+              180.99
+            </td>
+            <td>
+              barista
+            </td>
+            <td>
+              DeFonghi
+            </td>
+            <td>
+              <a
+                class="btn-sm edit m-1 btn btn-light"
+                href="/admin/product/61306f957ef9b1460b0f6c83/edit"
+              >
+                <i
+                  class="fas fa-edit"
+                />
+              </a>
+              <button
+                class="btn-sm trash m-1 btn btn-danger"
+                type="button"
+              >
+                <i
+                  class="fas fa-trash"
+                />
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ul
+      class="pagination"
+    >
+      <li
+        class="page-item active"
+      >
+        <span
+          class="page-link"
+          href="/admin/productslist/1"
+        >
+          1
+          <span
+            class="sr-only"
+          >
+            (current)
+          </span>
+        </span>
+      </li>
+      <li
+        class="page-item"
+      >
+        <a
+          class="page-link"
+          href="/admin/productslist/2"
+        >
+          2
+        </a>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;

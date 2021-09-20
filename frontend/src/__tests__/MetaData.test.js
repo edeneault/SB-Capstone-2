@@ -18,7 +18,7 @@ function getMeta(metaName) {
   return "";
 }
 
-test("renders MetaData component without crashing", async () => {
+test("renders MetaData component without crashing", () => {
   const store = mockStore(initialState);
 
   render(
@@ -31,7 +31,7 @@ test("renders MetaData component without crashing", async () => {
     </>,
   );
 
-  await waitFor(() => expect(getMeta(title)).toEqual(title));
+  waitFor(() => expect(getMeta(title)).toEqual(title));
 });
 
 test("matches snapshot", function () {

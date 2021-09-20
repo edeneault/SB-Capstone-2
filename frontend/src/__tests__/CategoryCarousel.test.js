@@ -8,7 +8,7 @@ import CategoryCarousel from "../components/CategoryCarousel.js";
 const mockStore = configureMockStore([thunk]);
 
 describe("test", () => {
-  test("renders CategoryCarousel without crashing", async () => {
+  test("renders CategoryCarousel without crashing", () => {
     const store = mockStore(initialState);
 
     const { getByText } = render(

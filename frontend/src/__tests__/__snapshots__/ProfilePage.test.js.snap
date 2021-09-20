@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="px-5 pt-3 fade-in container-fluid"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-md-3"
+      >
+        <h2
+          class=" pb-0 mb-0 slide-in"
+        >
+          User Profile
+          <p>
+            Update
+          </p>
+        </h2>
+        <form
+          class=""
+        >
+          <div
+            class="form-group"
+          >
+            <label
+              class="form-label"
+              for="name"
+            >
+              Email Name
+            </label>
+            <input
+              class="form-control"
+              id="name"
+              placeholder="Enter name"
+              type="name"
+              value="AdminName"
+            />
+          </div>
+          <div
+            class="form-group"
+          >
+            <label
+              class="form-label"
+              for="email"
+            >
+              Email Address
+            </label>
+            <input
+              class="form-control"
+              id="email"
+              placeholder="Enter email"
+              type="email"
+              value="admin@example.com"
+            />
+          </div>
+          <div
+            class="form-group"
+          >
+            <label
+              class="form-label"
+              for="password"
+            >
+              Password
+            </label>
+            <input
+              class="form-control"
+              id="password"
+              placeholder="Enter password"
+              type="password"
+              value=""
+            />
+          </div>
+          <div
+            class="form-group"
+          >
+            <label
+              class="form-label"
+              for="confirmPassword"
+            >
+              Confirm Password
+            </label>
+            <input
+              class="form-control"
+              id="confirmPassword"
+              placeholder="Confirm password"
+              type="confirmPassword"
+              value=""
+            />
+          </div>
+          <button
+            class="btn btn-primary rounded my-2"
+            type="submit"
+          >
+            Update
+          </button>
+        </form>
+      </div>
+      <div
+        class="col-md-9"
+      >
+        <h2>
+          My Orders
+        </h2>
+        <div
+          class="table-responsive"
+        >
+          <table
+            class="table-sm table table-bordered table-hover"
+          >
+            <thead>
+              <tr
+                class="bg-black text-light"
+              >
+                <th>
+                  ID
+                </th>
+                <th>
+                  DATE
+                </th>
+                <th>
+                  TOTAL
+                </th>
+                <th>
+                  PAID
+                </th>
+                <th>
+                  DELIVERED
+                </th>
+                <th>
+                  DETAILS
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  6125d0c2d3ffd29bedee24af
+                </td>
+                <td>
+                  2021-08-25
+                </td>
+                <td>
+                  459.99
+                </td>
+                <td>
+                  2021-08-26
+                </td>
+                <td>
+                  2021-08-26
+                </td>
+                <td>
+                  <a
+                    class="btn-sm btn btn-light"
+                    href="/orders/6125d0c2d3ffd29bedee24af"
+                  >
+                    Details
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  6126a23b644a96d02caece4c
+                </td>
+                <td>
+                  2021-08-25
+                </td>
+                <td>
+                  459.99
+                </td>
+                <td>
+                  <i
+                    class="fas fa-times"
+                    style="color: red;"
+                  />
+                </td>
+                <td>
+                  <i
+                    class="fas fa-times"
+                    style="color: red;"
+                  />
+                </td>
+                <td>
+                  <a
+                    class="btn-sm btn btn-light"
+                    href="/orders/6126a23b644a96d02caece4c"
+                  >
+                    Details
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

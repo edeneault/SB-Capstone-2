@@ -1,0 +1,251 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="px-5 pt-3 fade-in container-fluid"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12"
+      >
+        <div
+          class="justify-content-md-center mb-4 nav"
+        >
+          <div
+            class="mx-1 px-1 nav-item"
+          >
+            <a
+              class="nav-link"
+              data-rb-event-key="/login"
+              href="/login"
+            >
+              Sign In
+            </a>
+          </div>
+          <div
+            class="mx-1 px-1 nav-item"
+          >
+            <a
+              class="nav-link"
+              data-rb-event-key="/shipping"
+              href="/shipping"
+            >
+              Shipping
+            </a>
+          </div>
+          <div
+            class="mx-1 px-1 nav-item"
+          >
+            <a
+              class="nav-link"
+              data-rb-event-key="/payment"
+              href="/payment"
+            >
+              Payment
+            </a>
+          </div>
+          <div
+            class="mx-1 px-1 nav-item"
+          >
+            <a
+              class="active nav-link"
+              data-rb-event-key="/placeorder"
+              href="/placeorder"
+            >
+              Place Order
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="col-md-8"
+      >
+        <div
+          class="list-group list-group-flush"
+        >
+          <div
+            class="list-group-item"
+          >
+            <h2>
+              Shipping
+            </h2>
+            <p>
+              <strong>
+                Address:
+              </strong>
+               9620 W. Russell Rd   APT 1025, Las Vegas, 89148, United States
+            </p>
+          </div>
+          <div
+            class="list-group-item"
+          >
+            <h2>
+              Payment Method
+            </h2>
+            <strong>
+              Method: 
+            </strong>
+          </div>
+          <div
+            class="list-group-item"
+          >
+            <h2>
+              Order Items
+            </h2>
+            <div
+              class="list-group list-group-flush"
+            >
+              <div
+                class="list-group-item"
+              >
+                <div
+                  class="row"
+                >
+                  <div
+                    class="col-md-1"
+                  >
+                    <img
+                      alt="Lavazza - Espresso - Medium Roast"
+                      class="img-fluid rounded"
+                      src="https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630783263/eShop/sqiwu5ummm4y1to3cp5o.jpg"
+                    />
+                  </div>
+                  <div
+                    class="col"
+                  >
+                    <a
+                      href="/product/6125d04db949259bdec4de3c"
+                    >
+                      Lavazza - Espresso - Medium Roast
+                    </a>
+                  </div>
+                  <div
+                    class="col"
+                  >
+                    1 x $9.99 = $9.99
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-4"
+      >
+        <div
+          class="card"
+        >
+          <div
+            class="list-group list-group-flush"
+          >
+            <div
+              class="list-group-item"
+            >
+              <h2>
+                Order Summary
+              </h2>
+            </div>
+            <div
+              class="list-group-item"
+            >
+              <div
+                class="row"
+              >
+                <div
+                  class="col"
+                >
+                  Items
+                </div>
+                <div
+                  class="col"
+                >
+                  $9.99
+                </div>
+              </div>
+            </div>
+            <div
+              class="list-group-item"
+            >
+              <div
+                class="row"
+              >
+                <div
+                  class="col"
+                >
+                  Shipping
+                </div>
+                <div
+                  class="col"
+                >
+                  $0.00
+                </div>
+              </div>
+            </div>
+            <div
+              class="list-group-item"
+            >
+              <div
+                class="row"
+              >
+                <div
+                  class="col"
+                >
+                  Tax
+                </div>
+                <div
+                  class="col"
+                >
+                  $1.50
+                </div>
+              </div>
+            </div>
+            <div
+              class="list-group-item"
+            >
+              <div
+                class="row"
+              >
+                <div
+                  class="col"
+                >
+                  Total
+                </div>
+                <div
+                  class="col"
+                >
+                  $11.49
+                </div>
+              </div>
+            </div>
+            <div
+              class="list-group-item"
+            />
+            <div
+              class="list-group-item"
+            >
+              <div
+                class="d-grid col"
+              >
+                <button
+                  class="btn-block btn btn-primary"
+                  type="button"
+                >
+                  Place Order
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

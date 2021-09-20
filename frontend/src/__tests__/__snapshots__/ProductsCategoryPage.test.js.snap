@@ -5,7 +5,7 @@ exports[`test matches snapshot 1`] = `
   <h2
     class="carousel-title m-0 p-3 text-dark fs-1"
   >
-    ~ All Products ~
+    ~ Category espresso ~
   </h2>
   <div
     class="react-multi-carousel-list  fade-in"
@@ -21,6 +21,99 @@ exports[`test matches snapshot 1`] = `
     <div
       class="row"
     >
+      <div
+        class="col-xl-3 col-lg-4 col-md-6 col-sm-12"
+      >
+        <div
+          class="my-3 rounded product-card card"
+        >
+          <a
+            href="/products/612bd7e14a0598527a005a69"
+          >
+            <img
+              class="card-img-top p-1 fade-in"
+              src="https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630923314/eShop/kjgv9cx9obl6gbvddohz.jpg"
+            />
+          </a>
+          <div
+            class="card-body"
+          >
+            <div
+              class="list-group-flush py-2 list-group"
+            >
+              <div
+                class="list-group-item"
+              >
+                <a
+                  href="/products/612bd7e14a0598527a005a69"
+                >
+                  <div
+                    class="d-block card-title"
+                  >
+                    <strong>
+                       Blue Moon - Espresso Beans
+                    </strong>
+                  </div>
+                </a>
+              </div>
+              <div
+                class="list-group-item"
+              >
+                <div
+                  class="card-text"
+                >
+                  <div
+                    class="rating"
+                  >
+                    <span>
+                      <i
+                        class="fas fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-star-half-alt"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                       2 reviews
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="price mx-auto list-group-item"
+              >
+                <h3
+                  class="card-text"
+                >
+                  $8.99
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div
         class="col-xl-3 col-lg-4 col-md-6 col-sm-12"
       >
@@ -108,192 +201,6 @@ exports[`test matches snapshot 1`] = `
                   class="card-text"
                 >
                   $39.99
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="col-xl-3 col-lg-4 col-md-6 col-sm-12"
-      >
-        <div
-          class="my-3 rounded product-card card"
-        >
-          <a
-            href="/products/6125d04db949259bdec4de3c"
-          >
-            <img
-              class="card-img-top p-1 fade-in"
-              src="https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630783263/eShop/sqiwu5ummm4y1to3cp5o.jpg"
-            />
-          </a>
-          <div
-            class="card-body"
-          >
-            <div
-              class="list-group-flush py-2 list-group"
-            >
-              <div
-                class="list-group-item"
-              >
-                <a
-                  href="/products/6125d04db949259bdec4de3c"
-                >
-                  <div
-                    class="d-block card-title"
-                  >
-                    <strong>
-                       Lavazza - Espresso - Medium Roast
-                    </strong>
-                  </div>
-                </a>
-              </div>
-              <div
-                class="list-group-item"
-              >
-                <div
-                  class="card-text"
-                >
-                  <div
-                    class="rating"
-                  >
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star-half-alt"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="far fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                       10 reviews
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="price mx-auto list-group-item"
-              >
-                <h3
-                  class="card-text"
-                >
-                  $9.99
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="col-xl-3 col-lg-4 col-md-6 col-sm-12"
-      >
-        <div
-          class="my-3 rounded product-card card"
-        >
-          <a
-            href="/products/6125d04db949259bdec4de3a"
-          >
-            <img
-              class="card-img-top p-1 fade-in"
-              src="https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630782951/eShop/whsbs3qytgxaw2sk8alm.jpg"
-            />
-          </a>
-          <div
-            class="card-body"
-          >
-            <div
-              class="list-group-flush py-2 list-group"
-            >
-              <div
-                class="list-group-item"
-              >
-                <a
-                  href="/products/6125d04db949259bdec4de3a"
-                >
-                  <div
-                    class="d-block card-title"
-                  >
-                    <strong>
-                       Illy - Espresso 100% Arabica
-                    </strong>
-                  </div>
-                </a>
-              </div>
-              <div
-                class="list-group-item"
-              >
-                <div
-                  class="card-text"
-                >
-                  <div
-                    class="rating"
-                  >
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                       1 reviews
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="price mx-auto list-group-item"
-              >
-                <h3
-                  class="card-text"
-                >
-                  $14.99
                 </h3>
               </div>
             </div>
@@ -400,11 +307,11 @@ exports[`test matches snapshot 1`] = `
           class="my-3 rounded product-card card"
         >
           <a
-            href="/products/6125d04db949259bdec4de3b"
+            href="/products/6125d04db949259bdec4de3a"
           >
             <img
               class="card-img-top p-1 fade-in"
-              src="https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630782239/eShop/tz9ndkjukkrwdneon2fi.jpg"
+              src="https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630782951/eShop/whsbs3qytgxaw2sk8alm.jpg"
             />
           </a>
           <div
@@ -417,478 +324,13 @@ exports[`test matches snapshot 1`] = `
                 class="list-group-item"
               >
                 <a
-                  href="/products/6125d04db949259bdec4de3b"
+                  href="/products/6125d04db949259bdec4de3a"
                 >
                   <div
                     class="d-block card-title"
                   >
                     <strong>
-                       Bremille - Barista Express - Red
-                    </strong>
-                  </div>
-                </a>
-              </div>
-              <div
-                class="list-group-item"
-              >
-                <div
-                  class="card-text"
-                >
-                  <div
-                    class="rating"
-                  >
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star-half-alt"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                       2 reviews
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="price mx-auto list-group-item"
-              >
-                <h3
-                  class="card-text"
-                >
-                  $799.99
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="col-xl-3 col-lg-4 col-md-6 col-sm-12"
-      >
-        <div
-          class="my-3 rounded product-card card"
-        >
-          <a
-            href="/products/6125d04db949259bdec4de3d"
-          >
-            <img
-              class="card-img-top p-1 fade-in"
-              src="https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630782152/eShop/sfpm0zpmddeuarcaofxj.jpg"
-            />
-          </a>
-          <div
-            class="card-body"
-          >
-            <div
-              class="list-group-flush py-2 list-group"
-            >
-              <div
-                class="list-group-item"
-              >
-                <a
-                  href="/products/6125d04db949259bdec4de3d"
-                >
-                  <div
-                    class="d-block card-title"
-                  >
-                    <strong>
-                       Bremille - Barista Pro
-                    </strong>
-                  </div>
-                </a>
-              </div>
-              <div
-                class="list-group-item"
-              >
-                <div
-                  class="card-text"
-                >
-                  <div
-                    class="rating"
-                  >
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="far fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                       12 reviews
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="price mx-auto list-group-item"
-              >
-                <h3
-                  class="card-text"
-                >
-                  $1499.99
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="col-xl-3 col-lg-4 col-md-6 col-sm-12"
-      >
-        <div
-          class="my-3 rounded product-card card"
-        >
-          <a
-            href="/products/612bd3d74a0598527a005a22"
-          >
-            <img
-              class="card-img-top p-1 fade-in"
-              src="https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630811854/eShop/yoenhal08bjjfqzif2a1.jpg"
-            />
-          </a>
-          <div
-            class="card-body"
-          >
-            <div
-              class="list-group-flush py-2 list-group"
-            >
-              <div
-                class="list-group-item"
-              >
-                <a
-                  href="/products/612bd3d74a0598527a005a22"
-                >
-                  <div
-                    class="d-block card-title"
-                  >
-                    <strong>
-                       Hario Pour Over Coffee Driper
-                    </strong>
-                  </div>
-                </a>
-              </div>
-              <div
-                class="list-group-item"
-              >
-                <div
-                  class="card-text"
-                >
-                  <div
-                    class="rating"
-                  >
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="far fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                       1 reviews
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="price mx-auto list-group-item"
-              >
-                <h3
-                  class="card-text"
-                >
-                  $19.99
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="col-xl-3 col-lg-4 col-md-6 col-sm-12"
-      >
-        <div
-          class="my-3 rounded product-card card"
-        >
-          <a
-            href="/products/612bd6584a0598527a005a47"
-          >
-            <img
-              class="card-img-top p-1 fade-in"
-              src="https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630811795/eShop/sfysbymq1thvfthikdlc.jpg"
-            />
-          </a>
-          <div
-            class="card-body"
-          >
-            <div
-              class="list-group-flush py-2 list-group"
-            >
-              <div
-                class="list-group-item"
-              >
-                <a
-                  href="/products/612bd6584a0598527a005a47"
-                >
-                  <div
-                    class="d-block card-title"
-                  >
-                    <strong>
-                       Slow Brew Iced Coffee Maker Glass 
-                    </strong>
-                  </div>
-                </a>
-              </div>
-              <div
-                class="list-group-item"
-              >
-                <div
-                  class="card-text"
-                >
-                  <div
-                    class="rating"
-                  >
-                    <span>
-                      <i
-                        class="far fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="far fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="far fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="far fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="far fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                       0 reviews
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="price mx-auto list-group-item"
-              >
-                <h3
-                  class="card-text"
-                >
-                  $85.99
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="col-xl-3 col-lg-4 col-md-6 col-sm-12"
-      >
-        <div
-          class="my-3 rounded product-card card"
-        >
-          <a
-            href="/products/612bd7e14a0598527a005a69"
-          >
-            <img
-              class="card-img-top p-1 fade-in"
-              src="https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630923314/eShop/kjgv9cx9obl6gbvddohz.jpg"
-            />
-          </a>
-          <div
-            class="card-body"
-          >
-            <div
-              class="list-group-flush py-2 list-group"
-            >
-              <div
-                class="list-group-item"
-              >
-                <a
-                  href="/products/612bd7e14a0598527a005a69"
-                >
-                  <div
-                    class="d-block card-title"
-                  >
-                    <strong>
-                       Blue Moon - Espresso Beans
-                    </strong>
-                  </div>
-                </a>
-              </div>
-              <div
-                class="list-group-item"
-              >
-                <div
-                  class="card-text"
-                >
-                  <div
-                    class="rating"
-                  >
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                      <i
-                        class="fas fa-star-half-alt"
-                        style="color: rgb(140, 61, 61);"
-                      />
-                    </span>
-                    <span>
-                       2 reviews
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="price mx-auto list-group-item"
-              >
-                <h3
-                  class="card-text"
-                >
-                  $8.99
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="col-xl-3 col-lg-4 col-md-6 col-sm-12"
-      >
-        <div
-          class="my-3 rounded product-card card"
-        >
-          <a
-            href="/products/61306f7d7ef9b1460b0f6c6c"
-          >
-            <img
-              class="card-img-top p-1 fade-in"
-              src="https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630786349/eShop/yt55uakwnkvkfrxck7oj.jpg"
-            />
-          </a>
-          <div
-            class="card-body"
-          >
-            <div
-              class="list-group-flush py-2 list-group"
-            >
-              <div
-                class="list-group-item"
-              >
-                <a
-                  href="/products/61306f7d7ef9b1460b0f6c6c"
-                >
-                  <div
-                    class="d-block card-title"
-                  >
-                    <strong>
-                       Espresso Capsules Sampler Bundle
+                       Illy - Espresso 100% Arabica
                     </strong>
                   </div>
                 </a>
@@ -944,7 +386,100 @@ exports[`test matches snapshot 1`] = `
                 <h3
                   class="card-text"
                 >
-                  $35.99
+                  $14.99
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-xl-3 col-lg-4 col-md-6 col-sm-12"
+      >
+        <div
+          class="my-3 rounded product-card card"
+        >
+          <a
+            href="/products/6125d04db949259bdec4de3c"
+          >
+            <img
+              class="card-img-top p-1 fade-in"
+              src="https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630783263/eShop/sqiwu5ummm4y1to3cp5o.jpg"
+            />
+          </a>
+          <div
+            class="card-body"
+          >
+            <div
+              class="list-group-flush py-2 list-group"
+            >
+              <div
+                class="list-group-item"
+              >
+                <a
+                  href="/products/6125d04db949259bdec4de3c"
+                >
+                  <div
+                    class="d-block card-title"
+                  >
+                    <strong>
+                       Lavazza - Espresso - Medium Roast
+                    </strong>
+                  </div>
+                </a>
+              </div>
+              <div
+                class="list-group-item"
+              >
+                <div
+                  class="card-text"
+                >
+                  <div
+                    class="rating"
+                  >
+                    <span>
+                      <i
+                        class="fas fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-star-half-alt"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="far fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                       10 reviews
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="price mx-auto list-group-item"
+              >
+                <h3
+                  class="card-text"
+                >
+                  $9.99
                 </h3>
               </div>
             </div>
@@ -1051,11 +586,11 @@ exports[`test matches snapshot 1`] = `
           class="my-3 rounded product-card card"
         >
           <a
-            href="/products/61306f957ef9b1460b0f6c83"
+            href="/products/61306f7d7ef9b1460b0f6c6c"
           >
             <img
               class="card-img-top p-1 fade-in"
-              src="https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630922718/eShop/crj3g54ndo1yvtv6ipj1.jpg"
+              src="https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630786349/eShop/yt55uakwnkvkfrxck7oj.jpg"
             />
           </a>
           <div
@@ -1068,13 +603,13 @@ exports[`test matches snapshot 1`] = `
                 class="list-group-item"
               >
                 <a
-                  href="/products/61306f957ef9b1460b0f6c83"
+                  href="/products/61306f7d7ef9b1460b0f6c6c"
                 >
                   <div
                     class="d-block card-title"
                   >
                     <strong>
-                       DeFonghi Bar Espresso and Cappuccino Machine
+                       Espresso Capsules Sampler Bundle
                     </strong>
                   </div>
                 </a>
@@ -1090,36 +625,36 @@ exports[`test matches snapshot 1`] = `
                   >
                     <span>
                       <i
-                        class="far fa-star"
+                        class="fas fa-star"
                         style="color: rgb(140, 61, 61);"
                       />
                     </span>
                     <span>
                       <i
-                        class="far fa-star"
+                        class="fas fa-star"
                         style="color: rgb(140, 61, 61);"
                       />
                     </span>
                     <span>
                       <i
-                        class="far fa-star"
+                        class="fas fa-star"
                         style="color: rgb(140, 61, 61);"
                       />
                     </span>
                     <span>
                       <i
-                        class="far fa-star"
+                        class="fas fa-star"
                         style="color: rgb(140, 61, 61);"
                       />
                     </span>
                     <span>
                       <i
-                        class="far fa-star"
+                        class="fas fa-star"
                         style="color: rgb(140, 61, 61);"
                       />
                     </span>
                     <span>
-                       0 reviews
+                       1 reviews
                     </span>
                   </div>
                 </div>
@@ -1130,7 +665,7 @@ exports[`test matches snapshot 1`] = `
                 <h3
                   class="card-text"
                 >
-                  $180.99
+                  $35.99
                 </h3>
               </div>
             </div>
@@ -1138,35 +673,6 @@ exports[`test matches snapshot 1`] = `
         </div>
       </div>
     </div>
-    <ul
-      class="pagination"
-    >
-      <li
-        class="page-item active"
-      >
-        <span
-          class="page-link"
-          href="/page/1"
-        >
-          1
-          <span
-            class="sr-only"
-          >
-            (current)
-          </span>
-        </span>
-      </li>
-      <li
-        class="page-item"
-      >
-        <a
-          class="page-link"
-          href="/page/2"
-        >
-          2
-        </a>
-      </li>
-    </ul>
   </div>
 </DocumentFragment>
 `;

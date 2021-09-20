@@ -9,7 +9,7 @@ import HomePage from "../pages/HomePage.js";
 const mockStore = configureMockStore([thunk]);
 
 describe("test", () => {
-  test("renders homepage", async () => {
+  test("renders homepage", () => {
     const store = mockStore(initialState);
     const match = {
       params: {

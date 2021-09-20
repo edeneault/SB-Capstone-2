@@ -1,0 +1,399 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test matches snapshot 1`] = `
+<DocumentFragment>
+  <h2
+    class="carousel-title m-0 p-3 text-dark fs-1"
+  >
+    ~ Brand  ~
+  </h2>
+  <div
+    class="react-multi-carousel-list  fade-in"
+  >
+    <ul
+      class="react-multi-carousel-track "
+      style="transition: none; overflow: unset; transform: translate3d(0px,0,0);"
+    />
+  </div>
+  <div
+    class="px-5 pt-3 container-fluid"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-xl-3 col-lg-4 col-md-6 col-sm-12"
+      >
+        <div
+          class="my-3 rounded product-card card"
+        >
+          <a
+            href="/products/6125d04db949259bdec4de3b"
+          >
+            <img
+              class="card-img-top p-1 fade-in"
+              src="https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630782239/eShop/tz9ndkjukkrwdneon2fi.jpg"
+            />
+          </a>
+          <div
+            class="card-body"
+          >
+            <div
+              class="list-group-flush py-2 list-group"
+            >
+              <div
+                class="list-group-item"
+              >
+                <a
+                  href="/products/6125d04db949259bdec4de3b"
+                >
+                  <div
+                    class="d-block card-title"
+                  >
+                    <strong>
+                       Bremille - Barista Express - Red
+                    </strong>
+                  </div>
+                </a>
+              </div>
+              <div
+                class="list-group-item"
+              >
+                <div
+                  class="card-text"
+                >
+                  <div
+                    class="rating"
+                  >
+                    <span>
+                      <i
+                        class="fas fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-star-half-alt"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                       2 reviews
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="price mx-auto list-group-item"
+              >
+                <h3
+                  class="card-text"
+                >
+                  $799.99
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-xl-3 col-lg-4 col-md-6 col-sm-12"
+      >
+        <div
+          class="my-3 rounded product-card card"
+        >
+          <a
+            href="/products/613515b99f3902000498da5e"
+          >
+            <img
+              class="card-img-top p-1 fade-in"
+              src="https://res.cloudinary.com/edeneault-cloudinary/image/upload/c_fill,h_460,w_510/v1630868953/eShop/wwcesypqxw4ntj3a78ac.jpg"
+            />
+          </a>
+          <div
+            class="card-body"
+          >
+            <div
+              class="list-group-flush py-2 list-group"
+            >
+              <div
+                class="list-group-item"
+              >
+                <a
+                  href="/products/613515b99f3902000498da5e"
+                >
+                  <div
+                    class="d-block card-title"
+                  >
+                    <strong>
+                       Bremille - Coffee Shop Barista Red
+                    </strong>
+                  </div>
+                </a>
+              </div>
+              <div
+                class="list-group-item"
+              >
+                <div
+                  class="card-text"
+                >
+                  <div
+                    class="rating"
+                  >
+                    <span>
+                      <i
+                        class="far fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="far fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="far fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="far fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="far fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                       0 reviews
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="price mx-auto list-group-item"
+              >
+                <h3
+                  class="card-text"
+                >
+                  $1499.99
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-xl-3 col-lg-4 col-md-6 col-sm-12"
+      >
+        <div
+          class="my-3 rounded product-card card"
+        >
+          <a
+            href="/products/6125d04db949259bdec4de3d"
+          >
+            <img
+              class="card-img-top p-1 fade-in"
+              src="https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630782152/eShop/sfpm0zpmddeuarcaofxj.jpg"
+            />
+          </a>
+          <div
+            class="card-body"
+          >
+            <div
+              class="list-group-flush py-2 list-group"
+            >
+              <div
+                class="list-group-item"
+              >
+                <a
+                  href="/products/6125d04db949259bdec4de3d"
+                >
+                  <div
+                    class="d-block card-title"
+                  >
+                    <strong>
+                       Bremille - Barista Pro
+                    </strong>
+                  </div>
+                </a>
+              </div>
+              <div
+                class="list-group-item"
+              >
+                <div
+                  class="card-text"
+                >
+                  <div
+                    class="rating"
+                  >
+                    <span>
+                      <i
+                        class="fas fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="far fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                       12 reviews
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="price mx-auto list-group-item"
+              >
+                <h3
+                  class="card-text"
+                >
+                  $1499.99
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-xl-3 col-lg-4 col-md-6 col-sm-12"
+      >
+        <div
+          class="my-3 rounded product-card card"
+        >
+          <a
+            href="/products/6133c7430733da86bd484034"
+          >
+            <img
+              class="card-img-top p-1 fade-in"
+              src="https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630783375/eShop/hv1lqt49gjevdnrc6zma.jpg"
+            />
+          </a>
+          <div
+            class="card-body"
+          >
+            <div
+              class="list-group-flush py-2 list-group"
+            >
+              <div
+                class="list-group-item"
+              >
+                <a
+                  href="/products/6133c7430733da86bd484034"
+                >
+                  <div
+                    class="d-block card-title"
+                  >
+                    <strong>
+                       Bremille - Coffee Shop Barista
+                    </strong>
+                  </div>
+                </a>
+              </div>
+              <div
+                class="list-group-item"
+              >
+                <div
+                  class="card-text"
+                >
+                  <div
+                    class="rating"
+                  >
+                    <span>
+                      <i
+                        class="fas fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="fas fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                      <i
+                        class="far fa-star"
+                        style="color: rgb(140, 61, 61);"
+                      />
+                    </span>
+                    <span>
+                       2 reviews
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="price mx-auto list-group-item"
+              >
+                <h3
+                  class="card-text"
+                >
+                  $1499.99
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

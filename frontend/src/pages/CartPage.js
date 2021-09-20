@@ -46,7 +46,8 @@ const CartPage = ({ match, location, history }) => {
     <Container fluid className='px-5 pt-3 fade-in'>
       <Row>
         <Col md={12}>
-          <h1>Shopping Cart</h1>
+          <i className='fas fa-shopping-cart fa-2x px-1 py-3 text-black'></i>
+          <h1 className='shopping-cart-title d-inline py-2'> Shopping Cart</h1>
           {cartItems.length === 0 ? (
             <Message>
               Your Cart is empty <Link to='/'>Go Back</Link>

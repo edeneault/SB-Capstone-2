@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="fade-in px-5 pt-3 container-fluid"
+  >
+    <h1
+      class="page-title slide-in"
+    >
+      My Orders
+    </h1>
+    <div
+      class="table-responsive"
+    >
+      <table
+        class="table-sm table table-bordered table-hover"
+      >
+        <thead>
+          <tr
+            class="bg-black text-light"
+          >
+            <th>
+              ORDER ID
+            </th>
+            <th>
+              USER
+            </th>
+            <th>
+              DATE
+            </th>
+            <th>
+              TOTAL
+            </th>
+            <th>
+              PAID
+            </th>
+            <th>
+              DELIVERED
+            </th>
+            <th>
+              ACTION
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="align-middle"
+          >
+            <td>
+              6125d0c2d3ffd29bedee24af
+            </td>
+            <td>
+              AdminName
+            </td>
+            <td>
+              2021-08-25T05:10:26.957Z
+            </td>
+            <td>
+              459.99
+            </td>
+            <td
+              class="text-center"
+            >
+              2021-08-26
+            </td>
+            <td
+              class="text-center"
+            >
+              2021-08-26
+            </td>
+            <td>
+              <a
+                class="btn-sm btn btn-light"
+                href="/orders/6125d0c2d3ffd29bedee24af"
+              >
+                DETAILS
+              </a>
+            </td>
+          </tr>
+          <tr
+            class="align-middle"
+          >
+            <td>
+              6126a23b644a96d02caece4c
+            </td>
+            <td>
+              AdminName
+            </td>
+            <td>
+              2021-08-25T20:04:11.815Z
+            </td>
+            <td>
+              459.99
+            </td>
+            <td
+              class="text-center"
+            >
+              <i
+                class="fas fa-times"
+                style="color: red;"
+              />
+            </td>
+            <td
+              class="text-center"
+            >
+              <i
+                class="fas fa-times"
+                style="color: red;"
+              />
+            </td>
+            <td>
+              <a
+                class="btn-sm btn btn-light"
+                href="/orders/6126a23b644a96d02caece4c"
+              >
+                DETAILS
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test matches snapshot 1`] = `
+<DocumentFragment>
+  <a
+    class="btn btn-ligth my-3"
+    href="/admin/usersList"
+  >
+    Go Back
+  </a>
+  <div
+    class="container"
+  >
+    <div
+      class="justify-content-md-center row"
+    >
+      <div
+        class="col-md-6 col-12"
+      >
+        <h1>
+          Edit User
+        </h1>
+        <form
+          class=""
+        >
+          <div
+            class="form-group"
+          >
+            <label
+              class="form-label"
+              for="name"
+            >
+              Name
+            </label>
+            <input
+              class="form-control"
+              id="name"
+              placeholder="Enter name"
+              type="name"
+              value="AdminName"
+            />
+          </div>
+          <div
+            class="form-group"
+          >
+            <label
+              class="form-label"
+              for="email"
+            >
+              Email Address
+            </label>
+            <input
+              class="form-control"
+              id="email"
+              placeholder="Enter email"
+              type="email"
+              value="admin@example.com"
+            />
+          </div>
+          <div
+            class="form-group"
+          >
+            <div
+              class="form-check"
+            >
+              <input
+                class="form-check-input"
+                id="isAdmin"
+                type="checkbox"
+              />
+              <label
+                class="form-check-label"
+                for="isAdmin"
+                title=""
+              >
+                Is Admin
+              </label>
+            </div>
+          </div>
+          <button
+            class="my-2 btn btn-primary"
+            type="submit"
+          >
+            Update
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

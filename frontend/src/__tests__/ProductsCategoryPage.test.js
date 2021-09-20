@@ -3,41 +3,51 @@ import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import { initialState, render } from "../test-utils";
-import FormContainer from "../components/FormContainer";
-import ProductEditPage from "../pages/ProductEditPage";
+import ProductsCategoryPage from "../pages/ProductsCategoryPage.js";
 
 const mockStore = configureMockStore([thunk]);
 
 describe("test", () => {
-  test("renders FormContainer with children without crashing", () => {
+  let category;
+  beforeEach(() => {
+    jest.spyOn(global.Math, "random").mockReturnValue(0.123456789);
+    category = "espresso";
+  });
+
+  afterEach(() => {
+    jest.spyOn(global.Math, "random").mockRestore();
+  });
+  test("renders ProductsCategoryPage without crashing", async () => {
     const store = mockStore(initialState);
     const match = {
       params: {
-        id: "61306f7d7ef9b1460b0f6c6c",
+        category: category,
       },
     };
 
     const { getByText } = render(
       <Provider store={store}>
-        <FormContainer children={<ProductEditPage match={match} />} />
+        <ProductsCategoryPage match={match} />
       </Provider>,
+      { initialRoutes: [`/allproducts`] },
     );
 
-    expect(getByText("Edit Product")).toBeInTheDocument();
+    expect(getByText(/~ category espresso ~/i)).toBeInTheDocument();
   });
 
   test("matches snapshot", function () {
     const store = mockStore(initialState);
     const match = {
       params: {
-        id: "61306f7d7ef9b1460b0f6c6c",
+        category: category,
       },
     };
 
     const { asFragment } = render(
       <Provider store={store}>
-        <FormContainer children={<ProductEditPage match={match} />} />
+        <ProductsCategoryPage match={match} />
       </Provider>,
+      { initialRoutes: [`/allproducts`] },
     );
 
     expect(asFragment()).toMatchSnapshot();

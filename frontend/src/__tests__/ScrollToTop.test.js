@@ -5,17 +5,22 @@ import thunk from "redux-thunk";
 import { initialState, render } from "../test-utils";
 
 import ScrollToTop from "../components/ScrollToTop";
-import App from "../App";
+import ProductsPage from "../pages/ProductsPage";
 
 const mockStore = configureMockStore([thunk]);
 
 describe("test", () => {
-  let children;
+  let children, match;
   beforeEach(() => {
-    children = <App />;
+    match = {
+      params: {
+        keyword: "",
+      },
+    };
+    children = <ProductsPage match={match} />;
   });
 
-  test("renders Rating component without crashing", () => {
+  test("renders ScrollToTop component without crashing", () => {
     const store = mockStore(initialState);
 
     const { getByText } = render(
