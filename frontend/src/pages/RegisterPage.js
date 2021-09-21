@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../components/Loader";
+import MetaData from "../components/MetaData";
 import FormContainer from "../components/FormContainer";
 import Message from "../components/Message";
 import { register } from "../actions/userActions";
@@ -38,6 +39,7 @@ const RegisterPage = ({ location, history }) => {
 
   return (
     <FormContainer>
+      <MetaData title='register page' />
       <h1>Sign Up</h1>
       {message && <Message variant='danger'>{error}</Message>}
 

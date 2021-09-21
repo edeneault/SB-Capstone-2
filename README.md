@@ -1,5 +1,47 @@
 ## Impresso Expresso - eCommerce Shop
 
+**Project Overview:** StoreFront/eCommerce application for business to deliver brand identity and to sell products to retail consumers. Built in a way that is flexible/reusable.
+
+Coffee vendor themed. Products sold: coffee, brarista/coffee machines and accessories.
+
+**Application Features**
+
+- Views: Home, products, product details, shopping cart
+- admin panel: add/delete/update products, assign user as admin
+- Documentation: detailed documentation/tutorials for ease of use by end-user/client (route documentation using Postman)
+- Front-facing usage: user can get all the way to checkout before being required to login/signup
+
+**Technologies:**
+
+_MERN Stack_
+
+- MongoDB (Atlas Cloud Database)
+- Express
+- React
+- Node
+
+**Libraries:**
+
+- react-bootstrap for styling
+- redux, react-redux for global state management
+- jwt we tokens/bcrypt for authentification - custom middleware to protect routes
+- react-helmet for SEO friendly meta data
+- toast for dynamic messaging
+
+**API**
+
+- Paypal API for payment
+- Stripe API for payment
+- Cloudinary API for media management and custom transformations
+
+**Testing**
+
+- comprehensive testing: react-testing-library and jest (unit and integration tests)
+
+**Deployment**
+
+- Backend and Frontend: heroku
+
 ### User Flows
 
 <img src="documentation/User Flows - Cap 2-v2.png" alt="user-flow"/>
@@ -197,7 +239,7 @@ Install Node and Newman, then run:
 
 newman run eShop.postman_collection.json -e eShop.postman_environment.json
 
-Known Issues:
+**Known Issues**
 
 - cart reset after order is placed
 - Stripe payment not working on mobile devices
@@ -205,3 +247,12 @@ Known Issues:
 - pagination missing in admin orders page
 - navbar categories and brand should be provided dynamically (endpoints missing to allow for mapping of categories and brand)
 - delete order endpoint missing
+
+Features to Implement in CI/CD:
+
+- track product trends, potentially add chart visualization in admin views
+
+**Ressources**
+MERN Stack Tutorial by Brad Traversy (https://www.udemy.com/course/mern-ecommerce/)
+Set up Payments in React js with Stripe by Web Dev Hero (https://www.youtube.com/watch?v=lkA4rmo7W6k)
+Using Cookies with JWT in Node.js (https://dev.to/franciscomendes10866/using-cookies-with-jwt-in-node-js-8fn)

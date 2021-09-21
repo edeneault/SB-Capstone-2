@@ -2,7 +2,8 @@ import React from "react";
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
-import { initialState, render } from "../test-utils";
+import { render } from "../test-utils";
+import { initialState } from "../store-mock";
 import ProductsListPage from "../pages/ProductsListPage.js";
 import { createMemoryHistory, createLocation } from "history";
 

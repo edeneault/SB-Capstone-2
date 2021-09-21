@@ -2,7 +2,8 @@ import React from "react";
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
-import { initialState, render, screen } from "../test-utils";
+import { initialState } from "../store-mock";
+import { render, screen } from "../test-utils";
 
 import SearchBox from "../components/SearchBox";
 

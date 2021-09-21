@@ -1,3 +1,8 @@
+@font-face {
+  font-family: lovely-coffee;
+  src: url(./css/fonts/LovelyCoffee-jEVeO.ttf);
+}
+
 :root {
   --main-red-color: brown;
 }
@@ -8,13 +13,8 @@ body {
   padding: 0;
 }
 
-@font-face {
-  font-family: lovely-coffee;
-  src: url(./css/fonts/LovelyCoffee-jEVeO.ttf);
-}
-
 main {
-  min-height: 80vh;
+  min-height: 100vh;
 }
 
 h1 {
@@ -63,6 +63,10 @@ h3 {
 .edit {
   border-radius: 5px;
   width: 40px;
+}
+
+.disclaimer {
+  color: var(--main-red-color);
 }
 
 .fade-in {

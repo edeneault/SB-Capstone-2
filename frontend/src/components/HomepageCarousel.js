@@ -5,7 +5,7 @@ import "../css/HomepageCarousel.css";
 
 const HomepageCarousel = () => {
   return (
-    <Carousel fade className='mt-4 fade-in'>
+    <Carousel fade className='mt-3 fade-in'>
       <Carousel.Item>
         <Image
           className='img'
@@ -16,9 +16,6 @@ const HomepageCarousel = () => {
           <h3 className='text-light fs-md-5 slide-title'>
             Curated Coffee Selection
           </h3>
-          {/* <p className='text-white fs-3 carousel-text-shadow'>
-            Because life is better with coffee!
-          </p> */}
           <Link
             className='btn btn-secondary rounded slide-btn '
             to='/categories/espresso'
@@ -38,9 +35,6 @@ const HomepageCarousel = () => {
           <h3 className='text-light fs-md-5 slide-title'>
             Barista and Coffee Machines
           </h3>
-          {/* <p className='text-white fs-3 carousel-text-shadow'>
-            Only the highest quality and best rated.
-          </p> */}
           <Link
             className='btn btn-secondary rounded slide-btn'
             to='/categories/barista'
@@ -60,9 +54,6 @@ const HomepageCarousel = () => {
           <h3 className='text-light fs-md-5 slide-title'>
             ACCESSORIES AND MERCHANDISE
           </h3>
-          {/* <p className='text-white fs-3 carousel-text-shadow'>
-            Coffee mugs, single pour products, filters and much more.
-          </p> */}
           <Link
             className='btn btn-secondary rounded slide-btn'
             to='/categories/accessories'

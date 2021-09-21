@@ -9,7 +9,7 @@ exports[`test matches snapshot 1`] = `
       class="row"
     >
       <div
-        class="col-md-12"
+        class="col-md-6"
       >
         <i
           class="fas fa-shopping-cart fa-2x px-1 py-3 text-black"

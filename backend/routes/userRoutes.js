@@ -13,23 +13,23 @@ import {
 } from "../controllers/userController.js";
 
 // Authorazation Middleware //
-import { protect, admin } from "../middleware/authMiddleware.js";
+import { ensureLoggedIn, ensureAdmin } from "../middleware/authMiddleware.js";
 
 // User Routes //
 
-router.route("/").post(registerUser).get(protect, admin, getUsers);
+router.route("/").post(registerUser).get(ensureLoggedIn, ensureAdmin, getUsers);
 
 router.post("/login", authUser);
 router.get("/logout", logoutUser);
 router
   .route("/profile")
-  .get(protect, getUserProfile)
-  .put(protect, updateUserProfile);
+  .get(ensureLoggedIn, getUserProfile)
+  .put(ensureLoggedIn, updateUserProfile);
 
 router
   .route("/:id")
-  .delete(protect, admin, deleteUser)
-  .get(protect, admin, getUserById)
-  .put(protect, admin, updateUser);
+  .delete(ensureLoggedIn, ensureAdmin, deleteUser)
+  .get(ensureLoggedIn, ensureAdmin, getUserById)
+  .put(ensureLoggedIn, ensureAdmin, updateUser);
 
 export default router;

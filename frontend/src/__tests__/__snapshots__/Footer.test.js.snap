@@ -17,7 +17,7 @@ exports[`matches snapshot 1`] = `
             target="_blank"
           >
             <i
-              class="fab fa-facebook ps-4 text-dark "
+              class="fab fa-facebook px-4 text-dark "
             />
           </a>
           <a
@@ -25,7 +25,7 @@ exports[`matches snapshot 1`] = `
             target="_blank"
           >
             <i
-              class="fab fa-instagram ps-4 text-dark"
+              class="fab fa-instagram px-4 text-dark"
             />
           </a>
           <a
@@ -33,7 +33,7 @@ exports[`matches snapshot 1`] = `
             target="_blank"
           >
             <i
-              class="fab fa-linkedin-in ps-4 text-dark"
+              class="fab fa-linkedin-in px-4 text-dark"
             />
           </a>
           <a
@@ -41,7 +41,7 @@ exports[`matches snapshot 1`] = `
             target="_blank"
           >
             <i
-              class="fab fa-tiktok ps-4 text-dark"
+              class="fab fa-tiktok px-4 text-dark"
             />
           </a>
         </div>
@@ -50,9 +50,18 @@ exports[`matches snapshot 1`] = `
         class="row"
       >
         <div
-          class="text-center py-3 col"
+          class="text-center py-1 col"
         >
           Copyright © Impresso Espresso
+        </div>
+      </div>
+      <div
+        class="row"
+      >
+        <div
+          class="text-center disclaimer col"
+        >
+          Full Stack Application built using MERN stack as a Capstone Project. NOT A REAL STORE.
         </div>
       </div>
     </div>

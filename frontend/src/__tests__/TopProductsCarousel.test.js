@@ -3,7 +3,8 @@ import { Provider } from "react-redux";
 import "@testing-library/jest-dom/extend-expect";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
-import { initialState, render } from "../test-utils";
+import { render } from "../test-utils";
+import { initialState } from "../store-mock";
 
 import TopProductsCarousel from "../components/TopProductsCarousel.js";
 

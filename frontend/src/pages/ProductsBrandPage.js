@@ -4,6 +4,7 @@ import { Row, Col, Container } from "react-bootstrap";
 import Product from "../components/Product";
 import Loader from "../components/Loader";
 import Paginate from "../components/Paginate";
+import MetaData from "../components/MetaData";
 
 import BrandCarousel from "../components/BrandCarousel";
 import { listBrandProducts } from "../actions/productActions";
@@ -28,6 +29,7 @@ const ProductsBrandPage = ({ match }) => {
 
   return (
     <>
+      <MetaData title={brand + " page"} />
       <BrandCarousel brand={brand} />
       <Container fluid className='px-5 pt-3'>
         {loading ? (

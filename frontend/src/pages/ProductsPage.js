@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Row, Col, Container } from "react-bootstrap";
 import Product from "../components/Product";
 import Loader from "../components/Loader";
+import MetaData from "../components/MetaData";
 import AllProductsCarousel from "../components/AllProductsCarousel";
 import Paginate from "../components/Paginate";
 import { listProducts } from "../actions/productActions";
@@ -26,6 +27,8 @@ const ProductsPage = ({ match }) => {
 
   return (
     <>
+      <MetaData title='all products page' />
+
       <AllProductsCarousel />
       <Container fluid className='px-5 pt-3'>
         {loading ? (

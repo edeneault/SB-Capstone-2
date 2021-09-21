@@ -4,6 +4,7 @@ import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
+import MetaData from "../components/MetaData";
 import FormContainer from "../components/FormContainer";
 import { login } from "../actions/userActions";
 
@@ -32,6 +33,7 @@ const LoginPage = ({ location, history }) => {
 
   return (
     <FormContainer>
+      <MetaData title='login page' />
       <h1>Sign In</h1>
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}

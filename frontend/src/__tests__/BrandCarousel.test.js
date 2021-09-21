@@ -1,9 +1,9 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
-import { initialState, render } from "../test-utils";
+import { render } from "../test-utils";
+import { initialState } from "../store-mock";
 
 import BrandCarousel from "../components/BrandCarousel.js";
 

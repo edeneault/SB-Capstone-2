@@ -12,7 +12,7 @@ const MetaData = ({ title, description, keywords }) => {
 };
 
 MetaData.defaultProps = {
-  title: "Welcome to Impresso Espresso",
+  title: "Impresso Espresso",
   description: "Curated Coffee Products",
   keywords: "coffee, espresso, barista, beans, chocolate, machine",
 };

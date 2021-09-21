@@ -12,7 +12,7 @@ const Loader = () => {
           position: "absolute",
           top: "50%",
           left: "50%",
-          marginTop: "-50px", //Half of the height of the loading graphic
+          marginTop: "-50px",
         }}
       >
         <span className='sr-only'> Loading...</span>

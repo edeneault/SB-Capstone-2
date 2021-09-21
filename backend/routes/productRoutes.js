@@ -14,19 +14,22 @@ import {
 
 // Authorization Middleware //
 
-import { protect, admin } from "../middleware/authMiddleware.js";
+import { ensureLoggedIn, ensureAdmin } from "../middleware/authMiddleware.js";
 
 // Product Routes //
 
-router.route("/").get(getProducts).post(protect, admin, createProduct);
-router.route("/:id/reviews").post(protect, createProductReview);
+router
+  .route("/")
+  .get(getProducts)
+  .post(ensureLoggedIn, ensureAdmin, createProduct);
+router.route("/:id/reviews").post(ensureLoggedIn, createProductReview);
 router.get("/top", getTopProducts);
 router.get("/category/:category", getProductsByCategory);
 router.get("/brand/:brand", getProductsByBrand);
 router
   .route("/:id")
   .get(getProductById)
-  .delete(protect, admin, deleteProduct)
-  .put(protect, admin, updateProduct);
+  .delete(ensureLoggedIn, ensureAdmin, deleteProduct)
+  .put(ensureLoggedIn, ensureAdmin, updateProduct);
 
 export default router;

@@ -12,15 +12,22 @@ import {
 
 // Authorization Middleware //
 
-import { protect, admin } from "../middleware/authMiddleware.js";
+import { ensureLoggedIn, ensureAdmin } from "../middleware/authMiddleware.js";
 
 // Order Routes //
 
-router.route("/").post(protect, addOrderItems).get(protect, admin, getOrders);
-router.route("/myorders").get(protect, getMyOrders);
-router.route("/:id").get(protect, getOrderById);
-router.route("/:id/pay").put(protect, updateOrderToPaid);
-router.route("/:id/paymentmethod").put(protect, updateOrderPaymentMethod);
-router.route("/:id/deliver").put(protect, admin, updateOrderToDelivered);
+router
+  .route("/")
+  .post(ensureLoggedIn, addOrderItems)
+  .get(ensureLoggedIn, ensureAdmin, getOrders);
+router.route("/myorders").get(ensureLoggedIn, getMyOrders);
+router.route("/:id").get(ensureLoggedIn, getOrderById);
+router.route("/:id/pay").put(ensureLoggedIn, updateOrderToPaid);
+router
+  .route("/:id/paymentmethod")
+  .put(ensureLoggedIn, updateOrderPaymentMethod);
+router
+  .route("/:id/deliver")
+  .put(ensureLoggedIn, ensureAdmin, updateOrderToDelivered);
 
 export default router;
