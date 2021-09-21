@@ -1,5 +1,7 @@
 ## Impresso Expresso - eCommerce Shop
 
+**Website URL**: https://impresso-espresso-app.herokuapp.com/
+
 **Project Overview:** StoreFront/eCommerce application for business to deliver brand identity and to sell products to retail consumers. Built in a way that is flexible/reusable.
 
 Coffee vendor themed. Products sold: coffee, brarista/coffee machines and accessories.
@@ -42,13 +44,13 @@ _MERN Stack_
 
 - Backend and Frontend: heroku
 
-### User Flows
+**User Flows**
 
 <img src="documentation/User Flows - Cap 2-v2.png" alt="user-flow"/>
 
-### Database
+**Database**
 
-#### User Schema
+**User Schema**
 
 ```
 const userSchema = mongoose.Schema(
@@ -78,7 +80,7 @@ const userSchema = mongoose.Schema(
 );
 ```
 
-#### Product Schema
+**Product Schema**
 
 ```
 const productSchema = mongoose.Schema(
@@ -136,7 +138,7 @@ const productSchema = mongoose.Schema(
 );
 ```
 
-#### Review Schema
+**Review Schema**
 
 ```
 const reviewSchema = mongoose.Schema(
@@ -156,7 +158,7 @@ const reviewSchema = mongoose.Schema(
 );
 ```
 
-#### Order Schema
+**Order Schema**
 
 ```
 const orderSchema = mongoose.Schema(
@@ -233,11 +235,25 @@ const orderSchema = mongoose.Schema(
 );
 ```
 
+**Testing**
 Backend Testing with Postman:
 
-Install Node and Newman, then run:
+- Install nopm packages for Node and Newman
+- Navigate to folder "/backend-tests" in terminal
+- Run in terminal:
 
+```
 newman run eShop.postman_collection.json -e eShop.postman_environment.json
+```
+
+Frontend Testing with Jest and React-Testing-Library:
+
+- Navigate to "/frontend" folder in terminal
+- Run in terminal:
+
+```
+npm run test
+```
 
 **Known Issues**
 
@@ -253,6 +269,11 @@ Features to Implement in CI/CD:
 - track product trends, potentially add chart visualization in admin views
 
 **Ressources**
-MERN Stack Tutorial by Brad Traversy (https://www.udemy.com/course/mern-ecommerce/)
 Set up Payments in React js with Stripe by Web Dev Hero (https://www.youtube.com/watch?v=lkA4rmo7W6k)
 Using Cookies with JWT in Node.js (https://dev.to/franciscomendes10866/using-cookies-with-jwt-in-node-js-8fn)
+MERN Stack Tutorial by Brad Traversy (https://www.udemy.com/course/mern-ecommerce/)
+React-Testing-Library Docs: (https://testing-library.com/)
+Jest: (https://jestjs.io/)
+react-bootstrap (https://react-bootstrap.github.io/)
+react-multi-carousel (https://www.npmjs.com/package/react-multi-carousel)
+mongoDB Atlas (https://www.mongodb.com/cloud/atlas)
