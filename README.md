@@ -1,6 +1,11 @@
 ## Impresso Expresso - eCommerce Shop
 
-**Website URL**: https://impresso-espresso-app.herokuapp.com/
+**Website URL**
+https://impresso-espresso-app.herokuapp.com/
+Testing Admin Login credentials:
+
+- email: admin@example.com
+- password: 123456
 
 **Project Overview:** StoreFront/eCommerce application for business to deliver brand identity and to sell products to retail consumers. Built in a way that is flexible/reusable.
 
