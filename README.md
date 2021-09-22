@@ -2,7 +2,8 @@
 
 **Website URL**
 https://impresso-espresso-app.herokuapp.com/
-Testing Admin Login credentials:
+
+**Testing Admin Login credentials:**
 
 - email: admin@example.com
 - password: 123456
@@ -268,6 +269,8 @@ npm run test
 - pagination missing in admin orders page
 - navbar categories and brand should be provided dynamically (endpoints missing to allow for mapping of categories and brand)
 - delete order endpoint missing
+- Media inquiries needed for responsive HomePageCarousel component
+- Margin needed at the bottom of HEader component
 
 Features to Implement in CI/CD:
 
