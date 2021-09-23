@@ -12,7 +12,7 @@ exports[`test matches snapshot 1`] = `
   >
     <ul
       class="react-multi-carousel-track "
-      style="transition: none; overflow: unset; transform: translate3d(0px,0,0);"
+      style="transition: none; overflow: unset; transform: translate3d(200px,0,0);"
     />
   </div>
 </DocumentFragment>

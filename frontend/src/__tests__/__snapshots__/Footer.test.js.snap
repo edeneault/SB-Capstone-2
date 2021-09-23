@@ -59,9 +59,9 @@ exports[`matches snapshot 1`] = `
         class="row"
       >
         <div
-          class="text-center disclaimer col"
+          class="text-center disclaimer pb-2 col"
         >
-          Full Stack Application built using MERN stack as a Capstone Project. NOT A REAL STORE.
+          Web Application built using MERN stack as a Capstone Project. NOT A REAL STORE.
         </div>
       </div>
     </div>

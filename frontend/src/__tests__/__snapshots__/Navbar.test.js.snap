@@ -103,7 +103,7 @@ exports[`matches snapshot 1`] = `
           class="m-0 p-0 col-lg-12"
         >
           <nav
-            class=" py-1 fs-6 main-nav bg-custom navbar navbar-expand-lg navbar-light"
+            class=" py-1 fs-6 bg-custom navbar navbar-expand-lg navbar-light"
           >
             <button
               aria-controls="basic-navbar-nav"

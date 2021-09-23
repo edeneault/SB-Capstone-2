@@ -42,6 +42,7 @@
 									"    const expectedKeys = ['_id','name', 'email', 'isAdmin'];",
 									"    pm.expect(jsonData).to.be.an(\"object\");",
 									"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"    pm.environment.set('user_id', pm.response.json()._id);",
 									"});",
 									"",
 									""
@@ -55,7 +56,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"g@example.com\",\n    \"password\": \"123456\"\n}",
+							"raw": "{\n    \"email\": \"johnny@fake.com\",\n    \"password\": \"123456\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -117,7 +118,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"John\",\n    \"email\": \"g@example.com\",\n    \"password\": \"123456\"\n}",
+							"raw": "{\n    \"name\": \"Johnny\",\n    \"email\": \"johnny@fake.com\",\n    \"password\": \"123456\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -180,7 +181,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n \"name\": \"John Doe\",\n    \"email\": \"g@example.com\",\n    \"password\": \"123456\"\n}",
+							"raw": "{\n \"name\": \"Johnny Doe\",\n    \"email\": \"johnny@fake.com\",\n    \"password\": \"123456\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -369,7 +370,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"john@example.com\"\n}",
+							"raw": "{\n    \"email\": \"johnny@fake.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -423,6 +424,7 @@
 									"    const expectedKeys = ['_id','name', 'email', 'isAdmin'];",
 									"    pm.expect(jsonData).to.be.an(\"object\");",
 									"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"    pm.environment.set('user_id', pm.response.json()._id);",
 									"});",
 									"",
 									""
@@ -436,7 +438,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"g@example.com\",\n    \"password\": \"123456\"\n}",
+							"raw": "{\n    \"email\": \"admin@fake.com\",\n    \"password\": \"123456\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -521,7 +523,7 @@
 					"response": []
 				},
 				{
-					"name": "POST/api/users/login (login as admin) Copy",
+					"name": "POST/api/users/login (login as admin)",
 					"event": [
 						{
 							"listen": "test",
@@ -567,7 +569,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"g@example.com\",\n    \"password\": \"123456\"\n}",
+							"raw": "{\n    \"email\": \"admin@fake.com\",\n    \"password\": \"123456\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -644,73 +646,6 @@
 			"name": "Products",
 			"item": [
 				{
-					"name": "POST/api/users/login (login as admin) Copy",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.environment.set('access_token', pm.cookies.get('access_token'))",
-									"",
-									"pm.test(\"Response contains cookie with access_token\", function() {",
-									"     pm.expect(pm.cookies.get('access_token') === pm.environment.get('access_token'))",
-									"",
-									"})",
-									"",
-									"pm.test(\"Status test\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"environment to be eShop\", function () {",
-									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
-									"});",
-									"",
-									"pm.test(\"response must be valid and have a body\", function () {",
-									"     pm.response.to.be.ok;",
-									"     pm.response.to.be.withBody;",
-									"     pm.response.to.be.json;",
-									"});",
-									"",
-									"pm.test(\"User Details are Present\", () => {",
-									"    let jsonData = pm.response.json()",
-									"    const expectedKeys = ['_id','name', 'email', 'isAdmin'];",
-									"    pm.expect(jsonData).to.be.an(\"object\");",
-									"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
-									"});",
-									"",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"g@example.com\",\n    \"password\": \"123456\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{URL}}/api/users/login",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"api",
-								"users",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "GET /api/products",
 					"event": [
 						{
@@ -786,6 +721,74 @@
 							]
 						},
 						"description": "##### GET all products"
+					},
+					"response": []
+				},
+				{
+					"name": "POST/api/users/login (login as admin)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('access_token', pm.cookies.get('access_token'))",
+									"",
+									"pm.test(\"Response contains cookie with access_token\", function() {",
+									"     pm.expect(pm.cookies.get('access_token') === pm.environment.get('access_token'))",
+									"",
+									"})",
+									"",
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"environment to be eShop\", function () {",
+									"    pm.expect(pm.environment.get(\"env\")).to.equal(\"eShop\");",
+									"});",
+									"",
+									"pm.test(\"response must be valid and have a body\", function () {",
+									"     pm.response.to.be.ok;",
+									"     pm.response.to.be.withBody;",
+									"     pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"User Details are Present\", () => {",
+									"    let jsonData = pm.response.json()",
+									"    const expectedKeys = ['_id','name', 'email', 'isAdmin'];",
+									"    pm.expect(jsonData).to.be.an(\"object\");",
+									"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
+									"    pm.environment.set('user_id', pm.response.json()._id);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@fake.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
 					},
 					"response": []
 				},
@@ -876,7 +879,6 @@
 									"    const expectedKeys = ['rating','numReviews', 'price', 'countInStock','_id', 'name', 'image', 'description', 'brand', 'category', 'user', 'reviews', '__v', 'createdAt', 'updatedAt'];",
 									"    pm.expect(jsonData).to.be.an(\"object\");",
 									"    pm.expect(jsonData).to.be.an(\"object\").that.has.all.keys(expectedKeys);",
-									"",
 									"});",
 									"",
 									""
@@ -889,14 +891,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/api/products/6125d04db949259bdec4de3a",
+							"raw": "{{URL}}/api/products/{{product}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"api",
 								"products",
-								"6125d04db949259bdec4de3a"
+								"{{product}}"
 							]
 						},
 						"description": "##### GET single product by Id"
@@ -1350,7 +1352,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"john@example.com\"\n}",
+							"raw": "{\n    \"email\": \"admin@fake.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1423,7 +1425,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"g@example.com\",\n    \"password\": \"123456\"\n}",
+							"raw": "{\n    \"email\": \"admin@fake.com\",\n    \"password\": \"123456\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1810,7 +1812,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"g@example.com\",\n    \"password\": \"123456\"\n}",
+									"raw": "{\n    \"email\": \"admin@fake.com\",\n    \"password\": \"123456\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1932,14 +1934,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{URL}}/api/products/6125d04db949259bdec4de3a",
+									"raw": "{{URL}}/api/products/{{product}}",
 									"host": [
 										"{{URL}}"
 									],
 									"path": [
 										"api",
 										"products",
-										"6125d04db949259bdec4de3a"
+										"{{product}}"
 									]
 								},
 								"description": "##### GET single product by Id"
@@ -2097,7 +2099,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"g@example.com\"\n}",
+									"raw": "{\n    \"email\": \"admin@fake.com\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2439,7 +2441,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"g@example.com\",\n    \"password\": \"123456\"\n}",
+									"raw": "{\n    \"email\": \"admin@fake.com\",\n    \"password\": \"123456\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2577,7 +2579,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"g@example.com\"\n}",
+									"raw": "{\n    \"email\": \"admin@fake.com\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"

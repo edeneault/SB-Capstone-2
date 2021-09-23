@@ -103,7 +103,7 @@ exports[`matches snapshot 1`] = `
           class="m-0 p-0 col-lg-12"
         >
           <nav
-            class=" py-1 fs-6 main-nav bg-custom navbar navbar-expand-lg navbar-light"
+            class=" py-1 fs-6 bg-custom navbar navbar-expand-lg navbar-light"
           >
             <button
               aria-controls="basic-navbar-nav"
@@ -367,7 +367,7 @@ exports[`matches snapshot 1`] = `
       >
         <ul
           class="react-multi-carousel-track "
-          style="transition: none; overflow: unset; transform: translate3d(0px,0,0);"
+          style="transition: none; overflow: unset; transform: translate3d(200px,0,0);"
         />
       </div>
       <h2
@@ -380,7 +380,7 @@ exports[`matches snapshot 1`] = `
       >
         <ul
           class="react-multi-carousel-track "
-          style="transition: none; overflow: unset; transform: translate3d(0px,0,0);"
+          style="transition: none; overflow: unset; transform: translate3d(200px,0,0);"
         />
       </div>
       <div
@@ -392,7 +392,7 @@ exports[`matches snapshot 1`] = `
            ~ All Products ~
         </h2>
         <div
-          class="fade-in row"
+          class="row"
         >
           <div
             class="col-xl-3 col-lg-4 col-md-6 col-sm-12"
@@ -1600,9 +1600,9 @@ exports[`matches snapshot 1`] = `
         class="row"
       >
         <div
-          class="text-center disclaimer col"
+          class="text-center disclaimer pb-2 col"
         >
-          Full Stack Application built using MERN stack as a Capstone Project. NOT A REAL STORE.
+          Web Application built using MERN stack as a Capstone Project. NOT A REAL STORE.
         </div>
       </div>
     </div>

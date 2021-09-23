@@ -3,7 +3,7 @@
 exports[`test matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="fade-in px-5 pt-3 container-fluid"
+    class=" px-5 pt-3 container-fluid"
   >
     <div
       class="align-items-top mb-0 pb-0 row"

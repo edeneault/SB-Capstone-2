@@ -36,6 +36,30 @@ const products = [
     category: "espresso",
   },
   {
+    rating: 5,
+    numReviews: 1,
+    price: 14.99,
+    countInStock: 0,
+    name: "Illy - Nesgresso Pods",
+    image:
+      "https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630570052/eShop/hledh4z0vtu1r9kugkym.jpg",
+    description: "ESPRESSO - Negresso Compatible Pods",
+    brand: "illy",
+    category: "espresso",
+  },
+  {
+    rating: 5,
+    numReviews: 1,
+    price: 14.99,
+    countInStock: 0,
+    name: "L'Or - Nesgresso Pods",
+    image:
+      "https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630570265/eShop/vbzsjvqmiqr0gdknpied.jpg",
+    description: "ESPRESSO - Negresso Compatible Pods",
+    brand: "BrightDay",
+    category: "espresso",
+  },
+  {
     rating: 4,
     numReviews: 2,
     price: 11.99,
@@ -100,6 +124,18 @@ const products = [
       "12oz. Good iced coffee isn't made by brewing hot coffee and adding ice, really good iced coffee is slow brewed allowing the coffee flavor to gradually steep into water. This cold brew machine uses melting ice to slow brew but your patience will be rewarded with the great tasting coffee. 100 filters are included to get you started.  Capacity: 12oz Material: Glass Includes: 100 56MM Coffee Filter Papers Estimated Delivery: Allow 3 to 5 weeks for delivery. Ice Drip",
   },
   {
+    rating: 0,
+    numReviews: 0,
+    price: 25.99,
+    countInStock: 3,
+    name: "Lavazza Brand - Mug",
+    image:
+      "https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630861017/eShop/onoxupuvnusi2tcxdv73.jpg",
+    category: "accessories",
+    brand: "Lavazza",
+    description: "Original Lavazza Mug, perfect size!",
+  },
+  {
     rating: 4.5,
     numReviews: 2,
     price: 8.99,
@@ -142,12 +178,62 @@ const products = [
     numReviews: 0,
     price: 180.99,
     countInStock: 4,
-    name: "DeFonghi Bar Espresso and Cappuccino Machine",
+    name: "Nespreggo Espresso and Cappuccino Machine",
     image:
       "https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630922718/eShop/crj3g54ndo1yvtv6ipj1.jpg",
     category: "barista",
     brand: "DeFonghi",
     description: "Model:  EF155 Pre  ",
+  },
+  {
+    rating: 5,
+    numReviews: 0,
+    price: 1499.99,
+    countInStock: 4,
+    name: "Fancy Barista Coffee Bar Home Edition",
+    image:
+      "https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630783375/eShop/hv1lqt49gjevdnrc6zma.jpg",
+    category: "barista",
+    brand: "FancyBarista",
+    description: "Fancy Barista for luxirious home kitchens.",
+  },
+  {
+    rating: 4.5,
+    numReviews: 0,
+    price: 1499.99,
+    countInStock: 4,
+    name: "Fancy Barista Coffee Bar Express",
+    image:
+      "https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630784564/eShop/qlbehmqgeuafbcbkszn2.jpg",
+    category: "barista",
+    brand: "FancyBarista",
+    description: "Fancy Barista forh a great morning.",
+  },
+  {
+    rating: 4,
+    numReviews: 12,
+    price: 1699.99,
+    countInStock: 6,
+    name: "Bremille - Barista Deluxe",
+    image:
+      "https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630607611/eShop/lmdu2bohs8mdot4ozd4b.jpg",
+    description:
+      "Barista-quality performance with a new intuitive interface that provides all the information you need to create third wave specialty coffee at home. The built-in grinder delivers the right amount of ground coffee on demand, for full flavour. With a 3 second heat up time and precise espresso extraction, you go from bean to cup, faster than ever before.",
+    brand: "Bremille",
+    category: "barista",
+  },
+  {
+    rating: 4,
+    numReviews: 12,
+    price: 1699.99,
+    countInStock: 6,
+    name: "Bremille - Barista Deluxe (Black)",
+    image:
+      "https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1630607566/eShop/hyzjog4sr56zfz0u3plr.png",
+    description:
+      "Barista-quality performance with a new intuitive interface that provides all the information you need to create third wave specialty coffee at home. The built-in grinder delivers the right amount of ground coffee on demand, for full flavour. With a 3 second heat up time and precise espresso extraction, you go from bean to cup, faster than ever before.",
+    brand: "Bremille",
+    category: "barista",
   },
 ];
 
