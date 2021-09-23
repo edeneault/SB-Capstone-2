@@ -42,10 +42,6 @@ _MERN Stack_
 - Stripe API for payment
 - Cloudinary API for media management and custom transformations
 
-**Testing**
-
-- comprehensive testing: react-testing-library and jest (unit and integration tests)
-
 **Deployment**
 
 - Backend and Frontend: heroku
@@ -88,14 +84,15 @@ npm run test
 - navbar categories and brand should be provided dynamically (endpoints missing to allow for mapping of categories and brand)
 - delete order endpoint missing
 - Media inquiries needed for responsive HomePageCarousel component
+- SEO would be far better if App was built using Server Side Rendering (SSR) with a framework like NEXT.js.
 
 Features to Implement in CI/CD:
 
 - track product trends, potentially add chart visualization in admin views
 
-**Notes**
+**Personal Note**
 
-- SEO would be far better if App was built using Server Side Rendering (SSR) with a framework like NEXT.js.
+- For this Capstone, I challenged myself to use a tech stack that was not fully covered by the SpringBoard course curriculum. I wanted to gain experience working with MongoDB and react/redux design patterns and to practice learning how to use at a base level technologies that are new to me. Also, I felt that it would be a great opportunity to gain experience with eCommerce. The applications general design pattern was learned in Brad Traversy's course on MERN stack applications. My focus for the project was put on API integration, learning how to use HttpOnly cookies to pass JWT tokens as a more secure alternative to localStorage. Also, I spend some time exploring react ui npm packages such as react-bootstrap and react-multi-carousel. I also paid attention to scripts in the package.json file and learning how to test a react-redux application with jest/react-testing-libarary for the frontend and postman/chai for the backend. It took a significant amount of time to build/debug/test but the learning was invaluable. I enjoyed working on the project.
 
 **Ressources**
 
