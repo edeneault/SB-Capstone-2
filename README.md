@@ -3,6 +3,8 @@
 **Website URL**
 https://impresso-espresso-app.herokuapp.com/
 
+<img src="https://res.cloudinary.com/edeneault-cloudinary/image/upload/v1632411903/myProfile-images/Screen_Shot_2021-09-22_at_2.08.09_PM_oqh8pk.png" alt="" />
+
 **Testing Admin Login credentials:**
 
 - email: admin@fake.com
