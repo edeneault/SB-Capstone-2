@@ -31,7 +31,7 @@ const Footer = () => {
           </Col>
         </Row>
         <Row>
-          <Col className='text-center disclaimer'>
+          <Col className='text-center disclaimer pb-2'>
             Web Application built using MERN stack as a Capstone Project. NOT A
             REAL STORE.
           </Col>

@@ -23,7 +23,7 @@ const ShippingPage = ({ history }) => {
   };
 
   return (
-    <Container fluid className='px-5 pt-3 fade-in'>
+    <Container fluid className='px-5 pt-3'>
       <FormContainer>
         <CheckoutSteps step1 step2 />
         <h1>Shipping</h1>

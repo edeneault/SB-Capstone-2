@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { Row, Col, Container } from "react-bootstrap";
 import Product from "../components/Product";
 import Loader from "../components/Loader";
@@ -22,7 +22,7 @@ const HomePage = ({ match }) => {
   const pageNumber = match.params.pageNumber || 1;
   const dispatch = useDispatch();
 
-  const productList = useSelector((state) => state.productList);
+  const productList = useSelector((state) => state.productList, shallowEqual);
   const { loading, error, products, page, pages } = productList;
 
   useEffect(() => {
@@ -41,10 +41,9 @@ const HomePage = ({ match }) => {
       )}
       {!keyword && (
         <>
-          <TopProductsCarousel className='fade-in' />
+          <TopProductsCarousel />
         </>
       )}
-      {/* <AllProductsCarousel /> */}
 
       {!keyword && (
         <>
@@ -69,7 +68,7 @@ const HomePage = ({ match }) => {
           toast(`${error}`, { type: "error" })
         ) : (
           <>
-            <Row className='fade-in'>
+            <Row>
               {products.map((product) => (
                 <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
                   <Product product={product} />

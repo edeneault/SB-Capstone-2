@@ -5,7 +5,7 @@ https://impresso-espresso-app.herokuapp.com/
 
 **Testing Admin Login credentials:**
 
-- email: admin@example.com
+- email: admin@fake.com
 - password: 123456
 
 **Project Overview:** StoreFront/eCommerce application for business to deliver brand identity and to sell products to retail consumers. Built in a way that is flexible/reusable.
@@ -33,7 +33,7 @@ _MERN Stack_
 - react-bootstrap for styling
 - redux, react-redux for global state management
 - jwt we tokens/bcrypt for authentification - custom middleware to protect routes
-- react-helmet for SEO friendly meta data
+- react-helmet for meta data
 - toast for dynamic messaging
 
 **API**
@@ -88,13 +88,17 @@ npm run test
 - navbar categories and brand should be provided dynamically (endpoints missing to allow for mapping of categories and brand)
 - delete order endpoint missing
 - Media inquiries needed for responsive HomePageCarousel component
-- Margin needed at the bottom of HEader component
 
 Features to Implement in CI/CD:
 
 - track product trends, potentially add chart visualization in admin views
 
+**Notes**
+
+- SEO would be far better if App was built using Server Side Rendering (SSR) with a framework like NEXT.js.
+
 **Ressources**
+
 Set up Payments in React js with Stripe by Web Dev Hero (https://www.youtube.com/watch?v=lkA4rmo7W6k)
 Using Cookies with JWT in Node.js (https://dev.to/franciscomendes10866/using-cookies-with-jwt-in-node-js-8fn)
 MERN Stack Tutorial by Brad Traversy (https://www.udemy.com/course/mern-ecommerce/)

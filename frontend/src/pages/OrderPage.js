@@ -139,7 +139,7 @@ const OrderPage = ({ match, history }) => {
     toast("Something went wrong", { type: "error" })
   ) : (
     <>
-      <Container fluid className='px-5 pt-3 fade-in'>
+      <Container fluid className='px-5 pt-3'>
         <h1>Order: {orderId} </h1>{" "}
         <Row>
           <Col md={8}>
@@ -201,7 +201,7 @@ const OrderPage = ({ match, history }) => {
                             />
                           </Col>
                           <Col>
-                            <Link to={`/product/${item.product}`}>
+                            <Link to={`/products/${item._id}`}>
                               {item.name}
                             </Link>
                           </Col>

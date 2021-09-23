@@ -46,7 +46,7 @@ const CartPage = ({ match, location, history }) => {
   return (
     <>
       <MetaData title='cart page' />
-      <Container fluid className='px-5 pt-3 fade-in'>
+      <Container fluid className='px-5 pt-3'>
         <Row>
           <Col md={6}>
             <i className='fas fa-shopping-cart fa-2x px-1 py-3 text-black'></i>

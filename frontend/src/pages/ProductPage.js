@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import {
   Container,
   Row,
@@ -35,22 +35,27 @@ const ProductPage = ({ history, match }) => {
   const { id } = useParams();
   const dispatch = useDispatch();
 
-  const productDetails = useSelector((state) => state.productDetails);
+  const productDetails = useSelector(
+    (state) => state.productDetails,
+    shallowEqual,
+  );
   const { loading, error, product } = productDetails;
 
-  const productReviewCreate = useSelector((state) => state.productReviewCreate);
+  const productReviewCreate = useSelector(
+    (state) => state.productReviewCreate,
+    shallowEqual,
+  );
   const {
     loading: loadingProductReview,
     success: successProductReview,
     error: errorProductReview,
   } = productReviewCreate;
 
-  const userLogin = useSelector((state) => state.userLogin);
+  const userLogin = useSelector((state) => state.userLogin, shallowEqual);
   const { userInfo } = userLogin;
 
   useEffect(() => {
     if (successProductReview) {
-      // alert("Review Submitted!");
       toast("Success! Review Submitted!", { type: "success" });
       setRating(0);
       setComment("");

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { Row, Col, Container } from "react-bootstrap";
 import Product from "../components/Product";
 import Loader from "../components/Loader";
@@ -20,7 +20,7 @@ const ProductsBrandPage = ({ match }) => {
   const pageNumber = match.params.pageNumber || 1;
   const dispatch = useDispatch();
 
-  const productBrand = useSelector((state) => state.productBrand);
+  const productBrand = useSelector((state) => state.productBrand, shallowEqual);
   const { loading, error, products, page, pages } = productBrand;
 
   useEffect(() => {

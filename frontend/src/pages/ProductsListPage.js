@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { LinkContainer } from "react-router-bootstrap";
 import { Container, Table, Button, Row, Col } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import Loader from "../components/Loader";
 import Paginate from "../components/Paginate";
 import {
@@ -20,10 +20,13 @@ const ProductsListPage = ({ history, match }) => {
   const pageNumber = match.params.pageNumber || 1;
   const dispatch = useDispatch();
 
-  const productsList = useSelector((state) => state.productList);
+  const productsList = useSelector((state) => state.productList, shallowEqual);
   const { loading, error, products, page, pages } = productsList;
 
-  const productDelete = useSelector((state) => state.productDelete);
+  const productDelete = useSelector(
+    (state) => state.productDelete,
+    shallowEqual,
+  );
   const {
     loading: loadingDelete,
     error: errorDelete,
@@ -74,7 +77,7 @@ const ProductsListPage = ({ history, match }) => {
   };
   return (
     <>
-      <Container fluid className='fade-in px-5 pt-3'>
+      <Container fluid className=' px-5 pt-3'>
         <Row className='align-items-top mb-0 pb-0'>
           <Col sm={4}>
             <h1 className='page-title slide-in mb-0 pb-0'>My Products</h1>

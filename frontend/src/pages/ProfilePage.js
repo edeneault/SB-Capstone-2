@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { LinkContainer } from "react-router-bootstrap";
 import { Container, Form, Button, Row, Col, Table } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import Loader from "../components/Loader";
 import { getUserDetails, updateUserProfile } from "../actions/userActions";
 import { listMyOrders } from "../actions/orderActions";
@@ -21,16 +21,19 @@ const ProfilePage = ({ history }) => {
 
   const dispatch = useDispatch();
 
-  const userDetails = useSelector((state) => state.userDetails);
+  const userDetails = useSelector((state) => state.userDetails, shallowEqual);
   const { loading, error, user } = userDetails;
 
-  const userLogin = useSelector((state) => state.userLogin);
+  const userLogin = useSelector((state) => state.userLogin, shallowEqual);
   const { userInfo } = userLogin;
 
-  const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
+  const userUpdateProfile = useSelector(
+    (state) => state.userUpdateProfile,
+    shallowEqual,
+  );
   const { success } = userUpdateProfile;
 
-  const orderListMy = useSelector((state) => state.ordersMyList);
+  const orderListMy = useSelector((state) => state.ordersMyList, shallowEqual);
   const { loading: loadingOrders, error: errorOrders, orders } = orderListMy;
 
   useEffect(() => {
@@ -58,7 +61,7 @@ const ProfilePage = ({ history }) => {
   };
 
   return (
-    <Container fluid className='px-5 pt-3 fade-in'>
+    <Container fluid className='px-5 pt-3'>
       <Row>
         <Col md={3}>
           <h2 className=' pb-0 mb-0 slide-in'>

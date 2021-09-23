@@ -24,7 +24,7 @@ const PaymentPage = ({ history }) => {
   };
 
   return (
-    <Container fluid className='px-5 pt-3 fade-in'>
+    <Container fluid className='px-5 pt-3'>
       <FormContainer>
         <CheckoutSteps step1 step2 step3 />
         <h1>Payment Method</h1>
