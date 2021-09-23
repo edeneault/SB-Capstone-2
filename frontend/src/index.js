@@ -9,12 +9,20 @@ import "./index.css";
 import App from "./App";
 import ScrollToTop from "./components/ScrollToTop";
 import reportWebVitals from "./reportWebVitals";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
 
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <ScrollToTop>
         <App />
+        {toast(
+          "Web Application built using MERN stack as a Capstone Project. NOT A REAL STORE.",
+          { type: "info" },
+        )}
       </ScrollToTop>
     </BrowserRouter>
   </Provider>,
