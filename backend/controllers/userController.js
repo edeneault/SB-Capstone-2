@@ -71,7 +71,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
 // Desc:  Logout a user         //
 // Route: GET /api/users/logout //
-// Auth: Private                //
+// Auth: ensureLoggedIn         //
 const logoutUser = asyncHandler(async (req, res) => {
   return res
     .status(201)
@@ -82,7 +82,7 @@ const logoutUser = asyncHandler(async (req, res) => {
 
 // Desc:  Get user profile        //
 // Route: POST /api/users/profile //
-// Auth: Private                  //
+// Auth: ensureLoggedIn           //
 const getUserProfile = asyncHandler(async (req, res) => {
   const user = await User.findById(req.user._id);
 
@@ -101,7 +101,7 @@ const getUserProfile = asyncHandler(async (req, res) => {
 
 // Desc:  Update user profile     //
 // Route: PUT /api/users/profile  //
-// Auth: Private                  //
+// Auth: ensureLoggedIn           //
 const updateUserProfile = asyncHandler(async (req, res) => {
   const user = await User.findById(req.user._id);
 
@@ -128,7 +128,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 
 // Desc:   Get all users  //
 // Route:POST /api/users  //
-// Auth: PrivateAdmin     //
+// Auth: ensureAdmin      //
 const getUsers = asyncHandler(async (req, res) => {
   const users = await User.find({});
   res.json(users);
@@ -136,7 +136,7 @@ const getUsers = asyncHandler(async (req, res) => {
 
 // Desc:   Delete user          //
 // Route: DELETE /api/users/:id //
-// Auth: PrivateAdmin           //
+// Auth: ensureAdmin            //
 const deleteUser = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id);
 
@@ -151,7 +151,7 @@ const deleteUser = asyncHandler(async (req, res) => {
 
 // Desc:   Get user by ID     //
 // Route: POST /api/users/:id //
-// Auth: PrivateAdmin         //
+// Auth: ensureAdmin          //
 const getUserById = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id).select("-password");
 
@@ -165,7 +165,7 @@ const getUserById = asyncHandler(async (req, res) => {
 
 // Desc:   Update user        //
 // Route: PUT /api/users/:id  //
-// Auth: Private              //
+// Auth: ensureLoggedIn       //
 const updateUser = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id);
 

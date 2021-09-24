@@ -1,9 +1,9 @@
 import asyncHandler from "express-async-handler";
 import Product from "../models/productModel.js";
 
-// @desc  Fetch all products
-// @route GET /api/products
-// @access Public
+// Desc:   Fetch all products  //
+// Route: GET /api/products    //
+// Auth: Public                //
 const getProducts = asyncHandler(async (req, res) => {
   const pageSize = 12;
   const page = Number(req.query.pageNumber) || 1;
@@ -25,9 +25,9 @@ const getProducts = asyncHandler(async (req, res) => {
   res.json({ products, page, pages: Math.ceil(count / pageSize) });
 });
 
-// @desc  Fetch single product
-// @route GET /api/products/:id
-// @access Public
+// Desc:   Fetch single product   //
+// Route: GET /api/products/:id   //
+// Auth: Public                   //
 const getProductById = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
 
@@ -39,9 +39,9 @@ const getProductById = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc  Delete a product
-// @route DELETE /api/products/:id
-// @access PrivateAdmin
+// Desc:   Delete a product         //
+// Route: DELETE /api/products/:id  //
+// Auth: ensureAdmin                //
 const deleteProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
 
@@ -54,9 +54,9 @@ const deleteProduct = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc  Create a product
-// @route POST /api/products
-// @access PrivateAdmin
+// Desc:   Create a product   //
+// Route: POST /api/products  //
+// Auth: ensureAdmin          //
 const createProduct = asyncHandler(async (req, res) => {
   const product = new Product({
     name: "Sample Name",
@@ -76,9 +76,9 @@ const createProduct = asyncHandler(async (req, res) => {
   res.status(201).json(createProduct);
 });
 
-// @desc  Update a product
-// @route PUT /api/products/:id
-// @access PrivateAdmin
+// Desc:   Update a product       //
+// Route:  PUT /api/products/:id  //
+// Auth: ensureAdmin              //
 const updateProduct = asyncHandler(async (req, res) => {
   const { name, price, description, brand, category, countInStock, image } =
     req.body;
@@ -101,9 +101,9 @@ const updateProduct = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc  Create a review
-// @route POST /api/products/:id/reviews
-// @access Private
+// Desc:   Create a review                //
+// Route:  POST /api/products/:id/reviews //
+// Auth: ensureLoggedIn                   //
 const createProductReview = asyncHandler(async (req, res) => {
   const { rating, comment } = req.body;
 
@@ -141,18 +141,18 @@ const createProductReview = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc    Get top rated products
-// @route   GET /api/products/top
-// @access  Public
+// Desc:   Get top rated products   //
+// Route:  GET /api/products/top    //
+// Auth: Public                     //
 const getTopProducts = asyncHandler(async (req, res) => {
   const products = await Product.find({}).sort({ rating: -1 }).limit(6);
 
   res.json(products);
 });
 
-// @desc  Get products by category
-// @route GET /api/products/category/:category
-// @access Public
+// Desc:   Get products by category                //
+// Route:  GET /api/products/category/:category    //
+// Auth: Public                                    //
 const getProductsByCategory = asyncHandler(async (req, res) => {
   const { category } = req.params;
   const pageSize = 12;

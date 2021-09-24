@@ -1,9 +1,9 @@
 import asyncHandler from "express-async-handler";
 import Order from "../models/orderModel.js";
 
-// @desc  Create new order
-// @route GET /api/orders
-// @access Private
+// Desc:   Create new order     //
+// Route:  POST /api/orders     //
+// Auth: ensureLoggedIn         //
 const addOrderItems = asyncHandler(async (req, res) => {
   const {
     orderItems,
@@ -37,9 +37,9 @@ const addOrderItems = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc  Get order by ID
-// @route GET /api/orders/:id
-// @access Private
+// Desc:   Get order by ID      //
+// Route:  GET /api/orders/:id  //
+// Auth: ensureLoggedIn         //
 const getOrderById = asyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id).populate(
     "user",
@@ -54,9 +54,9 @@ const getOrderById = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc  Update order by ID to Paid
-// @route PUT /api/orders/:id/pay
-// @access Private
+// Desc:   Update order by ID to Paid  //
+// Route:  PUT /api/orders/:id/pay     //
+// Auth: ensureLoggedIn                //
 const updateOrderToPaid = asyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id);
 
@@ -85,9 +85,9 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc  Update order by ID to new payment method
-// @route PUT /api/orders/:id/paymentmethod
-// @access Private
+// Desc:   Update order by ID to new payment method //
+// Route:  PUT /api/orders/:id/paymentmethod        //
+// Auth: ensureLoggedIn                             //
 const updateOrderPaymentMethod = asyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id);
   const paymentMethod = req.body.paymentMethod;
@@ -103,9 +103,9 @@ const updateOrderPaymentMethod = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc  Update order to delivered
-// @route PUT /api/orders/:id/deliver
-// @access Private/admin
+// Desc:   Update order to delivered      //
+// Route:  PUT /api/orders/:id/deliver    //
+// Auth: ensureAdmin                      //
 const updateOrderToDelivered = asyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id);
 
@@ -122,17 +122,17 @@ const updateOrderToDelivered = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc Get logged in user orders
-// @route GET /api/orders/myorders
-// @access Private
+// Desc:   Get logged in user orders  //
+// Route:  GET /api/orders/myorders   //
+// Auth: ensureLoggedIn               //
 const getMyOrders = asyncHandler(async (req, res) => {
   const orders = await Order.find({ user: req.user._id });
   res.json(orders);
 });
 
-// @desc Get all orders
-// @route GET /api/orders
-// @access Private
+// Desc:   Get all orders    //
+// Route:  GET /api/orders   //
+// Auth: ensureLoggedIn      //
 const getOrders = asyncHandler(async (req, res) => {
   const orders = await Order.find({}).populate("user", "id name");
   res.json(orders);

@@ -52,7 +52,7 @@ const AllProductsCarousel = () => {
         renderArrowsWhenDisabled
         infinite
         partialVisible={true}
-        className='bg-primary fade-in'
+        className='fade-in'
       >
         {products.slice(0, 12).map((product) => {
           return (
