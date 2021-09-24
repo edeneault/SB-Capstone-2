@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import PropTypes from "prop-types";
 
-const Rating = ({ value, text, color }) => {
+const Rating = memo(({ value, text, color }) => {
   return (
     <div className='rating'>
       <span>
@@ -68,7 +68,7 @@ const Rating = ({ value, text, color }) => {
       <span> {text ?? text}</span>
     </div>
   );
-};
+});
 
 Rating.defaultProps = {
   color: "rgb(140, 61, 61)",

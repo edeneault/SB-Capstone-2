@@ -17,12 +17,12 @@ toast.configure();
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
+      {toast(
+        "Web Application built using MERN stack as a Capstone Project. NOT A REAL STORE.",
+        { type: "info" },
+      )}
       <ScrollToTop>
         <App />
-        {toast(
-          "Web Application built using MERN stack as a Capstone Project. NOT A REAL STORE.",
-          { type: "info" },
-        )}
       </ScrollToTop>
     </BrowserRouter>
   </Provider>,
