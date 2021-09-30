@@ -8,7 +8,6 @@ const App = () => {
   return (
     <>
       <Header />
-
       <main>
         <Container fluid className='mt-5 pt-4 g-0'>
           <Routes />
