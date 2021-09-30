@@ -58,7 +58,7 @@ export const savePaymentMethod = (data) => (dispatch) => {
 };
 
 export const updatePaymentMethod =
-  (paymentMethod, orderId) => async (dispatch, getState) => {
+  (paymentMethod, orderId) => async (dispatch) => {
     try {
       dispatch({
         type: CART_UPDATE_PAYMENT_METHOD_REQUEST,

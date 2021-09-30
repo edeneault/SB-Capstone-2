@@ -32,7 +32,6 @@ const addOrderItems = asyncHandler(async (req, res) => {
     });
 
     const createOrder = await order.save();
-    console.log(createOrder);
     res.status(201).json(createOrder);
   }
 });

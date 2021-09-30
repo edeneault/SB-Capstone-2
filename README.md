@@ -34,7 +34,7 @@ _MERN Stack_
 
 - react-bootstrap for styling
 - redux, react-redux for global state management
-- jwt we tokens/bcrypt for authentification - custom middleware to protect routes
+- jwt web tokens/bcrypt for authentification - custom middleware to protect routes
 - react-helmet for meta data
 - toast for dynamic messaging
 
@@ -87,6 +87,7 @@ npm run test
 - delete order endpoint missing
 - Media inquiries needed for responsive HomePageCarousel component
 - SEO would be far better if App was built using Server Side Rendering (SSR) with a framework like NEXT.js.
+- Update product quantity only works with admin user, need to update quantity with logged in user when the place an order.
 
 Features to Implement in CI/CD:
 
@@ -94,7 +95,7 @@ Features to Implement in CI/CD:
 
 **Personal Note**
 
-- For this Capstone, I challenged myself to use a tech stack that was not fully covered by the SpringBoard course curriculum. I wanted to gain experience working with MongoDB and react/redux design patterns and to practice learning how to use at a 'base level' technologies that are new to me. Also, I felt that it would be a great opportunity to gain experience with eCommerce. The applications general design pattern was learned in Brad Traversy's course on mern stack applications. My focus for the project was on applying react/redux design patterns and on API integration. I also learned how to use HttpOnly cookies to pass jwt tokens as a more secure alternative to localStorage. Additional time was invested on exploring react ui npm packages such as react-bootstrap and react-multi-carousel. I also paid attention to scripts in the package.json file and learning how to test a react-redux application with jest/react-testing-libarary for the frontend and postman/chai for the backend. It took a significant amount of time to build/debug/test but the experience was invaluable. I enjoyed working on the project.
+- For this Capstone, I challenged myself to use a tech stack that was not fully covered by the SpringBoard course curriculum. I wanted to gain experience working with MongoDB and react/redux design patterns and to practice learning how to use at a 'base level' technologies that are new to me. Also, I felt that it would be a great opportunity to gain experience with eCommerce. The applications general design pattern was learned in Brad Traversy's course on mern stack applications. My focus for the project was on applying react/redux design patterns and on API integration. I also learned how to use HttpOnly cookies to pass jwt tokens as a more secure alternative to localStorage. Additional time was invested on exploring react ui npm packages such as react-bootstrap, react-multi-carousel and toast notifications. I also paid attention to scripts in the package.json file and learning how to test a react-redux application with jest/react-testing-libarary for the frontend and postman/chai for the backend. It took a significant amount of time to build/debug/test but the experience was invaluable. I enjoyed working on the project.
 
 **Ressources**
 

@@ -20,7 +20,7 @@ import {
   ORDER_PAY_SUCCESS,
 } from "../constants/orderConstants";
 
-export const createOrder = (order) => async (dispatch, getState) => {
+export const createOrder = (order) => async (dispatch) => {
   try {
     dispatch({
       type: ORDER_CREATE_REQUEST,
@@ -49,7 +49,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
   }
 };
 
-export const getOrderDetails = (id) => async (dispatch, getState) => {
+export const getOrderDetails = (id) => async (dispatch) => {
   try {
     dispatch({
       type: ORDER_DETAILS_REQUEST,
@@ -121,14 +121,8 @@ export const deliverOrder = (orderId) => async (dispatch, getState) => {
       type: ORDER_DELIVER_REQUEST,
     });
 
-    const {
-      userLogin: { userInfo },
-    } = getState();
-
     const config = {
-      headers: {
-        Authorization: `Bearer ${userInfo.token}`,
-      },
+      headers: {},
     };
 
     const { data } = await axios.put(
@@ -152,7 +146,7 @@ export const deliverOrder = (orderId) => async (dispatch, getState) => {
   }
 };
 
-export const listMyOrders = () => async (dispatch, getState) => {
+export const listMyOrders = () => async (dispatch) => {
   try {
     dispatch({
       type: ORDER_MY_LIST_REQUEST,
