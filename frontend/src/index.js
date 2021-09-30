@@ -21,10 +21,12 @@ ReactDOM.render(
         <App />
       </ScrollToTop>
     </BrowserRouter>
-    {toast(
-      "Web Application built using MERN stack as a Capstone Project. NOT A REAL STORE.",
-      { type: "info" },
-    )}
+    {
+      (window.onload = toast(
+        "Web Application built using MERN stack as a Capstone Project. NOT A REAL STORE.",
+        { type: "info" },
+      ))
+    }
   </Provider>,
   document.getElementById("root"),
 );
