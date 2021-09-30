@@ -8,7 +8,7 @@ exports[`test matches snapshot 1`] = `
     ~ All Products ~
   </h2>
   <div
-    class="react-multi-carousel-list  bg-primary fade-in"
+    class="react-multi-carousel-list  fade-in"
   >
     <ul
       class="react-multi-carousel-track "
