@@ -63,6 +63,7 @@ const AllProductsCarousel = () => {
                 draggable={false}
                 src={product.image}
               />
+
               <Link to={`/products/${product._id}`} className='text-dark'>
                 <p className='p-0 m-0  fs-6 '>{product.name}</p>
                 <p className='p-0 m-0  fs-6'>{product.price}</p>

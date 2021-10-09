@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Carousel, Image } from "react-bootstrap";
 import "../css/HomepageCarousel.css";
 
 const HomepageCarousel = () => {
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
   return (
-    <Carousel fade className='mt-3 fade-in'>
+    <Carousel
+      activeIndex={index}
+      onSelect={handleSelect}
+      interval={null}
+      fade
+      className='mt-3 fade-in'
+    >
       <Carousel.Item>
         <Image
           className='img'

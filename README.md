@@ -79,6 +79,7 @@ npm run test
 
 **Known Issues**
 
+- images should be clickeable.
 - cart reset after order is placed
 - Stripe payment not working on mobile devices
 - local storage issues on mobile devices

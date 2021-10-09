@@ -32,6 +32,7 @@ app.use(express.static("public"));
 app.use(express.json({ limit: "50mb" }));
 app.use(cors());
 
+// Routes //
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/orders", orderRoutes);
@@ -51,8 +52,6 @@ if (process.env.NODE_ENV === "production") {
     res.send("API is running...");
   });
 }
-
-// app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
 app.use(notFound);
 
